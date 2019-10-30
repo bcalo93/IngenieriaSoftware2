@@ -114,10 +114,6 @@
                                               <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                                               <Component id="CalBtnEditar" min="-2" pref="77" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                              <Component id="CalBtnAgregar" min="-2" pref="210" max="-2" attributes="0"/>
-                                          </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                               <Component id="CalBtnAgregarDatos" min="-2" pref="279" max="-2" attributes="0"/>
@@ -187,6 +183,11 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="CalLblTituloActividad" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Component id="btnAgregarActividad" min="-2" pref="210" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -260,7 +261,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="CalLblAdvertencia" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CalBtnAgregar" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAgregarActividad" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="CalBtnAgregarDatos" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
@@ -352,9 +353,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="CalBtnAgregar">
+            <Component class="javax.swing.JButton" name="btnAgregarActividad">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Actividad"/>
+              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnAgregarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarActividadActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="CalLblTipo">

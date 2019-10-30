@@ -146,7 +146,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalYearChooser = new com.toedter.calendar.JYearChooser();
         CalScrollActividades = new javax.swing.JScrollPane();
         CalLstActividades = new javax.swing.JList<>();
-        CalBtnAgregar = new javax.swing.JButton();
+        btnAgregarActividad = new javax.swing.JButton();
         CalLblTipo = new javax.swing.JLabel();
         CalLblUsuario = new javax.swing.JLabel();
         CalLblPerro = new javax.swing.JLabel();
@@ -268,9 +268,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         CalScrollActividades.setViewportView(CalLstActividades);
 
-        CalBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarActividad.setText("Agregar Actividad");
+        btnAgregarActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnAgregarActionPerformed(evt);
+                btnAgregarActividadActionPerformed(evt);
             }
         });
 
@@ -557,9 +558,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                         .addGap(116, 116, 116)
                                         .addComponent(CalBtnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
-                                        .addGap(59, 59, 59)
-                                        .addComponent(CalBtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panCalendarioLayout.createSequentialGroup()
                                         .addGap(25, 25, 25)
                                         .addComponent(CalBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(CalLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -608,7 +606,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCalendarioLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CalLblTituloActividad)
-                        .addGap(291, 291, 291))))
+                        .addGap(291, 291, 291))
+                    .addGroup(panCalendarioLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(btnAgregarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         panCalendarioLayout.setVerticalGroup(
             panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -664,7 +666,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(CalLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CalBtnAgregar)
+                        .addComponent(btnAgregarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CalBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
@@ -1625,7 +1627,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CalComboTipoActionPerformed
 
-    private void CalBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnAgregarActionPerformed
+    private void btnAgregarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActividadActionPerformed
         String nombreAct = CalTxtNombreResp.getText();
         boolean fueRealizada = true;
         if (CalBtnRealizadaNo.isSelected()) {
@@ -1738,7 +1740,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         CalLblFechaResp.setText(dia + "/" + mes + "/" + ano);
         fechaSeleccionada = new Fecha(dia, mes, ano);
-    }//GEN-LAST:event_CalBtnAgregarActionPerformed
+    }//GEN-LAST:event_btnAgregarActividadActionPerformed
 
     private void CalLstActividadesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CalLstActividadesValueChanged
         String nombreAct = CalLstActividades.getSelectedValue();
@@ -2074,7 +2076,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CalBtnAgregar;
     private javax.swing.JButton CalBtnAgregarDatos;
     private javax.swing.JButton CalBtnEditar;
     private javax.swing.ButtonGroup CalBtnGroupRealizada;
@@ -2166,6 +2167,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane UsuarioScrollFechas;
     private javax.swing.JTextField UsuarioTxtMail;
     private javax.swing.JTextField UsuarioTxtNombre;
+    private javax.swing.JButton btnAgregarActividad;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JPanel panCalendario;
     private javax.swing.JPanel panPerros;
