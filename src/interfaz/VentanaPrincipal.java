@@ -60,6 +60,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println(ex);
         }
         PerroBtnEditar.setVisible(false);
+        btnBorrar.setVisible(false);
         PerroBtnGuardar.setVisible(false);
         CalPanHoraPersonalizada.setVisible(false);
         CalPanVeterinaria.setVisible(false);
@@ -93,6 +94,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             PerroLblComentarios.setText("" + perroSeleccionado.getComentarios());
             PerroLblFoto.setIcon(perroSeleccionado.getFoto());
             PerroBtnEditar.setVisible(true);
+            btnBorrar.setVisible(true);
+            ocultarAgregarPerro();
         } else {
             PerroLblNombre.setText("Nombre:");
             PerroLblPeso.setText("Peso:");
@@ -100,8 +103,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             PerroLblComentarios.setText("Comentarios:");
             PerroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
             PerroBtnEditar.setVisible(false);
+            btnBorrar.setVisible(false);
+            mostrarAgregarPerro();
         }
-        ocultarAgregarPerro();
         rutaImagenAgregar = "";
     }
 
@@ -141,16 +145,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalMonthChooser = new com.toedter.calendar.JMonthChooser();
         CalYearChooser = new com.toedter.calendar.JYearChooser();
         CalScrollActividades = new javax.swing.JScrollPane();
-        CalLstActividades = new javax.swing.JList<String>();
+        CalLstActividades = new javax.swing.JList<>();
         CalBtnAgregar = new javax.swing.JButton();
         CalLblTipo = new javax.swing.JLabel();
         CalLblUsuario = new javax.swing.JLabel();
         CalLblPerro = new javax.swing.JLabel();
         CalLblFecha = new javax.swing.JLabel();
-        CalComboTipo = new javax.swing.JComboBox<String>();
-        CalComboUsuario = new javax.swing.JComboBox<String>();
-        CalComboPerro = new javax.swing.JComboBox<String>();
-        CalComboHora = new javax.swing.JComboBox<String>();
+        CalComboTipo = new javax.swing.JComboBox<>();
+        CalComboUsuario = new javax.swing.JComboBox<>();
+        CalComboPerro = new javax.swing.JComboBox<>();
+        CalComboHora = new javax.swing.JComboBox<>();
         CalLblHora = new javax.swing.JLabel();
         CalPanHoraPersonalizada = new javax.swing.JPanel();
         CalPanLblMinutos = new javax.swing.JLabel();
@@ -166,9 +170,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalLblVeterinaria = new javax.swing.JLabel();
         CalBtnVeterinariaSi = new javax.swing.JRadioButton();
         CalBtnVeterinariaNo = new javax.swing.JRadioButton();
-        CalComboVeterinaria = new javax.swing.JComboBox<String>();
+        CalComboVeterinaria = new javax.swing.JComboBox<>();
         CalLblMotivo = new javax.swing.JLabel();
-        CalComboMotivo = new javax.swing.JComboBox<String>();
+        CalComboMotivo = new javax.swing.JComboBox<>();
         CalLblHorarios = new javax.swing.JLabel();
         CalTxtTipoAlimento = new javax.swing.JTextField();
         CalLblTipoAlimento = new javax.swing.JLabel();
@@ -191,7 +195,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalBtnVerRuta = new javax.swing.JButton();
         panUsuarios = new javax.swing.JPanel();
         UsuarioLblUsuarios = new javax.swing.JLabel();
-        UsuarioComboUsuarios = new javax.swing.JComboBox<String>();
+        UsuarioComboUsuarios = new javax.swing.JComboBox<>();
         UsuarioLblNombre = new javax.swing.JLabel();
         UsuarioLblMail = new javax.swing.JLabel();
         UsuarioTxtNombre = new javax.swing.JTextField();
@@ -199,11 +203,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         UsuarioBtnAgregar = new javax.swing.JButton();
         UsuarioLblActividades = new javax.swing.JLabel();
         UsuarioScrollActividades = new javax.swing.JScrollPane();
-        UsuarioLstActividades = new javax.swing.JList<String>();
+        UsuarioLstActividades = new javax.swing.JList<>();
         UsuarioLblActividad = new javax.swing.JLabel();
         UsuarioLblFecha = new javax.swing.JLabel();
         UsuarioScrollFechas = new javax.swing.JScrollPane();
-        UsuarioLstFechas = new javax.swing.JList<String>();
+        UsuarioLstFechas = new javax.swing.JList<>();
         UsuarioLblAdvertencia = new javax.swing.JLabel();
         panPerros = new javax.swing.JPanel();
         PerroBtnAgregar = new javax.swing.JButton();
@@ -223,10 +227,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PerroSpinPeso = new javax.swing.JSpinner();
         CalLblCentimetros = new javax.swing.JLabel();
         CalLblKilogramos = new javax.swing.JLabel();
-        PerroComboPerros = new javax.swing.JComboBox<String>();
+        PerroComboPerros = new javax.swing.JComboBox<>();
         PerroBtnEditar = new javax.swing.JButton();
         PerroBtnGuardar = new javax.swing.JButton();
         PerroLblAdvertencia = new javax.swing.JLabel();
+        btnBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Pets");
@@ -277,14 +282,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         CalLblFecha.setText("Fecha:");
 
-        CalComboTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paseo", "Alimentación", "Otra" }));
+        CalComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paseo", "Alimentación", "Otra" }));
         CalComboTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CalComboTipoActionPerformed(evt);
             }
         });
 
-        CalComboHora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ahora", "Personalizado" }));
+        CalComboHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ahora", "Personalizado" }));
         CalComboHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CalComboHoraActionPerformed(evt);
@@ -368,7 +373,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         CalLblMotivo.setText("Motivo:");
 
-        CalComboMotivo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Corte de Pelo", "Corte de Uñas", "Visita Médica", "Otro" }));
+        CalComboMotivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corte de Pelo", "Corte de Uñas", "Visita Médica", "Otro" }));
 
         javax.swing.GroupLayout CalPanVeterinariaLayout = new javax.swing.GroupLayout(CalPanVeterinaria);
         CalPanVeterinaria.setLayout(CalPanVeterinariaLayout);
@@ -452,7 +457,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        CalSpinDistancia.setModel(new javax.swing.SpinnerNumberModel(Double.valueOf(0.0d), Double.valueOf(0.0d), null, Double.valueOf(0.5d)));
+        CalSpinDistancia.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
 
         CalLblKilometros.setText("Kilómetros");
 
@@ -851,9 +856,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         PerroLblFotoBoton.setText("Foto:");
 
-        PerroSpinAltura.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        PerroSpinAltura.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        PerroSpinPeso.setModel(new javax.swing.SpinnerNumberModel(Double.valueOf(0.0d), Double.valueOf(0.0d), null, Double.valueOf(0.1d)));
+        PerroSpinPeso.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
 
         CalLblCentimetros.setText("Centímetros");
 
@@ -960,6 +965,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panPerrosLayout = new javax.swing.GroupLayout(panPerros);
         panPerros.setLayout(panPerrosLayout);
         panPerrosLayout.setHorizontalGroup(
@@ -972,9 +984,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(PerroLblPerros)
                             .addComponent(PerroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panPerrosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(PerroBtnEditar)
-                        .addGap(22, 22, 22)))
+                        .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(PerroBtnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
+                        .addGap(12, 12, 12)))
                 .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addGap(268, 268, 268)
@@ -1000,7 +1013,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(PerroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(PerroBtnEditar))
+                        .addComponent(PerroBtnEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBorrar))
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(PerroPanInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1092,6 +1107,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 ocultarAgregarPerro();
                 setearListaPerros();
                 PerroComboPerros.setSelectedIndex(sistema.getPerros().size() - 1);
+                btnBorrar.setVisible(true);
             }
         }
     }//GEN-LAST:event_PerroBtnAgregarActionPerformed
@@ -1847,6 +1863,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CalBtnVerRutaActionPerformed
 
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        Object nombrePerro = PerroComboPerros.getSelectedItem();
+        if(nombrePerro != null) {
+            sistema.getPerros().removeIf(perro -> perro.getNombre()
+                    .equals(nombrePerro));
+            resetearPestanaPerros();
+            if(sistema.getPerros().size() > 0) {
+                PerroComboPerros.setSelectedIndex(0);  
+            }
+        }
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
     private void cambiarVisibilidadVeterinaria(boolean opcionCombo, boolean usaVeterinaria) {
         CalPanVeterinaria.setVisible(opcionCombo);
         CalBtnVeterinariaSi.setSelected(usaVeterinaria);
@@ -2138,6 +2166,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane UsuarioScrollFechas;
     private javax.swing.JTextField UsuarioTxtMail;
     private javax.swing.JTextField UsuarioTxtNombre;
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JPanel panCalendario;
     private javax.swing.JPanel panPerros;
     private javax.swing.JPanel panUsuarios;
