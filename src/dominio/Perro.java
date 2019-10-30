@@ -9,6 +9,7 @@ public class Perro {
     private double peso;
     private String comentarios;
     private ImageIcon foto;
+    private boolean fueAdoptado;
 
     public Perro(String nombre, double altura, double peso, String comentarios) { //Sin foto
         setNombre(nombre);
@@ -85,11 +86,17 @@ public class Perro {
         this.foto = imagen;
     }
 
+    public boolean fueAdoptado() {
+        return fueAdoptado;
+    }
+
+    public void setFueAdoptado(boolean fueAdoptado) {
+        this.fueAdoptado = fueAdoptado;
+    }
+
     @Override
     public String toString() {
         return "Perro{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
     }
-
     
-
 }
