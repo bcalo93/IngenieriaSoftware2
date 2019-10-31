@@ -146,7 +146,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalYearChooser = new com.toedter.calendar.JYearChooser();
         CalScrollActividades = new javax.swing.JScrollPane();
         CalLstActividades = new javax.swing.JList<>();
-        btnAgregarActividad = new javax.swing.JButton();
+        btnGuardarActividad = new javax.swing.JButton();
         CalLblTipo = new javax.swing.JLabel();
         CalLblUsuario = new javax.swing.JLabel();
         CalLblPerro = new javax.swing.JLabel();
@@ -268,10 +268,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         CalScrollActividades.setViewportView(CalLstActividades);
 
-        btnAgregarActividad.setText("Agregar Actividad");
-        btnAgregarActividad.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarActividad.setText("Guardar Actividad");
+        btnGuardarActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActividadActionPerformed(evt);
+                btnGuardarActividadActionPerformed(evt);
             }
         });
 
@@ -609,7 +609,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(291, 291, 291))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(btnAgregarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGuardarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         panCalendarioLayout.setVerticalGroup(
@@ -666,7 +666,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(CalLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAgregarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGuardarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CalBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
@@ -1627,7 +1627,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CalComboTipoActionPerformed
 
-    private void btnAgregarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActividadActionPerformed
+    private void btnGuardarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActividadActionPerformed
         String nombreAct = CalTxtNombreResp.getText();
         boolean fueRealizada = true;
         if (CalBtnRealizadaNo.isSelected()) {
@@ -1740,7 +1740,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         CalLblFechaResp.setText(dia + "/" + mes + "/" + ano);
         fechaSeleccionada = new Fecha(dia, mes, ano);
-    }//GEN-LAST:event_btnAgregarActividadActionPerformed
+    }//GEN-LAST:event_btnGuardarActividadActionPerformed
 
     private void CalLstActividadesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CalLstActividadesValueChanged
         String nombreAct = CalLstActividades.getSelectedValue();
@@ -1999,7 +1999,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             throw new RuntimeException(e);
         }
     }
-
+    
     public void timerNuevo(final Actividad act) {
         int horaActividad = act.getHora().getHour() * 60 + act.getHora().getMinute();
         int horaActual = LocalTime.now().getHour() * 60 + LocalTime.now().getMinute();
@@ -2008,7 +2008,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             ActionListener notificacion = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
-                    enviarMail(act);
                     mostrarNotificacion(act);
                 }
             };
@@ -2167,8 +2166,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane UsuarioScrollFechas;
     private javax.swing.JTextField UsuarioTxtMail;
     private javax.swing.JTextField UsuarioTxtNombre;
-    private javax.swing.JButton btnAgregarActividad;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnGuardarActividad;
     private javax.swing.JPanel panCalendario;
     private javax.swing.JPanel panPerros;
     private javax.swing.JPanel panUsuarios;
