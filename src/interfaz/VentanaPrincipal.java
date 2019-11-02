@@ -301,7 +301,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         CalPanLblMinutos.setText("Minutos");
 
-        CalPanSpinMinutos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 55, 5));
+        CalPanSpinMinutos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 5));
 
         CalPanSpinHora.setModel(new javax.swing.SpinnerListModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
 
@@ -1653,8 +1653,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if (CalBtnVeterinariaSi.isSelected()) {
                 Veterinaria vet = sistema.buscarVetPorNombre((String) CalComboVeterinaria.getSelectedItem());
                 String motivo = (String) CalComboMotivo.getSelectedItem();
-                VisitaVeterinaria visita = new VisitaVeterinaria(nombreAct, time, usuario, perro, fueRealizada, fechaSeleccionada, vet, motivo);
-                if (vet.AgendarActividad(visita)) {
+                VisitaVeterinaria visita = new VisitaVeterinaria(nombreAct, time, 
+                        usuario, perro, fueRealizada, fechaSeleccionada, vet, motivo);
+                if (vet.agendarActividad(visita)) {
                     sistema.AnadirActividad(visita);
                     sistema.getVisitas().add(visita);
                     if (CalComboHora.getSelectedIndex() != 0) {

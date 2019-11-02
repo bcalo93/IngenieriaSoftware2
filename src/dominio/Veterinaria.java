@@ -5,6 +5,7 @@
  */
 package dominio;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
@@ -52,16 +53,15 @@ public class Veterinaria {
         this.actividadesAgendadas = actividadesAgendadas;
     }
 
-    public boolean AgendarActividad(VisitaVeterinaria act) {
-        int hora = act.getHora().getHour();
-        if (hora >= horaInicial && hora <= horaFinal) {
+    public boolean agendarActividad(VisitaVeterinaria act) {
+        if (act.getHora().isAfter(this.getHoraInicialComoLocalTime()) && 
+                act.getHora().isBefore(this.getHoraFinalComoLocalTime())) {
             Fecha fecha = act.getFecha();
             for (int i = 0; i < actividadesAgendadas.size(); i++) {
                 Actividad actAgendada = actividadesAgendadas.get(i);
-                if (fecha.getDia() == actAgendada.getFecha().getDia() && fecha.getMes()== actAgendada.getFecha().getMes()&& fecha.getAno()== actAgendada.getFecha().getAno()) {
-                    if (hora == actAgendada.getHora().getHour()) {
-                        return false;
-                    }
+                if (fecha.equals(actAgendada.getFecha()) && act.getHora()
+                        .equals(actAgendada.getHora())) {
+                    return false;
                 }
             }
             actividadesAgendadas.add(act);
@@ -82,6 +82,10 @@ public class Veterinaria {
     public int getHoraInicial() {
         return horaInicial;
     }
+    
+    private LocalTime getHoraInicialComoLocalTime() {
+        return LocalTime.of(horaInicial, 0, 0);
+    }
 
     public final void setHoraInicial(int horaInicial) {
         if (horaInicial < 0) {
@@ -98,6 +102,10 @@ public class Veterinaria {
 
     public int getHoraFinal() {
         return horaFinal;
+    }
+    
+    private LocalTime getHoraFinalComoLocalTime() {
+        return LocalTime.of(horaFinal, 0, 0);
     }
 
     public final void setHoraFinal(int horaFinal) {

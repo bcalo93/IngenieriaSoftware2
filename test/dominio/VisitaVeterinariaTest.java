@@ -21,31 +21,11 @@ public class VisitaVeterinariaTest {
 
     private VisitaVeterinaria visita;
 
-    public VisitaVeterinariaTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         visita = new VisitaVeterinaria();
     }
 
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
     @Test
     public void testConstructorSinParametros() {
         VisitaVeterinaria unaVisita = new VisitaVeterinaria();

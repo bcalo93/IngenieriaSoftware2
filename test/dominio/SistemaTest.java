@@ -393,7 +393,7 @@ public class SistemaTest {
     @Test
     public void testEliminarFechaQueNoEsta() {
         Fecha fecha = new Fecha();
-        Fecha fecha2 = new Fecha();
+        Fecha fecha2 = new Fecha(10, 10, 2019);
         sis.AnadirFecha(fecha2);
         sis.EliminarFecha(fecha);
         assertFalse(sis.getFechas().contains(fecha));
