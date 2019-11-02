@@ -4,9 +4,9 @@ public class Adoptante {
     private String nombre;
     private String apellido;
     private String telefono;
-    private Perro animalAdoptado;
+    private Mascota animalAdoptado;
 
-    public Adoptante(String nombre, String apellido, String telefono, Perro animalAdoptado) {
+    public Adoptante(String nombre, String apellido, String telefono, Mascota animalAdoptado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -37,11 +37,11 @@ public class Adoptante {
         this.telefono = telefono;
     }
 
-    public Perro getAnimalAdoptado() {
+    public Mascota getAnimalAdoptado() {
         return animalAdoptado;
     }
 
-    public void setAnimalAdoptado(Perro animalAdoptado) {
+    public void setAnimalAdoptado(Mascota animalAdoptado) {
         this.animalAdoptado = animalAdoptado;
     }
     

@@ -5,7 +5,7 @@ import java.time.LocalTime;
 public abstract class Actividad {
 
     
-    private Perro mascota;
+    private Mascota mascota;
     private boolean fueRealizado;
     private Fecha fecha;
     private LocalTime hora;
@@ -21,9 +21,9 @@ public abstract class Actividad {
 
     public abstract void setUsuario(Usuario responasble);
 
-    public abstract Perro getMascota();
+    public abstract Mascota getMascota();
 
-    public abstract void setMascota(Perro mascota);
+    public abstract void setMascota(Mascota mascota);
 
     public abstract boolean getFueRealizado();
 

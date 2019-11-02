@@ -41,7 +41,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static final String PERRO_POR_DEFECTO = "images/perroPorDefecto.png";
 
     private Sistema sistema;
-    private boolean agregarPerroSeleccionado;
+    private boolean agregarMascotaSeleccionada;
     private boolean agregarUsuarioSeleccionado;
     private String rutaImagenAgregar;
     private Fecha fechaSeleccionada;
@@ -78,24 +78,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CalLblHorarios.setVisible(false);
         rutaImagenAgregar = "";
         rutaImagenRuta = "";
-        agregarPerroSeleccionado = true;
+        agregarMascotaSeleccionada = true;
         agregarUsuarioSeleccionado = true;
         CalPanRuta.setVisible(false);
         this.setSize(950, 625);
     }
 
     public void resetearPestanaPerros() {
-        setearListaPerros();
+        setearListaMascotas();
         if (PerroComboPerros.getItemCount() != 0) {
-            Perro perroSeleccionado = sistema.buscarPerroPorNombre(PerroComboPerros.getSelectedItem().toString());
-            PerroLblNombre.setText(perroSeleccionado.getNombre().toUpperCase());
-            PerroLblPeso.setText("Pesa:       " + perroSeleccionado.getPeso());
-            PerroLblAltura.setText("Mide:       " + perroSeleccionado.getAltura());
-            PerroLblComentarios.setText("" + perroSeleccionado.getComentarios());
-            PerroLblFoto.setIcon(perroSeleccionado.getFoto());
+            Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(PerroComboPerros.getSelectedItem().toString());
+            PerroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
+            PerroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
+            PerroLblAltura.setText("Mide:       " + mascotaSeleccionada.getAltura());
+            PerroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
+            PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
             PerroBtnEditar.setVisible(true);
             btnBorrar.setVisible(true);
-            ocultarAgregarPerro();
+            ocultarAgregarMascota();
         } else {
             PerroLblNombre.setText("Nombre:");
             PerroLblPeso.setText("Peso:");
@@ -104,7 +104,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             PerroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
             PerroBtnEditar.setVisible(false);
             btnBorrar.setVisible(false);
-            mostrarAgregarPerro();
+            mostrarAgregarMascota();
         }
         rutaImagenAgregar = "";
     }
@@ -1071,17 +1071,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_PerroTxtNombreActionPerformed
 
     private void PerroBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnAgregarActionPerformed
-        if (!agregarPerroSeleccionado) {
-            mostrarAgregarPerro();
+        if (!agregarMascotaSeleccionada) {
+            mostrarAgregarMascota();
         } else {
-            Perro perroAgregar = new Perro(PerroTxtNombre.getText(),
+            Mascota mascotaAgregar = new Mascota(PerroTxtNombre.getText(),
                     Integer.parseInt(PerroSpinAltura.getValue().toString()),
                     Double.parseDouble(PerroSpinPeso.getValue().toString()),
                     PerroTxtComentarios.getText());
-            if(validarFormularioMascota(perroAgregar)) {
+            if(validarFormularioMascota(mascotaAgregar)) {
                 if (rutaImagenAgregar.equals("")) {
                     try {
-                        perroAgregar.setFoto(
+                        mascotaAgregar.setFoto(
                                 new ImageIcon(ImageIO.read(this.getClass()
                                         .getResource(PERRO_POR_DEFECTO))
                                         .getScaledInstance(100, 100, 
@@ -1091,25 +1091,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     }
                 } else {
                     File imagen = new File(rutaImagenAgregar);
-                    perroAgregar.setFoto(crearIcono(imagen, 100));
+                    mascotaAgregar.setFoto(crearIcono(imagen, 100));
                     rutaImagenAgregar = "";
                 }
-                sistema.AnadirPerro(perroAgregar);
+                sistema.anadirMascota(mascotaAgregar);
                 PerroTxtNombre.setText("");
                 PerroSpinPeso.setValue((Object) 0.0);
                 PerroSpinAltura.setValue((Object) 0.0);
                 PerroTxtComentarios.setText("");
                 PerroLblAdvertencia.setText("");
-                ocultarAgregarPerro();
-                setearListaPerros();
-                PerroComboPerros.setSelectedIndex(sistema.getPerros().size() - 1);
+                ocultarAgregarMascota();
+                setearListaMascotas();
+                PerroComboPerros.setSelectedIndex(sistema.getMascotas().size() - 1);
                 btnBorrar.setVisible(true);
             }
         }
     }//GEN-LAST:event_PerroBtnAgregarActionPerformed
 
     
-    private boolean validarFormularioMascota(Perro mascota) {
+    private boolean validarFormularioMascota(Mascota mascota) {
         boolean resultado = false;
         if (!mascota.nombreValido()) {
             PerroLblAdvertencia.setText("Por favor ingrese un nombre");
@@ -1199,8 +1199,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }
 
-    private void mostrarAgregarPerro() {
-        agregarPerroSeleccionado = true;
+    private void mostrarAgregarMascota() {
+        agregarMascotaSeleccionada = true;
         PerroLblNombre.setText("Nombre:");
         PerroLblPeso.setText("Peso:");
         PerroLblAltura.setText("Altura:");
@@ -1214,7 +1214,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PerroBtnExaminar.setVisible(true);
     }
 
-    private void ocultarAgregarPerro() {
+    private void ocultarAgregarMascota() {
         PerroTxtNombre.setVisible(false);
         PerroTxtNombre.setText("");
         PerroSpinPeso.setVisible(false);
@@ -1225,24 +1225,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PerroTxtComentarios.setText("");
         PerroLblFotoBoton.setVisible(false);
         PerroBtnExaminar.setVisible(false);
-        agregarPerroSeleccionado = false;
+        agregarMascotaSeleccionada = false;
     }
 
-    private void mostrarEditarPerro() {
+    private void mostrarEditarMascota() {
         PerroBtnGuardar.setVisible(true);
         PerroBtnAgregar.setVisible(false);
-        agregarPerroSeleccionado = true;
+        agregarMascotaSeleccionada = true;
         PerroLblNombre.setText("Nombre:");
         PerroLblPeso.setText("Peso:");
         PerroLblAltura.setText("Altura:");
         PerroLblComentarios.setText("Comentarios:");
-        Perro perroSeleccionado = sistema.buscarPerroPorNombre(PerroComboPerros
+        Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(PerroComboPerros
                 .getSelectedItem().toString());
-        PerroLblFoto.setIcon(perroSeleccionado.getFoto());
-        PerroTxtNombre.setText(perroSeleccionado.getNombre());
-        PerroSpinPeso.setValue(perroSeleccionado.getPeso());
-        PerroSpinAltura.setValue(perroSeleccionado.getAltura());
-        PerroTxtComentarios.setText("" + perroSeleccionado.getComentarios());
+        PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
+        PerroTxtNombre.setText(mascotaSeleccionada.getNombre());
+        PerroSpinPeso.setValue(mascotaSeleccionada.getPeso());
+        PerroSpinAltura.setValue(mascotaSeleccionada.getAltura());
+        PerroTxtComentarios.setText("" + mascotaSeleccionada.getComentarios());
         PerroTxtNombre.setVisible(true);
         PerroSpinPeso.setVisible(true);
         PerroSpinAltura.setVisible(true);
@@ -1251,16 +1251,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PerroBtnExaminar.setVisible(true);
     }
 
-    private void setearListaPerros() {
+    private void setearListaMascotas() {
         if (PerroComboPerros.getItemCount() > 0) {
             PerroComboPerros.removeAllItems();
         }
         if (CalComboPerro.getItemCount() > 0) {
             CalComboPerro.removeAllItems();
         }
-        for (int i = 0; i < sistema.getPerros().size(); i++) {
-            PerroComboPerros.addItem(sistema.getPerros().get(i).getNombre());
-            CalComboPerro.addItem(sistema.getPerros().get(i).getNombre());
+        for (int i = 0; i < sistema.getMascotas().size(); i++) {
+            PerroComboPerros.addItem(sistema.getMascotas().get(i).getNombre());
+            CalComboPerro.addItem(sistema.getMascotas().get(i).getNombre());
         }
 
     }
@@ -1306,16 +1306,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_PerroComboPerrosMouseClicked
 
     private void PerroComboPerrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroComboPerrosActionPerformed
-        ocultarAgregarPerro();
+        ocultarAgregarMascota();
         if (PerroComboPerros.getItemCount() > 0) {
-            Perro perroSeleccionado = sistema.buscarPerroPorNombre(
+            Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(
                     PerroComboPerros.getSelectedItem().toString());
-            PerroLblNombre.setText(perroSeleccionado.getNombre().toUpperCase());
-            PerroLblPeso.setText("Pesa:       " + perroSeleccionado.getPeso());
-            PerroLblAltura.setText("Mide:       " + perroSeleccionado
+            PerroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
+            PerroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
+            PerroLblAltura.setText("Mide:       " + mascotaSeleccionada
                     .getAltura());
-            PerroLblComentarios.setText("" + perroSeleccionado.getComentarios());
-            PerroLblFoto.setIcon(perroSeleccionado.getFoto());
+            PerroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
+            PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
             PerroBtnGuardar.setVisible(false);
             PerroBtnEditar.setVisible(true);
             PerroBtnAgregar.setVisible(true);
@@ -1336,7 +1336,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_PerroComboPerrosActionPerformed
 
     private void PerroBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnEditarActionPerformed
-        mostrarEditarPerro();
+        mostrarEditarMascota();
     }//GEN-LAST:event_PerroBtnEditarActionPerformed
 
     private void PerroBtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnGuardarActionPerformed
@@ -1345,20 +1345,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         valor = PerroSpinPeso.getValue() + "";
         double peso = Double.parseDouble(valor);
         
-        Perro nuevosValores = new Perro(PerroTxtNombre.getText(),
+        Mascota nuevosValores = new Mascota(PerroTxtNombre.getText(),
                     altura, peso, PerroTxtComentarios.getText());
         if(validarFormularioMascota(nuevosValores)) {
-            Perro perroSeleccionado = sistema.buscarPerroPorNombre(
+            Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(
                 PerroComboPerros.getSelectedItem().toString());
-            perroSeleccionado.actualizar(nuevosValores);
+            mascotaSeleccionada.actualizar(nuevosValores);
         if (!rutaImagenAgregar.equals("")) {
             File imagen = new File(rutaImagenAgregar);
-            perroSeleccionado.setFoto(crearIcono(imagen, 100));
+            mascotaSeleccionada.setFoto(crearIcono(imagen, 100));
             rutaImagenAgregar = "";
         }
-        ocultarAgregarPerro();
+        ocultarAgregarMascota();
         int pos = PerroComboPerros.getSelectedIndex();
-        setearListaPerros();
+        setearListaMascotas();
         PerroComboPerros.setSelectedIndex(pos);
         }
     }//GEN-LAST:event_PerroBtnGuardarActionPerformed
@@ -1367,18 +1367,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         try {
             Usuario persona = new Usuario("Alex", "alexkmass@gmail.com");
             sistema.AnadirUsuario(persona);
-            Perro rasta = new Perro("Rasta", 50, 23, "Es un buen perro, le gusta comer");
+            Mascota rasta = new Mascota("Rasta", 50, 23, "Es un buen perro, le gusta comer");
             rasta.setFoto(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource(PERRO_POR_DEFECTO))
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
-            sistema.AnadirPerro(rasta);
+            sistema.anadirMascota(rasta);
             Usuario persona2 = new Usuario("Marcelo", "marcelo@gmail.com");
             sistema.AnadirUsuario(persona2);
-            Perro ori = new Perro("Ori", 50, 23, "Es un buen perro");
+            Mascota ori = new Mascota("Ori", 50, 23, "Es un buen perro");
             ori.setFoto(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource("images/perroFoto.png"))
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
-            sistema.AnadirPerro(ori);
+            sistema.anadirMascota(ori);
             Fecha fecha = new Fecha(22, 11, 2018);
             sistema.AnadirFecha(fecha);
             LocalTime hora = LocalTime.now();
@@ -1654,7 +1654,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             CalLblAdvertencia.setText("Por favor, ingrese un perro para agregar una actividad.");
         } else {
             Usuario usuario = sistema.buscarUsuarioPorNombre((String) CalComboUsuario.getSelectedItem());
-            Perro perro = sistema.buscarPerroPorNombre((String) CalComboPerro.getSelectedItem());
+            Mascota mascota = sistema.buscarMascotaPorNombre((String) CalComboPerro.getSelectedItem());
             LocalTime time;
             if (((String) CalComboHora.getSelectedItem()).equals("Ahora")) {
                 time = LocalTime.now();
@@ -1667,7 +1667,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 Veterinaria vet = sistema.buscarVetPorNombre((String) CalComboVeterinaria.getSelectedItem());
                 String motivo = (String) CalComboMotivo.getSelectedItem();
                 VisitaVeterinaria visita = new VisitaVeterinaria(nombreAct, time, 
-                        usuario, perro, fueRealizada, fechaSeleccionada, vet, motivo);
+                        usuario, mascota, fueRealizada, fechaSeleccionada, vet, motivo);
                 if (vet.agendarActividad(visita)) {
                     sistema.AnadirActividad(visita);
                     sistema.getVisitas().add(visita);
@@ -1687,7 +1687,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             } else {
                 String tipoAct = (String) CalComboTipo.getSelectedItem();
                 if (tipoAct.equals("Paseo")) {
-                    Paseo paseo = new Paseo(nombreAct, usuario, perro, 0, fueRealizada, time, fechaSeleccionada);
+                    Paseo paseo = new Paseo(nombreAct, usuario, mascota, 0, fueRealizada, time, fechaSeleccionada);
                     double distanciaPaseo = Double.parseDouble(CalSpinDistancia.getValue().toString());
                     if (distanciaPaseo != 0.0) {
                         paseo.setDistancia(distanciaPaseo);
@@ -1713,7 +1713,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         if (tipoAlimento.equals("")) {
                             CalLblAdvertencia.setText("No se ingresó el tipo del alimento, ingrse el tipo del alimento");
                         } else {
-                            Alimentacion alim = new Alimentacion(nombreAct, usuario, perro, tipoAlimento, fueRealizada, time, fechaSeleccionada);
+                            Alimentacion alim = new Alimentacion(nombreAct, usuario, mascota, tipoAlimento, fueRealizada, time, fechaSeleccionada);
                             sistema.AnadirActividad(alim);
                             sistema.getAlimentaciones().add(alim);
                             if (CalComboHora.getSelectedIndex() != 0) {
@@ -1726,7 +1726,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             CalLstActividades.setEnabled(true);
                         }
                     } else {
-                        ActividadCualquiera actividad = new ActividadCualquiera(nombreAct, usuario, perro, fueRealizada, time, fechaSeleccionada);
+                        ActividadCualquiera actividad = new ActividadCualquiera(nombreAct, usuario, mascota, fueRealizada, time, fechaSeleccionada);
                         sistema.AnadirActividad(actividad);
                         sistema.getActsCualquieras().add(actividad);
                         if (CalComboHora.getSelectedIndex() != 0) {
@@ -1774,13 +1774,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 if (paseo.getDistancia() == 0.0) {
                     CalTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
                             + "Usuario responsable: " + paseo.getUsuario().getNombre() + "\n"
-                            + "Perro: " + paseo.getMascota().getNombre() + "\n"
+                            + "Mascota: " + paseo.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
                             + "Hora: " + paseo.getHora().getHour() + ":" + cero + paseo.getHora().getMinute());
                 } else {
                     CalTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
                             + "Usuario responsable: " + paseo.getUsuario().getNombre() + "\n"
-                            + "Perro: " + paseo.getMascota().getNombre() + "\n"
+                            + "Mascota: " + paseo.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
                             + "Hora: " + paseo.getHora().getHour() + ":" + cero + paseo.getHora().getMinute() + "\n"
                             + "Distancia: " + paseo.getDistancia() + "kilómetros");
@@ -1801,7 +1801,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
                     CalTxtAreaInfoAct.setText("Nombre: " + alim.getNombre() + "\n"
                             + "Usuario responsable: " + alim.getUsuario().getNombre() + "\n"
-                            + "Perro: " + alim.getMascota().getNombre() + "\n"
+                            + "Mascota: " + alim.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
                             + "Tipo Alimento: " + alim.getTipoAlimento() + "\n"
                             + "Hora: " + alim.getHora().getHour() + ":" + cero + alim.getHora().getMinute());
@@ -1817,7 +1817,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         }
                         CalTxtAreaInfoAct.setText("Nombre: " + visita.getNombre() + "\n"
                                 + "Usuario responsable: " + visita.getUsuario().getNombre() + "\n"
-                                + "Perro: " + visita.getMascota().getNombre() + "\n"
+                                + "Mascota: " + visita.getMascota().getNombre() + "\n"
                                 + "Realizada: " + fueRealizada + "\n"
                                 + "Motivo: " + visita.getMotivo() + "\n"
                                 + "Veterinaria: " + visita.getVeterinaria().getNombre() + "\n"
@@ -1834,7 +1834,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
                         CalTxtAreaInfoAct.setText("Nombre: " + act.getNombre() + "\n"
                                 + "Usuario responsable: " + act.getUsuario().getNombre() + "\n"
-                                + "Perro: " + act.getMascota().getNombre() + "\n"
+                                + "Mascota: " + act.getMascota().getNombre() + "\n"
                                 + "Realizada: " + fueRealizada + "\n"
                                 + "Hora: " + act.getHora().getHour() + ":" + cero + act.getHora().getMinute());
                     }
@@ -1880,12 +1880,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_CalBtnVerRutaActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        Object nombrePerro = PerroComboPerros.getSelectedItem();
-        if(nombrePerro != null) {
-            sistema.getPerros().removeIf(perro -> perro.getNombre()
-                    .equals(nombrePerro));
+        Object nombreMascota = PerroComboPerros.getSelectedItem();
+        if(nombreMascota != null) {
+            sistema.getMascotas().removeIf(perro -> perro.getNombre()
+                    .equals(nombreMascota));
             resetearPestanaPerros();
-            if(sistema.getPerros().size() > 0) {
+            if(sistema.getMascotas().size() > 0) {
                 PerroComboPerros.setSelectedIndex(0);  
             }
         }

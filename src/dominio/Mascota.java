@@ -2,7 +2,7 @@ package dominio;
 
 import javax.swing.ImageIcon;
 
-public class Perro {
+public class Mascota {
 
     private String nombre;
     private double altura;
@@ -11,7 +11,7 @@ public class Perro {
     private ImageIcon foto;
     private boolean fueAdoptado;
 
-    public Perro(String nombre, double altura, double peso, String comentarios) { //Sin foto
+    public Mascota(String nombre, double altura, double peso, String comentarios) { //Sin foto
         setNombre(nombre);
         setAltura(altura);
         setPeso(peso);
@@ -19,7 +19,7 @@ public class Perro {
         this.foto = null;
     }
 
-    public Perro() { //Sin foto
+    public Mascota() { //Sin foto
         this.nombre = "Sin-Nombre";
         this.altura = 0;
         this.peso = 0;
@@ -106,7 +106,7 @@ public class Perro {
         return this.peso > 0;
     }
     
-    public void actualizar(Perro perro) {
+    public void actualizar(Mascota perro) {
         this.nombre = perro.getNombre();
         this.peso = perro.getPeso();
         this.altura = perro.getAltura();
@@ -117,7 +117,7 @@ public class Perro {
 
     @Override
     public String toString() {
-        return "Perro{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
+        return "Mascota{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
     }
     
 }
