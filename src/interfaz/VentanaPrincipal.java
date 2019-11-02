@@ -1155,9 +1155,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             UsuarioLblNombre.setText("Nombre: " + usuarioSeleccionado
                     .getNombre());
             UsuarioLblMail.setText("Mail: " + usuarioSeleccionado.getMail());
-            String[] arrayActividades = new String[5];
-            String[] arrayFechas = new String[5];
             int cantidadActividades = usuarioSeleccionado.getActividades().size();
+            String[] arrayActividades = new String[cantidadActividades];
+            String[] arrayFechas = new String[cantidadActividades];
             for (int i = 0; i < cantidadActividades; i++) {
                 arrayActividades[i] = usuarioSeleccionado.getActividades()
                         .get(i).getNombre();
@@ -1629,10 +1629,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnGuardarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActividadActionPerformed
         String nombreAct = CalTxtNombreResp.getText();
-        boolean fueRealizada = true;
-        if (CalBtnRealizadaNo.isSelected()) {
-            fueRealizada = false;
-        }
+        boolean fueRealizada = !CalBtnRealizadaNo.isSelected();
+        
         if (nombreAct.equals("")) {
             CalLblAdvertencia.setText("No se ingresó un nombre, ingrese el nombre de la actividad.");
         } else if (CalComboUsuario.getItemCount() == 0) {

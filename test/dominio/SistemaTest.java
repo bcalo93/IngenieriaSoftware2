@@ -374,6 +374,18 @@ public class SistemaTest {
         assertFalse(sis.getActividades().contains(act));
         assertTrue(sis.getActividades().contains(act2));
     }
+    
+    @Test
+    public void testElminarActividadDeUsuario() {
+        Usuario usuario = new Usuario();
+        Paseo paseo = new Paseo();
+        usuario.agregarActividad(paseo);
+        sis.AnadirUsuario(usuario);
+        sis.AnadirActividad(paseo);
+        sis.EliminarActividad(paseo);
+        assertFalse(sis.getActividades().contains(paseo));
+        assertFalse(usuario.getActividades().contains(paseo));
+    }
 
     @Test
     public void testAnadirFecha() {
