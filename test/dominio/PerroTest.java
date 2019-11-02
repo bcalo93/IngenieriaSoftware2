@@ -19,31 +19,11 @@ import static org.junit.Assert.*;
  */
 public class PerroTest {
     private Perro perro;
-    public PerroTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
     @Before
     public void setUp() {
         perro = new Perro();
     }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
     
     @Test
     public void testConstructorSinParametros() {
@@ -128,5 +108,54 @@ public class PerroTest {
         double peso = perro.getPeso();
         String comentarios = perro.getComentarios();
         assertEquals("Perro{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}', resToString);
+    }
+    
+    
+    @Test
+    public void testNombreValidoOk() {
+        perro.setNombre("Nombre valido");
+        boolean resultado = perro.nombreValido();
+        assertTrue(resultado);
+        assertEquals("Nombre valido", perro.getNombre());
+    }
+    
+    @Test
+    public void testNombreValidoEspacioBlanco() {
+        perro.setNombre(" ");
+        boolean resultado = perro.nombreValido();
+        assertFalse(resultado);
+        assertEquals(" ", perro.getNombre());
+    }
+    
+    @Test
+    public void testAlturaValidaOk() {
+        perro.setAltura(2.0);
+        boolean resultado = perro.alturaValida();
+        assertTrue(resultado);
+        assertEquals(2.0, perro.getAltura(), 0);
+    }
+    
+    @Test
+    public void testAlturaValidaCero() {
+        perro.setAltura(0.0);
+        boolean resultado = perro.alturaValida();
+        assertFalse(resultado);
+        assertEquals(0.0, perro.getAltura(), 0);
+    }
+    
+    @Test
+    public void testPesoValidoOk() {
+        perro.setPeso(5.0);
+        boolean resultado = perro.pesoValido();
+        assertTrue(resultado);
+        assertEquals(5.0, perro.getPeso(), 0);
+    }
+    
+    @Test
+    public void testPesoValidaCero() {
+        perro.setAltura(0.0);
+        boolean resultado = perro.alturaValida();
+        assertFalse(resultado);
+        assertEquals(0.0, perro.getAltura(), 0);
     }
 }

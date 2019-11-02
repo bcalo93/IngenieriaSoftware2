@@ -93,6 +93,27 @@ public class Perro {
     public void setFueAdoptado(boolean fueAdoptado) {
         this.fueAdoptado = fueAdoptado;
     }
+    
+    public boolean nombreValido() {
+        return this.nombre != null && !this.nombre.trim().equals("");
+    }
+    
+    public boolean alturaValida() {
+        return this.altura > 0;
+    }
+    
+    public boolean pesoValido() {
+        return this.peso > 0;
+    }
+    
+    public void actualizar(Perro perro) {
+        this.nombre = perro.getNombre();
+        this.peso = perro.getPeso();
+        this.altura = perro.getAltura();
+        this.comentarios = perro.getComentarios();
+        this.foto = perro.getFoto();
+        this.fueAdoptado = perro.fueAdoptado();
+    }
 
     @Override
     public String toString() {
