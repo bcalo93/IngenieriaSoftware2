@@ -8,14 +8,26 @@ public class Padrino extends Persona {
     private String ciudad;
     private String pais;
     private ArrayList<Mascota> quiereApadrinar;
+    private Donacion donacion;
+    
+    public Padrino() {
+        super();
+        this.apellido = "Sin-Apellido";
+        this.telefono = "Sin-Telefono";
+        this.ciudad = "Sin-Ciudad";
+        this.pais = "Sin-Pais";
+        this.quiereApadrinar = new ArrayList<>();
+        this.donacion = new Donacion();
+    }
     
     public Padrino(String nombre, String mail, String apellido, String telefono,
-            String ciudad, String pais) {
+            String ciudad, String pais, Donacion donacion) {
         super(nombre, mail);
         this.apellido = apellido;
         this.telefono = telefono;
         this.ciudad = ciudad;
         this.pais = pais;
+        this.donacion = donacion;
         this.quiereApadrinar = new ArrayList<>();
     }
 
@@ -50,16 +62,24 @@ public class Padrino extends Persona {
     public void setPais(String pais) {
         this.pais = pais;
     }
+    
+    public Donacion getDonacion() {
+        return donacion;
+    }
 
+    public void setDonacion(Donacion donacion) {
+        this.donacion = donacion;
+    }
+    
     public ArrayList<Mascota> getQuiereApadrinar() {
         return quiereApadrinar;
     }
     
-    public void agregarQuiereAdoptar(Mascota perro) {
+    public void agregarMascota(Mascota perro) {
         this.quiereApadrinar.add(perro);
     }
     
-    public void quitarQuiereAdoptar(Mascota perro) {
+    public void borrarMascota(Mascota perro) {
         this.quiereApadrinar.remove(perro);
     }
     
