@@ -3,19 +3,24 @@ package dominio;
 import javax.swing.ImageIcon;
 
 public class Mascota {
+    
+    public static final String TIPO_POR_DEFECTO = "Perro";
 
     private String nombre;
     private double altura;
     private double peso;
+    private  String tipo;
     private String comentarios;
     private ImageIcon foto;
     private boolean fueAdoptado;
 
-    public Mascota(String nombre, double altura, double peso, String comentarios) { //Sin foto
+    public Mascota(String nombre, double altura, double peso, String comentarios, 
+            String tipo) { //Sin foto
         setNombre(nombre);
         setAltura(altura);
         setPeso(peso);
         setComentarios(comentarios);
+        setTipo(tipo);
         this.foto = null;
     }
 
@@ -24,6 +29,7 @@ public class Mascota {
         this.altura = 0;
         this.peso = 0;
         this.comentarios = "Sin-Comentarios";
+        this.tipo = TIPO_POR_DEFECTO;
         this.foto = null;
     }
 
@@ -32,7 +38,7 @@ public class Mascota {
     }
 
     public final void setNombre(String nombre) {
-        if (nombre.equals("")) {
+        if (nombre.isEmpty()) {
             this.nombre = "Sin-Nombre";
         } else {
             this.nombre = nombre;
@@ -70,7 +76,7 @@ public class Mascota {
     }
 
     public final void setComentarios(String comentarios) {
-        if (comentarios.equals("")) {
+        if (comentarios.isEmpty()) {
             this.comentarios = "Sin-Comentarios";
 
         } else {
@@ -93,6 +99,18 @@ public class Mascota {
     public void setFueAdoptado(boolean fueAdoptado) {
         this.fueAdoptado = fueAdoptado;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        if(tipo.isEmpty()) {
+            this.tipo = TIPO_POR_DEFECTO;
+        } else {
+            this.tipo = tipo;            
+        }
+    }
     
     public boolean nombreValido() {
         return this.nombre != null && !this.nombre.trim().equals("");
@@ -113,6 +131,7 @@ public class Mascota {
         this.comentarios = perro.getComentarios();
         this.foto = perro.getFoto();
         this.fueAdoptado = perro.fueAdoptado();
+        this.tipo = perro.getTipo();
     }
 
     @Override

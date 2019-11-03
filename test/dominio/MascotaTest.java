@@ -33,34 +33,38 @@ public class MascotaTest {
         assertEquals(0, unaMascota.getAltura(),0);
         assertNull(unaMascota.getFoto());
         assertEquals("Sin-Comentarios", unaMascota.getComentarios());
+        assertEquals(Mascota.TIPO_POR_DEFECTO, unaMascota.getTipo());
     }
     
      @Test
     public void testConstructorPorParametros() {
-        Mascota unaMascota = new Mascota("Rasta", 1.1, 2.3, "Es rubio");
+        Mascota unaMascota = new Mascota("Rasta", 1.1, 2.3, "Es rubio", "Perro");
         assertEquals("Rasta", unaMascota.getNombre());
         assertEquals(1.1, unaMascota.getAltura(), 0);
         assertEquals(2.3, unaMascota.getPeso(), 0);
         assertEquals("Es rubio", unaMascota.getComentarios());
+        assertEquals("Perro", unaMascota.getTipo());
         assertEquals(null, unaMascota.getFoto());
     }
      @Test
     public void testConstructorPorParametrosConPesoYAlturaMenoresQue0() {
-        Mascota unaMascota = new Mascota("Rasta", -1.1, -2.3, "Es rubio");
-        assertEquals("Rasta", unaMascota.getNombre());
+        Mascota unaMascota = new Mascota("Pedro", -1.1, -2.3, "Es rubio", "Gato");
+        assertEquals("Pedro", unaMascota.getNombre());
         assertEquals(0.0, unaMascota.getAltura(), 0);
         assertEquals(0.0, unaMascota.getPeso(), 0);
         assertEquals("Es rubio", unaMascota.getComentarios());
+        assertEquals("Gato", unaMascota.getTipo());
         assertEquals(null, unaMascota.getFoto());
     }
     
      @Test
     public void testConstructorPorParametrosConNombreYComentariosVacios() {
-        Mascota unaMascota = new Mascota("", -1.1, -2.3, "");
+        Mascota unaMascota = new Mascota("", -1.1, -2.3, "", "");
         assertEquals("Sin-Nombre", unaMascota.getNombre());
         assertEquals(0.0, unaMascota.getAltura(), 0);
         assertEquals(0.0, unaMascota.getPeso(), 0);
         assertEquals("Sin-Comentarios", unaMascota.getComentarios());
+        assertEquals(Mascota.TIPO_POR_DEFECTO, unaMascota.getTipo());
         assertEquals(null, unaMascota.getFoto());
     }
     
