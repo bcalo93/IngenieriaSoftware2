@@ -124,14 +124,16 @@ public class Mascota {
         return this.peso > 0;
     }
     
-    public void actualizar(Mascota perro) {
-        this.nombre = perro.getNombre();
-        this.peso = perro.getPeso();
-        this.altura = perro.getAltura();
-        this.comentarios = perro.getComentarios();
-        this.foto = perro.getFoto();
-        this.fueAdoptado = perro.fueAdoptado();
-        this.tipo = perro.getTipo();
+    public void actualizar(Mascota mascota) {
+        this.nombre = mascota.getNombre();
+        this.peso = mascota.getPeso();
+        this.altura = mascota.getAltura();
+        this.comentarios = mascota.getComentarios();
+        this.fueAdoptado = mascota.fueAdoptado();
+        this.tipo = mascota.getTipo();
+        if(mascota.getFoto() != null) {
+            this.foto = mascota.getFoto();    
+        }
     }
 
     @Override

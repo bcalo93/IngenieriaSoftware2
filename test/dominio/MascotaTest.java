@@ -209,4 +209,19 @@ public class MascotaTest {
         assertEquals("Gato", mascota.getTipo());
         assertEquals(imagen, mascota.getFoto());
     }
+    
+    @Test
+    public void testActualizarImagenNull() {
+        ImageIcon imagen = new ImageIcon("/interfaz.images/gato.png");
+        mascota.setFoto(imagen);
+        Mascota nuevosValores = new Mascota("Misifu", 20.0, 10.0, "Es un gato mimoso", 
+                "Gato");
+        mascota.actualizar(nuevosValores);
+        assertEquals("Misifu", mascota.getNombre());
+        assertEquals(20.0, mascota.getAltura(), 0);
+        assertEquals(10.0, mascota.getPeso(), 0);
+        assertEquals("Es un gato mimoso", mascota.getComentarios());
+        assertEquals("Gato", mascota.getTipo());
+        assertEquals(imagen, mascota.getFoto());
+    }
 }
