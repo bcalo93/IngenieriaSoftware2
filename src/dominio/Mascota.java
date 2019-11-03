@@ -38,7 +38,7 @@ public class Mascota {
     }
 
     public final void setNombre(String nombre) {
-        if (nombre.isEmpty()) {
+        if (nombre == null || nombre.isEmpty()) {
             this.nombre = "Sin-Nombre";
         } else {
             this.nombre = nombre;
@@ -76,7 +76,7 @@ public class Mascota {
     }
 
     public final void setComentarios(String comentarios) {
-        if (comentarios.isEmpty()) {
+        if (comentarios == null || comentarios.isEmpty()) {
             this.comentarios = "Sin-Comentarios";
 
         } else {
@@ -105,7 +105,7 @@ public class Mascota {
     }
 
     public void setTipo(String tipo) {
-        if(tipo.isEmpty()) {
+        if(tipo == null || tipo.isEmpty()) {
             this.tipo = TIPO_POR_DEFECTO;
         } else {
             this.tipo = tipo;            

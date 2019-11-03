@@ -80,6 +80,11 @@ public class MascotaTest {
         assertEquals("Sin-Nombre", mascota.getNombre());
     }
     
+    @Test
+    public void testSetNombreNull(){
+        mascota.setNombre(null);
+        assertEquals("Sin-Nombre", mascota.getNombre());
+    }
      @Test
     public void testSetComentarios(){
         mascota.setComentarios("Es rubio");
@@ -91,6 +96,13 @@ public class MascotaTest {
         mascota.setComentarios("");
         assertEquals("Sin-Comentarios", mascota.getComentarios());
     }
+    
+    @Test
+    public void testSetComentariosNull(){
+        mascota.setComentarios(null);
+        assertEquals("Sin-Comentarios", mascota.getComentarios());
+    }
+    
     @Test
     public void testSetRutaFoto(){
         ImageIcon imagen = new ImageIcon("/interfaz.images/perro.png");
@@ -102,6 +114,26 @@ public class MascotaTest {
     public void testSetRutaFotoVacia(){
         mascota.setFoto(null);
         assertEquals(null, mascota.getFoto());
+    }
+    
+    @Test
+    public void testSetTipo() {
+        mascota.setTipo("Caballo");
+        assertEquals("Caballo", mascota.getTipo());
+    }
+    
+    @Test
+    public void testSetTipoVacio() {
+        mascota.setTipo("Caballo");
+        assertEquals("Caballo", mascota.getTipo());
+        mascota.setTipo("");
+        assertEquals("Perro", mascota.getTipo());
+    }
+    
+    @Test
+    public void testSetTipoNull() {
+        mascota.setTipo(null);
+        assertEquals("Perro", mascota.getTipo());
     }
     
     @Test
@@ -161,5 +193,20 @@ public class MascotaTest {
         boolean resultado = mascota.alturaValida();
         assertFalse(resultado);
         assertEquals(0.0, mascota.getAltura(), 0);
+    }
+    
+    @Test
+    public void testActualizarMascota() {
+        ImageIcon imagen = new ImageIcon("/interfaz.images/gato.png");
+        Mascota nuevosValores = new Mascota("Misifu", 20.0, 10.0, "Es un gato mimoso", 
+                "Gato");
+        nuevosValores.setFoto(imagen);
+        mascota.actualizar(nuevosValores);
+        assertEquals("Misifu", mascota.getNombre());
+        assertEquals(20.0, mascota.getAltura(), 0);
+        assertEquals(10.0, mascota.getPeso(), 0);
+        assertEquals("Es un gato mimoso", mascota.getComentarios());
+        assertEquals("Gato", mascota.getTipo());
+        assertEquals(imagen, mascota.getFoto());
     }
 }
