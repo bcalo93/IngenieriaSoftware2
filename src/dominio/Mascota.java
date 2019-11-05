@@ -2,28 +2,34 @@ package dominio;
 
 import javax.swing.ImageIcon;
 
-public class Perro {
+public class Mascota {
+    
+    public static final String TIPO_POR_DEFECTO = "Perro";
 
     private String nombre;
     private double altura;
     private double peso;
+    private  String tipo;
     private String comentarios;
     private ImageIcon foto;
     private boolean fueAdoptado;
 
-    public Perro(String nombre, double altura, double peso, String comentarios) { //Sin foto
+    public Mascota(String nombre, double altura, double peso, String comentarios, 
+            String tipo) { //Sin foto
         setNombre(nombre);
         setAltura(altura);
         setPeso(peso);
         setComentarios(comentarios);
+        setTipo(tipo);
         this.foto = null;
     }
 
-    public Perro() { //Sin foto
+    public Mascota() { //Sin foto
         this.nombre = "Sin-Nombre";
         this.altura = 0;
         this.peso = 0;
         this.comentarios = "Sin-Comentarios";
+        this.tipo = TIPO_POR_DEFECTO;
         this.foto = null;
     }
 
@@ -32,7 +38,7 @@ public class Perro {
     }
 
     public final void setNombre(String nombre) {
-        if (nombre.equals("")) {
+        if (nombre == null || nombre.isEmpty()) {
             this.nombre = "Sin-Nombre";
         } else {
             this.nombre = nombre;
@@ -70,7 +76,7 @@ public class Perro {
     }
 
     public final void setComentarios(String comentarios) {
-        if (comentarios.equals("")) {
+        if (comentarios == null || comentarios.isEmpty()) {
             this.comentarios = "Sin-Comentarios";
 
         } else {
@@ -94,9 +100,45 @@ public class Perro {
         this.fueAdoptado = fueAdoptado;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        if(tipo == null || tipo.isEmpty()) {
+            this.tipo = TIPO_POR_DEFECTO;
+        } else {
+            this.tipo = tipo;            
+        }
+    }
+    
+    public boolean nombreValido() {
+        return this.nombre != null && !this.nombre.trim().equals("");
+    }
+    
+    public boolean alturaValida() {
+        return this.altura > 0;
+    }
+    
+    public boolean pesoValido() {
+        return this.peso > 0;
+    }
+    
+    public void actualizar(Mascota mascota) {
+        this.nombre = mascota.getNombre();
+        this.peso = mascota.getPeso();
+        this.altura = mascota.getAltura();
+        this.comentarios = mascota.getComentarios();
+        this.fueAdoptado = mascota.fueAdoptado();
+        this.tipo = mascota.getTipo();
+        if(mascota.getFoto() != null) {
+            this.foto = mascota.getFoto();    
+        }
+    }
+
     @Override
     public String toString() {
-        return "Perro{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
+        return "Mascota{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
     }
     
 }

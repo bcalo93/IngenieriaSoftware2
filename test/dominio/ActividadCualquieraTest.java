@@ -58,16 +58,16 @@ public class ActividadCualquieraTest {
         Fecha fecha = new Fecha();
         LocalTime time = LocalTime.now();
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
-        ActividadCualquiera unaAct = new ActividadCualquiera("Nombre", usuario, perro, false, time, fecha);
+        Mascota mascota = new Mascota();
+        ActividadCualquiera unaAct = new ActividadCualquiera("Nombre", usuario, mascota, false, time, fecha);
         Usuario resResponsable = unaAct.getUsuario();
-        Perro resMascota = unaAct.getMascota();
+        Mascota resMascota = unaAct.getMascota();
         String resNombreAct = unaAct.getNombre();
         boolean resFueRealizada = unaAct.getFueRealizado();
         Fecha resFecha = unaAct.getFecha();
         LocalTime resHora = unaAct.getHora();
         assertEquals(usuario, resResponsable);
-        assertEquals(perro, resMascota);
+        assertEquals(mascota, resMascota);
         assertEquals("Nombre", resNombreAct);
         assertEquals(false, resFueRealizada);
         assertEquals(fecha, resFecha);
@@ -79,16 +79,16 @@ public class ActividadCualquieraTest {
         Fecha fecha = new Fecha();
         LocalTime time = LocalTime.now();
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
-        ActividadCualquiera unaAct = new ActividadCualquiera("", usuario, perro, false, time, fecha);
+        Mascota mascota = new Mascota();
+        ActividadCualquiera unaAct = new ActividadCualquiera("", usuario, mascota, false, time, fecha);
         Usuario resResponsable = unaAct.getUsuario();
-        Perro resMascota = unaAct.getMascota();
+        Mascota resMascota = unaAct.getMascota();
         String resNombreAct = unaAct.getNombre();
         boolean resFueRealizada = unaAct.getFueRealizado();
         Fecha resFecha = unaAct.getFecha();
         LocalTime resHora = unaAct.getHora();
         assertEquals(usuario, resResponsable);
-        assertEquals(perro, resMascota);
+        assertEquals(mascota, resMascota);
         assertEquals("Sin-Nombre", resNombreAct);
         assertEquals(false, resFueRealizada);
         assertEquals(fecha, resFecha);
@@ -124,9 +124,9 @@ public class ActividadCualquieraTest {
         actividad.setHora(time);
         actividad.setFecha(fecha);
         Usuario usuario = actividad.getUsuario();
-        Perro perro = actividad.getMascota();
+        Mascota mascota = actividad.getMascota();
         String resToString = actividad.toString();
-        assertEquals("ActividadCualquiera{" + "responsable=" + usuario + ", mascota=" + perro + ", fueRealizado=" + actividad.getFueRealizado() + ", hora=" + time + ", fecha=" + fecha + ", nombre=" + actividad.getNombre() + '}', resToString);
+        assertEquals("ActividadCualquiera{" + "responsable=" + usuario + ", mascota=" + mascota + ", fueRealizado=" + actividad.getFueRealizado() + ", hora=" + time + ", fecha=" + fecha + ", nombre=" + actividad.getNombre() + '}', resToString);
     }
     
       @Test
@@ -145,8 +145,8 @@ public class ActividadCualquieraTest {
     
     @Test
     public void testSetMascota() {
-        Perro mascota;
-        mascota = new Perro();
+        Mascota mascota;
+        mascota = new Mascota();
        actividad.setMascota(mascota);
         assertEquals(mascota, actividad.getMascota());
     }

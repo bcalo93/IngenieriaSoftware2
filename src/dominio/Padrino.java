@@ -7,7 +7,7 @@ public class Padrino extends Persona {
     private String telefono;
     private String ciudad;
     private String pais;
-    private ArrayList<Perro> quiereApadrinar;
+    private ArrayList<Mascota> quiereApadrinar;
     
     public Padrino(String nombre, String mail, String apellido, String telefono,
             String ciudad, String pais) {
@@ -51,15 +51,15 @@ public class Padrino extends Persona {
         this.pais = pais;
     }
 
-    public ArrayList<Perro> getQuiereApadrinar() {
+    public ArrayList<Mascota> getQuiereApadrinar() {
         return quiereApadrinar;
     }
     
-    public void agregarQuiereAdoptar(Perro perro) {
+    public void agregarQuiereAdoptar(Mascota perro) {
         this.quiereApadrinar.add(perro);
     }
     
-    public void quitarQuiereAdoptar(Perro perro) {
+    public void quitarQuiereAdoptar(Mascota perro) {
         this.quiereApadrinar.remove(perro);
     }
     

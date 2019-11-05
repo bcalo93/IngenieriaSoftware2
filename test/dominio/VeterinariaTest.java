@@ -7,12 +7,11 @@ package dominio;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
  *
@@ -99,7 +98,7 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), new Veterinaria(), "Medico");
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), new Veterinaria(), "Medico");
         boolean resultado = vet.agendarActividad(act);
         assertTrue(resultado);
         assertTrue(vet.getActividadesAgendadas().contains(act));
@@ -110,7 +109,7 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(7, 59), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean resultado = vet.agendarActividad(act);
         assertFalse(resultado);
@@ -122,7 +121,7 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(16, 1), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean resultado = vet.agendarActividad(act);
         assertFalse(resultado);
@@ -134,10 +133,10 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act2 = new VisitaVeterinaria("Visita2", LocalTime.of(11, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean primerResultado = vet.agendarActividad(act);
         boolean segundoResultado = vet.agendarActividad(act2);
@@ -152,10 +151,10 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act2 = new VisitaVeterinaria("Visita2", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean primerResultado = vet.agendarActividad(act);
         boolean segundoResultado = vet.agendarActividad(act2);
@@ -170,10 +169,10 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act2 = new VisitaVeterinaria("Visita2", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(11, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(11, 10, 2018), 
                 new Veterinaria(), "Medico");
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean primerResultado = vet.agendarActividad(act);
         boolean segundoResultado = vet.agendarActividad(act2);
@@ -188,10 +187,10 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act2 = new VisitaVeterinaria("Visita2", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 11, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 11, 2018), 
                 new Veterinaria(), "Medico");
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018), 
                 new Veterinaria(), "Medico");
         boolean primerResultado = vet.agendarActividad(act);
         boolean segundoResultado = vet.agendarActividad(act2);
@@ -206,10 +205,10 @@ public class VeterinariaTest {
         vet.setHoraInicial(8);
         vet.setHoraFinal(16);
         VisitaVeterinaria act2 = new VisitaVeterinaria("Visita2", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2019), 
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2019), 
                 new Veterinaria(), "Medico");
         VisitaVeterinaria act = new VisitaVeterinaria("Visita", LocalTime.of(10, 20), 
-                new Usuario(), new Perro(), false, new Fecha(10, 10, 2018),
+                new Usuario(), new Mascota(), false, new Fecha(10, 10, 2018),
                 new Veterinaria(), "Medico");
         boolean primerResultado = vet.agendarActividad(act);
         boolean segundoResultado = vet.agendarActividad(act2);

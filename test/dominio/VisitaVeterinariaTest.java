@@ -6,12 +6,9 @@
 package dominio;
 
 import java.time.LocalTime;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -39,17 +36,17 @@ public class VisitaVeterinariaTest {
         Fecha fecha = new Fecha();
         LocalTime time = LocalTime.now();
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         Veterinaria vet = new Veterinaria();
-        VisitaVeterinaria unaVisita = new VisitaVeterinaria("Nombre", time, usuario, perro, false, fecha, vet, "medico");
+        VisitaVeterinaria unaVisita = new VisitaVeterinaria("Nombre", time, usuario, mascota, false, fecha, vet, "medico");
         Usuario resResponsable = unaVisita.getUsuario();
-        Perro resMascota = unaVisita.getMascota();
+        Mascota resMascota = unaVisita.getMascota();
         String resNombreAct = unaVisita.getNombre();
         boolean resFueRealizada = unaVisita.getFueRealizado();
         Fecha resFecha = unaVisita.getFecha();
         LocalTime resHora = unaVisita.getHora();
         assertEquals(usuario, resResponsable);
-        assertEquals(perro, resMascota);
+        assertEquals(mascota, resMascota);
         assertEquals("Nombre", resNombreAct);
         assertEquals(false, resFueRealizada);
         assertEquals(fecha, resFecha);
@@ -63,17 +60,17 @@ public class VisitaVeterinariaTest {
         Fecha fecha = new Fecha();
         LocalTime time = LocalTime.now();
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         Veterinaria vet = new Veterinaria();
-        VisitaVeterinaria unaVisita = new VisitaVeterinaria("", time, usuario, perro, false, fecha, vet, "");
+        VisitaVeterinaria unaVisita = new VisitaVeterinaria("", time, usuario, mascota, false, fecha, vet, "");
         Usuario resResponsable = unaVisita.getUsuario();
-        Perro resMascota = unaVisita.getMascota();
+        Mascota resMascota = unaVisita.getMascota();
         String resNombreAct = unaVisita.getNombre();
         boolean resFueRealizada = unaVisita.getFueRealizado();
         Fecha resFecha = unaVisita.getFecha();
         LocalTime resHora = unaVisita.getHora();
         assertEquals(usuario, resResponsable);
-        assertEquals(perro, resMascota);
+        assertEquals(mascota, resMascota);
         assertEquals("Sin-Nombre", resNombreAct);
         assertEquals(false, resFueRealizada);
         assertEquals(fecha, resFecha);
@@ -111,12 +108,12 @@ public class VisitaVeterinariaTest {
         visita.setHora(time);
         visita.setFecha(fecha);
         Usuario usuario = visita.getUsuario();
-        Perro perro = visita.getMascota();
+        Mascota mascota = visita.getMascota();
         String nombre = visita.getNombre();
         boolean fueRealizado = visita.getFueRealizado();
         Veterinaria veterinaria = visita.getVeterinaria();
         String resToString = visita.toString();
-        assertEquals("VisitaVeterinaria{" + "nombre=" + nombre + ", hora=" + time + ", responsable=" + usuario + ", perro=" + perro + ", fueRealizado=" + fueRealizado + ", fecha=" + fecha + ", veterinaria=" + veterinaria + '}', resToString);
+        assertEquals("VisitaVeterinaria{" + "nombre=" + nombre + ", hora=" + time + ", responsable=" + usuario + ", mascota=" + mascota + ", fueRealizado=" + fueRealizado + ", fecha=" + fecha + ", veterinaria=" + veterinaria + '}', resToString);
     }
 
     @Test
@@ -135,8 +132,8 @@ public class VisitaVeterinariaTest {
 
     @Test
     public void testSetMascota() {
-        Perro mascota;
-        mascota = new Perro();
+        Mascota mascota;
+        mascota = new Mascota();
         visita.setMascota(mascota);
         assertEquals(mascota, visita.getMascota());
     }
