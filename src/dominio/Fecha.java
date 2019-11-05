@@ -118,4 +118,39 @@ public class Fecha {
         return "Fecha{" + "dia=" + dia + ", mes=" + mes + ", año=" + ano + ", actividades=" + actividades + '}';
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.dia;
+        hash = 97 * hash + this.mes;
+        hash = 97 * hash + this.ano;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Fecha otra = (Fecha) obj;
+        if (this.dia != otra.dia) {
+            return false;
+        }
+        if (this.mes != otra.mes) {
+            return false;
+        }
+        if (this.ano != otra.ano) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }

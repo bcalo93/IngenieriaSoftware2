@@ -102,6 +102,13 @@ public class Sistema {
     public void EliminarActividad(Actividad act) {
         if (listaActividades.contains(act)) {
             listaActividades.remove(act);
+            Usuario sacarActividad = this.usuarios.stream()
+                    .filter(usuario -> usuario.getActividades().contains(act))
+                    .findFirst()
+                    .orElse(null);
+            if(sacarActividad != null) {
+                sacarActividad.getActividades().remove(act);
+            }
         } else {
             System.out.println("No existe tal actividad");
         }

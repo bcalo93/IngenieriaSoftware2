@@ -374,6 +374,18 @@ public class SistemaTest {
         assertFalse(sis.getActividades().contains(act));
         assertTrue(sis.getActividades().contains(act2));
     }
+    
+    @Test
+    public void testElminarActividadDeUsuario() {
+        Usuario usuario = new Usuario();
+        Paseo paseo = new Paseo();
+        usuario.agregarActividad(paseo);
+        sis.AnadirUsuario(usuario);
+        sis.AnadirActividad(paseo);
+        sis.EliminarActividad(paseo);
+        assertFalse(sis.getActividades().contains(paseo));
+        assertFalse(usuario.getActividades().contains(paseo));
+    }
 
     @Test
     public void testAnadirFecha() {
@@ -393,7 +405,7 @@ public class SistemaTest {
     @Test
     public void testEliminarFechaQueNoEsta() {
         Fecha fecha = new Fecha();
-        Fecha fecha2 = new Fecha();
+        Fecha fecha2 = new Fecha(10, 10, 2019);
         sis.AnadirFecha(fecha2);
         sis.EliminarFecha(fecha);
         assertFalse(sis.getFechas().contains(fecha));
