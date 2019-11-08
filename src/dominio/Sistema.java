@@ -1,11 +1,9 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-
-
-
-public class Sistema {
+public class Sistema extends Observable {
 
     private ArrayList<Usuario> usuarios;
     private ArrayList<Mascota> mascotas;
@@ -72,6 +70,7 @@ public class Sistema {
 
     public void anadirMascota(Mascota mascotaAnadir) {
         mascotas.add(mascotaAnadir);
+        this.notifyChange();
     }
 
     public void eliminarMascota(Mascota mascota) {
@@ -229,4 +228,8 @@ public class Sistema {
         this.listaFechas = fechas;
     }
 
+    private void notifyChange() {
+        this.setChanged();
+        this.notifyObservers();
+    }
 }

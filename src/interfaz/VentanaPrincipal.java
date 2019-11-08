@@ -51,8 +51,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         sistema = sis;
         fechaSeleccionada = new Fecha();
         initComponents();
-        this.panelPadrinos.add(new PanelEditarPadrino(this.panelPadrinos.getWidth(), 
-                this.panelPadrinos.getHeight(), sis));
+        this.panelPadrinos.add(new PanelPadrino(sistema, this.panelPadrinos.getWidth(), 
+                this.panelPadrinos.getHeight()));
         this.setLocationRelativeTo(null);
         try {
             PerroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
