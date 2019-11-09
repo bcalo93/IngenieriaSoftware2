@@ -19,4 +19,14 @@ public class LogicaMascota {
                 .filter(mascota -> !escluir.contains(mascota))
                 .collect(Collectors.toList());
     }
+    
+    public Mascota getMascotaPorNombre(String nombre) {
+        return this.sistema
+                .getMascotas()
+                .stream()
+                .filter(mascota -> mascota.getNombre().equals(nombre))
+                .findFirst()
+                .orElse(null);
+    }
+    
 }

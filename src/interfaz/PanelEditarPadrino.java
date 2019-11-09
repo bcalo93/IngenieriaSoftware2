@@ -1,10 +1,12 @@
 package interfaz;
 
+import dominio.Mascota;
 import dominio.Padrino;
 import dominio.Sistema;
 import java.util.Observable;
 import java.util.Observer;
 import logicanegocio.LogicaMascota;
+import logicanegocio.LogicaPadrino;
 
 public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
     
@@ -12,6 +14,7 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         initComponents();
         this.sistema = sistema;
         this.logicaMascota = new LogicaMascota(sistema);
+        this.logicaPadrino = new LogicaPadrino(sistema);
         this.sistema.addObserver(this);
     }
     
@@ -21,6 +24,7 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.setSize(this.panelPadrino.getWidth(), this.panelPadrino.getHeight());
         this.padrino = new Padrino();
         this.setComboAnimales();
+        this.setListaAnimalesAgregados();
     }
     
     private void setComboAnimales() {
@@ -29,6 +33,16 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
                 .forEach(mascota -> {
                     this.comboMascotas.addItem(mascota.getNombre());
                 });
+    }
+    
+    private void setListaAnimalesAgregados() {
+        this.listAnimalesAgregados.removeAll();
+        int tamanioLista = this.padrino.getQuiereApadrinar().size();
+        String[] nombres = new String[tamanioLista];
+        for(int i = 0; i < tamanioLista; i++) {
+            nombres[i] = this.padrino.getQuiereApadrinar().get(i).getNombre();
+        }
+        this.listAnimalesAgregados.setListData(nombres);
     }
     
     @SuppressWarnings("unchecked")
@@ -146,6 +160,11 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         lbPais.setText("Pais:");
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         lbAnimales.setText("Animales:");
 
@@ -273,11 +292,23 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.padrino.setCiudad(this.txCiudad.getText());
         this.padrino.setPais(this.txPais.getText());
         this.padrino.setTelefono(this.txTelefono.getText());
+        this.logicaPadrino.guardarPadrino(padrino);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        String nombreMascota = (String)comboMascotas.getSelectedItem();
+        if(nombreMascota != null) {
+            Mascota mascotaEncontrada = this.logicaMascota.getMascotaPorNombre(nombreMascota);
+            this.padrino.agregarMascota(mascotaEncontrada);
+            this.setComboAnimales();
+            this.setListaAnimalesAgregados();
+        }
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private Sistema sistema;
     private Padrino padrino;
     private LogicaMascota logicaMascota;
+    private LogicaPadrino logicaPadrino;
     private PanelPadrino panelPadrino;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

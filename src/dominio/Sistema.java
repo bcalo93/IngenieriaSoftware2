@@ -1,6 +1,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 public class Sistema extends Observable {
@@ -14,6 +15,7 @@ public class Sistema extends Observable {
     private ArrayList<Paseo> listaPaseos;
     private ArrayList<Alimentacion> listaAlimentaciones;
     private ArrayList<VisitaVeterinaria> listaVisitas;
+    private ArrayList<Padrino> listaPadrinos;
 
     public Sistema() {
         this.usuarios = new ArrayList<>();
@@ -25,6 +27,7 @@ public class Sistema extends Observable {
         this.listaAlimentaciones = new ArrayList<>();
         this.listaVisitas = new ArrayList<>();
         this.listaActividadesCualquiera = new ArrayList<>();
+        this.listaPadrinos = new ArrayList<>();
     }
 
     public ArrayList<Actividad> listaActividadesPorFecha(int dia, int mes, int ano) {
@@ -70,7 +73,7 @@ public class Sistema extends Observable {
 
     public void anadirMascota(Mascota mascotaAnadir) {
         mascotas.add(mascotaAnadir);
-        this.notifyChange();
+        this.notificarCambios();
     }
 
     public void eliminarMascota(Mascota mascota) {
@@ -123,6 +126,18 @@ public class Sistema extends Observable {
         } else {
             System.out.println("No existe tal fecha");
         }
+    }
+    
+    public List<Padrino> getListPadrinos() {
+        return this.listaPadrinos;
+    }
+    
+    public void agregarPadrino(Padrino padrino) {
+        this.listaPadrinos.add(padrino);
+    }
+    
+    public void eliminarPadrino(Padrino padrino) {
+        this.listaPadrinos.remove(padrino);
     }
 
     public Usuario buscarUsuarioPorNombre(String nombreBuscar) {
@@ -227,8 +242,8 @@ public class Sistema extends Observable {
     public void setFechas(ArrayList<Fecha> fechas) {
         this.listaFechas = fechas;
     }
-
-    private void notifyChange() {
+    
+    private void notificarCambios() {
         this.setChanged();
         this.notifyObservers();
     }

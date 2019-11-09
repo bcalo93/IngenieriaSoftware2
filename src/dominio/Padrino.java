@@ -3,6 +3,7 @@ package dominio;
 import java.util.ArrayList;
 
 public class Padrino extends Persona {
+    private Integer id;
     private String apellido;
     private String telefono;
     private String ciudad;
@@ -31,6 +32,14 @@ public class Padrino extends Persona {
         this.quiereApadrinar = new ArrayList<>();
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
     public String getApellido() {
         return apellido;
     }
@@ -75,8 +84,10 @@ public class Padrino extends Persona {
         return quiereApadrinar;
     }
     
-    public void agregarMascota(Mascota perro) {
-        this.quiereApadrinar.add(perro);
+    public void agregarMascota(Mascota mascota) {
+        if(mascota != null) {
+            this.quiereApadrinar.add(mascota);
+        }
     }
     
     public void borrarMascota(Mascota perro) {
