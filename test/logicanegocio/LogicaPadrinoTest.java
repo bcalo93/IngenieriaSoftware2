@@ -1,5 +1,8 @@
 package logicanegocio;
 
+import dominio.Donacion;
+import dominio.FrecuenciaDonacion;
+import dominio.MedioDonacion;
 import dominio.Padrino;
 import dominio.Sistema;
 import logicanegocio.excepciones.LogicaNegocioException;
@@ -27,6 +30,8 @@ public class LogicaPadrinoTest {
         padrino.setTelefono("23123412");
         padrino.setCiudad("Test Ciudad");
         padrino.setPais("Test Pais");
+        padrino.setDonacion(new Donacion(2000, "U$", FrecuenciaDonacion.MENSUAL, 
+                MedioDonacion.TARJETA_CREDITO));
         this.logica.guardarPadrino(padrino);
         
         Padrino resultado = this.sistema.getListPadrinos().stream()
@@ -40,6 +45,12 @@ public class LogicaPadrinoTest {
         assertEquals(Integer.valueOf(GeneradorId.getInstancia().getIdActual()), 
                 resultado.getId());
         assertEquals(0, resultado.getQuiereApadrinar().size());
+        assertEquals(2000, padrino.getDonacion().getMontoDonacion());
+        assertEquals("U$", padrino.getDonacion().getMoneda());
+        assertEquals(FrecuenciaDonacion.MENSUAL, padrino.getDonacion()
+                .getFrecuencia());
+        assertEquals(MedioDonacion.TARJETA_CREDITO, padrino.getDonacion()
+                .getMedio());
     }
     
     @Test(expected = LogicaNegocioException.class)
@@ -152,5 +163,41 @@ public class LogicaPadrinoTest {
         } finally {
             assertEquals(0, this.sistema.getListPadrinos().size());
         }
+    }
+    
+    @Test(expected = LogicaNegocioException.class)
+    public void guardarPadrinoMontoDonacionInvalidoTest() throws LogicaNegocioException {
+        Padrino padrino = new Padrino();
+        padrino.setNombre("Test Nombre");
+        padrino.setApellido("Test Apellido");
+        padrino.setMail("mail@mail.com");
+        padrino.setTelefono("23123412");
+        padrino.setCiudad("Test Ciudad");
+        padrino.setPais("Test Pais");
+        padrino.setDonacion(new Donacion(0, "U$", FrecuenciaDonacion.MENSUAL, 
+                MedioDonacion.TARJETA_CREDITO));
+        try {
+            this.logica.guardarPadrino(padrino);
+        } finally {
+            assertEquals(0, this.sistema.getListPadrinos().size());
+        }
+    }
+    
+    @Test(expected = LogicaNegocioException.class)
+    public void guardarPadrinoMonedaNullTest() throws LogicaNegocioException {
+        Padrino padrino = new Padrino();
+        padrino.setNombre("Test Nombre");
+        padrino.setApellido("Test Apellido");
+        padrino.setMail("mail@mail.com");
+        padrino.setTelefono("23123412");
+        padrino.setCiudad("Test Ciudad");
+        padrino.setPais("Test Pais");
+        padrino.setDonacion(new Donacion(300, null, FrecuenciaDonacion.MENSUAL, 
+                MedioDonacion.TARJETA_CREDITO));
+        try {
+            this.logica.guardarPadrino(padrino);
+        } finally {
+            assertEquals(0, this.sistema.getListPadrinos().size());
+        }   
     }
 }

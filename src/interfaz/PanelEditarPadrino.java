@@ -1,17 +1,22 @@
 package interfaz;
 
+import dominio.Donacion;
+import dominio.FrecuenciaDonacion;
 import dominio.Mascota;
+import dominio.MedioDonacion;
 import dominio.Padrino;
 import dominio.Sistema;
 import java.util.Observable;
 import java.util.Observer;
 import logicanegocio.LogicaMascota;
 import logicanegocio.LogicaPadrino;
+import logicanegocio.excepciones.LogicaNegocioException;
 
 public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
     
     public PanelEditarPadrino(Sistema sistema) {
         initComponents();
+        this.lblError.setVisible(false);
         this.sistema = sistema;
         this.logicaMascota = new LogicaMascota(sistema);
         this.logicaPadrino = new LogicaPadrino(sistema);
@@ -25,6 +30,12 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.padrino = new Padrino();
         this.setComboAnimales();
         this.setListaAnimalesAgregados();
+    }
+    
+    
+    @Override
+    public void update(Observable o, Object arg) {
+        this.setComboAnimales();
     }
     
     private void setComboAnimales() {
@@ -43,6 +54,28 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
             nombres[i] = this.padrino.getQuiereApadrinar().get(i).getNombre();
         }
         this.listAnimalesAgregados.setListData(nombres);
+    }
+    
+    private FrecuenciaDonacion getComoFrecuenciaDonacion() {
+        String frecuencia = (String)this.comboFrecuenciaDonacion.getSelectedItem();
+        if (frecuencia == null || frecuencia.equals("Una vez")) {
+            return FrecuenciaDonacion.UNA_VEZ;
+        } else if (frecuencia.equals("Mensual")) {
+            return FrecuenciaDonacion.MENSUAL;
+        } else if (frecuencia.equals("Trimestral")) {
+            return FrecuenciaDonacion.TRIMESTRAL;
+        } else {
+            return FrecuenciaDonacion.ANUAL;
+        }
+    }
+    
+    private MedioDonacion getComoMedioDonacion() {
+        String medio = (String)this.comboMedioDonacion.getSelectedItem();
+        if(medio == null || medio.equals("Tarjeta de Credito")) {
+            return MedioDonacion.TARJETA_CREDITO;
+        } else {
+            return MedioDonacion.TRANSFERENCIA_BANCARIA;
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -80,6 +113,7 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         listAnimalesAgregados = new javax.swing.JList<>();
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        lblError = new javax.swing.JLabel();
 
         lblDonacion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblDonacion.setText("Donacion");
@@ -254,20 +288,29 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
             }
         });
 
+        lblError.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblError.setText("Error");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnInfoBasicaPadrino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))
-                    .addComponent(panelDonaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelDonaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(lblError)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,12 +320,15 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnCancelar))
+                .addGap(31, 31, 31)
+                .addComponent(lblError)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(pnInfoBasicaPadrino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        this.lblError.setVisible(false);
         if(this.padrino == null) {
             this.padrino = new Padrino();
         }
@@ -292,7 +338,17 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.padrino.setCiudad(this.txCiudad.getText());
         this.padrino.setPais(this.txPais.getText());
         this.padrino.setTelefono(this.txTelefono.getText());
-        this.logicaPadrino.guardarPadrino(padrino);
+        this.padrino.setDonacion(new Donacion(Integer.valueOf(
+                this.spMontoDonacion.getValue().toString()), 
+                (String)this.comboMonedaDonacion.getSelectedItem(), 
+                this.getComoFrecuenciaDonacion(), this.getComoMedioDonacion()
+        ));
+        try {
+            this.logicaPadrino.guardarPadrino(padrino);
+        } catch (LogicaNegocioException ex) {
+            this.lblError.setVisible(true);
+            this.lblError.setText(ex.getMessage());
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -333,6 +389,7 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
     private javax.swing.JLabel lbPais;
     private javax.swing.JLabel lbTelefono;
     private javax.swing.JLabel lblDonacion;
+    private javax.swing.JLabel lblError;
     private javax.swing.JList<String> listAnimalesAgregados;
     private javax.swing.JPanel panelDonaciones;
     private javax.swing.JPanel pnInfoBasicaPadrino;
@@ -345,8 +402,4 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
     private javax.swing.JTextField txTelefono;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void update(Observable o, Object arg) {
-        this.setComboAnimales();
-    }
 }
