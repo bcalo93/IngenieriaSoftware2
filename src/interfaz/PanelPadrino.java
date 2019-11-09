@@ -22,8 +22,8 @@ public class PanelPadrino extends javax.swing.JPanel {
     
     public PanelPadrino(Sistema sistema, int ancho, int altura) {
         this(sistema);
-        this.setSize(ancho, altura);
-        this.editarPadrino = new PanelEditarPadrino(sistema, this);
+        this.setSize(ancho - 150, altura);
+        this.editarPadrino = new PanelEditarPadrino(this.sistema, this);
         this.add(this.editarPadrino);
     }
     

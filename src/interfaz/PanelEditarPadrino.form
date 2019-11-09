@@ -18,18 +18,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="pnInfoBasicaPadrino" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="panelDonaciones" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="btnCancelar" min="-2" pref="89" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnGuardar" min="-2" pref="95" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="panelDonaciones" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -66,16 +63,16 @@
                               <Component id="lbMonto" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="comboMonedaDonacion" min="-2" pref="147" max="-2" attributes="0"/>
-                              <Component id="spMontoDonacion" min="-2" pref="147" max="-2" attributes="0"/>
-                              <Component id="comboFrecuenciaDonacion" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                              <Component id="comboMedioDonacion" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="spMontoDonacion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboMonedaDonacion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboFrecuenciaDonacion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboMedioDonacion" alignment="0" pref="217" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="lblDonacion" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -188,115 +185,91 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="txCiudadPadrino" min="-2" pref="208" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbInfoBasicaPadrino" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="comboAnimales" min="-2" pref="122" max="-2" attributes="0"/>
-                                  <EmptySpace pref="10" max="32767" attributes="0"/>
-                                  <Component id="btnAgregarAnimalPadrino" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="slListaAnimalesPadrino" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lbNombre" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbApellido" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbTelefono" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbMail" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbCiudad" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbPais" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbAnimales" min="-2" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txTelefono" max="32767" attributes="0"/>
-                              <Component id="txPaisPadrino" max="32767" attributes="0"/>
+                              <Component id="txNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txApellido" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txTelefono" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txMail" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txCiudad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txPais" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="comboMascotas" pref="170" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="lbNombrePadrino" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbInfoBasicaPadrino" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="lbMailPadrino" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbApellidoPadrino" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lbCiudadPadrino" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTelefono" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblPaisPadrino" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbAnimalesPadrino" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txApellidoPadrino" pref="208" max="32767" attributes="0"/>
-                          <Component id="txNombrePadrino" pref="208" max="32767" attributes="0"/>
-                          <Component id="txMailPadrino" alignment="1" pref="208" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="lbInfoBasicaPadrino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
-                  <Component id="lbNombrePadrino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lbApellidoPadrino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="lbMailPadrino" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbCiudadPadrino" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txCiudadPadrino" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txPaisPadrino" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPaisPadrino" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbMail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbAnimalesPadrino" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="comboAnimales" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAgregarAnimalPadrino" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="txCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="slListaAnimalesPadrino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="txNombrePadrino" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="txApellidoPadrino" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="txMailPadrino" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="337" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txPais" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbPais" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="comboMascotas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbAnimales" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -310,69 +283,79 @@
             <Property name="text" type="java.lang.String" value="Informacion Basica"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbNombrePadrino">
+        <Component class="javax.swing.JTextField" name="txNombre">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbNombre">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txNombrePadrino">
+        <Component class="javax.swing.JTextField" name="txApellido">
         </Component>
-        <Component class="javax.swing.JLabel" name="lbApellidoPadrino">
+        <Component class="javax.swing.JLabel" name="lbApellido">
           <Properties>
             <Property name="text" type="java.lang.String" value="Apellido:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txApellidoPadrino">
+        <Component class="javax.swing.JTextField" name="txTelefono">
         </Component>
-        <Component class="javax.swing.JLabel" name="lbMailPadrino">
+        <Component class="javax.swing.JLabel" name="lbTelefono">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mail:"/>
+            <Property name="text" type="java.lang.String" value="Telefono:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txMailPadrino">
+        <Component class="javax.swing.JTextField" name="txMail">
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboAnimales">
+        <Component class="javax.swing.JLabel" name="lbMail">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Correo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txCiudad">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbCiudad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ciudad:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txPais">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbPais">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pais:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboMascotas">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAgregarAnimalPadrino">
+        <Component class="javax.swing.JButton" name="btnAgregar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbAnimalesPadrino">
+        <Component class="javax.swing.JLabel" name="lbAnimales">
           <Properties>
             <Property name="text" type="java.lang.String" value="Animales:"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="slListaAnimalesPadrino">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="lstAnimalesPadrino">
+            <Component class="javax.swing.JList" name="listAnimalesAgregados">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                    <StringItem index="4" value="Item 5"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -381,27 +364,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblTelefono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Telefono:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txTelefono">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbCiudadPadrino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ciudad:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txCiudadPadrino">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txPaisPadrino">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblPaisPadrino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pais:"/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="btnCancelar">
