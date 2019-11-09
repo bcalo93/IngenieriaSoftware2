@@ -296,6 +296,7 @@ public class SistemaTest {
     @Test
     public void testEliminarMascotaQueNoEsta() {
         Mascota mascota = new Mascota();
+        mascota.setNombre("Mascota Test");
         Mascota mascota2 = new Mascota();
         sis.anadirMascota(mascota2);
         sis.eliminarMascota(mascota);
