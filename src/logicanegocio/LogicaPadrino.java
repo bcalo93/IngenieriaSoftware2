@@ -3,6 +3,7 @@ package logicanegocio;
 import dominio.Donacion;
 import dominio.Padrino;
 import dominio.Sistema;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import logicanegocio.excepciones.LogicaNegocioException;
@@ -24,6 +25,9 @@ public class LogicaPadrino {
         this.sistema.agregarPadrino(padrino);
     }
     
+    public List<Padrino> getPadrinos() {
+        return this.sistema.getPadrinos();
+    }
     
     private void validarPadrino(Padrino padrino) throws LogicaNegocioException {
         if (!this.textoValido(padrino.getNombre()) || padrino.getNombre().equals("Sin-Nombre")) {

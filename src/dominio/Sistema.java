@@ -128,7 +128,7 @@ public class Sistema extends Observable {
         }
     }
     
-    public List<Padrino> getListPadrinos() {
+    public List<Padrino> getPadrinos() {
         return this.listaPadrinos;
     }
     

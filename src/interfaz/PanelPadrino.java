@@ -13,6 +13,7 @@ import dominio.Sistema;
  */
 public class PanelPadrino extends javax.swing.JPanel {
     private PanelEditarPadrino editarPadrino;
+    private PanelInfoPadrinos infoPadrinos;
     private Sistema sistema;
     
     public PanelPadrino(Sistema sistema) {
@@ -24,7 +25,8 @@ public class PanelPadrino extends javax.swing.JPanel {
         this(sistema);
         this.setSize(ancho - 150, altura);
         this.editarPadrino = new PanelEditarPadrino(this.sistema, this);
-        this.add(this.editarPadrino);
+        this.infoPadrinos = new PanelInfoPadrinos(this.sistema, this);
+        this.add(this.infoPadrinos);
     }
     
     /**

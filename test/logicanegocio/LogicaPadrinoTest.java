@@ -34,7 +34,7 @@ public class LogicaPadrinoTest {
                 MedioDonacion.TARJETA_CREDITO));
         this.logica.guardarPadrino(padrino);
         
-        Padrino resultado = this.sistema.getListPadrinos().stream()
+        Padrino resultado = this.sistema.getPadrinos().stream()
                 .findFirst().get();
         assertEquals("Test Nombre", resultado.getNombre());
         assertEquals("Test Apellido", resultado.getApellido());
@@ -65,7 +65,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -81,7 +81,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -97,7 +97,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -113,7 +113,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -129,7 +129,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -145,7 +145,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -161,7 +161,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -179,7 +179,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }
     }
     
@@ -197,7 +197,7 @@ public class LogicaPadrinoTest {
         try {
             this.logica.guardarPadrino(padrino);
         } finally {
-            assertEquals(0, this.sistema.getListPadrinos().size());
+            assertEquals(0, this.sistema.getPadrinos().size());
         }   
     }
 }
