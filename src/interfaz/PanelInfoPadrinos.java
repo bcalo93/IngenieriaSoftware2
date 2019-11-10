@@ -1,5 +1,6 @@
 package interfaz;
 
+import dominio.Donacion;
 import dominio.Mascota;
 import dominio.Padrino;
 import dominio.Sistema;
@@ -16,6 +17,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         this.listPadrinos.setModel(this.modeloPadrinos);
         this.modeloMascota = new DefaultListModel<>();
         this.listAnimalesApadrinados.setModel(modeloMascota);
+        
     }
     
     public PanelInfoPadrinos(Sistema sistema, PanelPadrino contenedor) {
@@ -49,23 +51,27 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         scrollPadrinos = new javax.swing.JScrollPane();
         listPadrinos = new javax.swing.JList<>();
         lbPadrinos = new javax.swing.JLabel();
+        btnNuevo = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
         panelInfoBasica = new javax.swing.JPanel();
-        lbNombre = new javax.swing.JLabel();
-        lbValorNombre = new javax.swing.JLabel();
-        lbApellido = new javax.swing.JLabel();
-        lblValorApellido = new javax.swing.JLabel();
-        lbTenefono = new javax.swing.JLabel();
-        lbValorTelefono = new javax.swing.JLabel();
-        lbCorreo = new javax.swing.JLabel();
-        lbValorCorreo = new javax.swing.JLabel();
-        lbCiudad = new javax.swing.JLabel();
-        lbValorCiudad = new javax.swing.JLabel();
-        lbPais = new javax.swing.JLabel();
-        lbValorPais = new javax.swing.JLabel();
         lbApadrinados = new javax.swing.JLabel();
         scrollAnimales = new javax.swing.JScrollPane();
         listAnimalesApadrinados = new javax.swing.JList<>();
         lbInformacionBasica = new javax.swing.JLabel();
+        panelCamposInfoBasica = new javax.swing.JPanel();
+        lbTenefono = new javax.swing.JLabel();
+        lbValorCorreo = new javax.swing.JLabel();
+        lbValorCiudad = new javax.swing.JLabel();
+        lbPais = new javax.swing.JLabel();
+        lblValorApellido = new javax.swing.JLabel();
+        lbCiudad = new javax.swing.JLabel();
+        lbCorreo = new javax.swing.JLabel();
+        lbValorPais = new javax.swing.JLabel();
+        lbValorTelefono = new javax.swing.JLabel();
+        lbApellido = new javax.swing.JLabel();
+        lbNombre = new javax.swing.JLabel();
+        lbValorNombre = new javax.swing.JLabel();
         panelDonacion = new javax.swing.JPanel();
         lbDonaciones = new javax.swing.JLabel();
         lbMonto = new javax.swing.JLabel();
@@ -80,68 +86,62 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lblInfoPadrinos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblInfoPadrinos.setText("Informacion Padrinos");
 
+        listPadrinos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listPadrinosMouseClicked(evt);
+            }
+        });
         scrollPadrinos.setViewportView(listPadrinos);
 
         lbPadrinos.setText("Padrinos");
+
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setText("Editar");
+
+        btnBorrar.setText("Borrar");
 
         javax.swing.GroupLayout panelListaPadrinosLayout = new javax.swing.GroupLayout(panelListaPadrinos);
         panelListaPadrinos.setLayout(panelListaPadrinosLayout);
         panelListaPadrinosLayout.setHorizontalGroup(
             panelListaPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelListaPadrinosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(panelListaPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbPadrinos)
-                    .addComponent(scrollPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(lbPadrinos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelListaPadrinosLayout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(scrollPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelListaPadrinosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelListaPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(90, 90, 90))
         );
         panelListaPadrinosLayout.setVerticalGroup(
             panelListaPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelListaPadrinosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelListaPadrinosLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(lbPadrinos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18)
+                .addComponent(btnNuevo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBorrar)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         panelInfoBasica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lbNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbNombre.setText("Nombre:");
-
-        lbValorNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorNombre.setText("Nombre");
-
-        lbApellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbApellido.setText("Apellido:");
-
-        lblValorApellido.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblValorApellido.setText("Apellido");
-
-        lbTenefono.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbTenefono.setText("Telefono:");
-
-        lbValorTelefono.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorTelefono.setText("Telefono");
-
-        lbCorreo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbCorreo.setText("Correo:");
-
-        lbValorCorreo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorCorreo.setText("Correo");
-
-        lbCiudad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbCiudad.setText("Ciudad:");
-
-        lbValorCiudad.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorCiudad.setText("Ciudad");
-
-        lbPais.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lbPais.setText("Pais:");
-
-        lbValorPais.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorPais.setText("Pais");
 
         lbApadrinados.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbApadrinados.setText("Animales apadrinados");
@@ -151,70 +151,127 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lbInformacionBasica.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbInformacionBasica.setText("Informacion Basica");
 
+        panelCamposInfoBasica.setMaximumSize(new java.awt.Dimension(273, 230));
+
+        lbTenefono.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbTenefono.setText("Telefono:");
+
+        lbValorCorreo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lbValorCorreo.setText("Correo");
+
+        lbValorCiudad.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lbValorCiudad.setText("Ciudad");
+
+        lbPais.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbPais.setText("Pais:");
+
+        lblValorApellido.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblValorApellido.setText("Apellido");
+
+        lbCiudad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbCiudad.setText("Ciudad:");
+
+        lbCorreo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbCorreo.setText("Correo:");
+
+        lbValorPais.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lbValorPais.setText("Pais");
+
+        lbValorTelefono.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lbValorTelefono.setText("Telefono");
+
+        lbApellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbApellido.setText("Apellido:");
+
+        lbNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbNombre.setText("Nombre:");
+
+        lbValorNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lbValorNombre.setText("Nombre");
+
+        javax.swing.GroupLayout panelCamposInfoBasicaLayout = new javax.swing.GroupLayout(panelCamposInfoBasica);
+        panelCamposInfoBasica.setLayout(panelCamposInfoBasicaLayout);
+        panelCamposInfoBasicaLayout.setHorizontalGroup(
+            panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCamposInfoBasicaLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbApellido)
+                    .addComponent(lbNombre)
+                    .addComponent(lbCorreo)
+                    .addComponent(lbTenefono)
+                    .addComponent(lbCiudad)
+                    .addComponent(lbPais))
+                .addGap(34, 34, 34)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbValorNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblValorApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbValorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbValorTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(lbValorCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbValorPais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelCamposInfoBasicaLayout.setVerticalGroup(
+            panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCamposInfoBasicaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbNombre)
+                    .addComponent(lbValorNombre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbApellido)
+                    .addComponent(lblValorApellido))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbCorreo)
+                    .addComponent(lbValorCorreo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbTenefono)
+                    .addComponent(lbValorTelefono))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbCiudad)
+                    .addComponent(lbValorCiudad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelCamposInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbPais)
+                    .addComponent(lbValorPais))
+                .addGap(40, 40, 40))
+        );
+
         javax.swing.GroupLayout panelInfoBasicaLayout = new javax.swing.GroupLayout(panelInfoBasica);
         panelInfoBasica.setLayout(panelInfoBasicaLayout);
         panelInfoBasicaLayout.setHorizontalGroup(
             panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInfoBasicaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(17, 17, 17)
                 .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbInformacionBasica)
                     .addGroup(panelInfoBasicaLayout.createSequentialGroup()
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbPais)
-                            .addComponent(lbCiudad)
-                            .addComponent(lbCorreo)
-                            .addComponent(lbTenefono)
-                            .addComponent(lbApellido)
-                            .addComponent(lbNombre))
-                        .addGap(35, 35, 35)
+                        .addComponent(panelCamposInfoBasica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbValorNombre)
-                            .addComponent(lblValorApellido)
-                            .addComponent(lbValorTelefono)
-                            .addComponent(lbValorCorreo)
-                            .addComponent(lbValorCiudad)
-                            .addComponent(lbValorPais))
-                        .addGap(74, 74, 74)
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbApadrinados, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(scrollAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lbApadrinados, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scrollAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lbInformacionBasica))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         panelInfoBasicaLayout.setVerticalGroup(
             panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInfoBasicaLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbInformacionBasica)
-                .addGap(18, 18, 18)
-                .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbNombre)
-                    .addComponent(lbValorNombre)
-                    .addComponent(lbApadrinados))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelInfoBasicaLayout.createSequentialGroup()
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbApellido)
-                            .addComponent(lblValorApellido))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbTenefono)
-                            .addComponent(lbValorTelefono))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbCorreo)
-                            .addComponent(lbValorCorreo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbCiudad)
-                            .addComponent(lbValorCiudad))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelInfoBasicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbPais)
-                            .addComponent(lbValorPais)))
-                    .addComponent(scrollAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                        .addGap(6, 6, 6)
+                        .addComponent(lbApadrinados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scrollAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelCamposInfoBasica, javax.swing.GroupLayout.PREFERRED_SIZE, 194, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
 
         panelDonacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -261,10 +318,10 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
                     .addComponent(lbMedio))
                 .addGap(30, 30, 30)
                 .addGroup(panelDonacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbValorMonto)
-                    .addComponent(lbValorMoneda)
-                    .addComponent(lbValorFrecuencia)
-                    .addComponent(lbValorMedio))
+                    .addComponent(lbValorMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbValorMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbValorFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbValorMedio, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDonacionLayout.setVerticalGroup(
@@ -288,7 +345,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
                 .addGroup(panelDonacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbMedio)
                     .addComponent(lbValorMedio))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -297,14 +354,14 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblInfoPadrinos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelListaPadrinos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblInfoPadrinos)
+                    .addComponent(panelListaPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelDonacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelInfoBasica, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(panelInfoBasica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,14 +370,42 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
                 .addComponent(lblInfoPadrinos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelListaPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelInfoBasica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelDonacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelInfoBasica, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelDonacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelListaPadrinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        this.contenedor.cambiarAEditarPadrino();
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void listPadrinosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listPadrinosMouseClicked
+        Padrino seleccionado = this.listPadrinos.getSelectedValue();
+        this.lbValorNombre.setText(seleccionado.getNombre());
+        this.lblValorApellido.setText(seleccionado.getApellido());
+        this.lbValorCorreo.setText(seleccionado.getMail());
+        this.lbValorTelefono.setText(seleccionado.getTelefono());
+        this.lbValorCiudad.setText(seleccionado.getCiudad());
+        this.lbValorPais.setText(seleccionado.getPais());
+        this.setListaMascotas(seleccionado);
+        
+        Donacion donacion = seleccionado.getDonacion();
+        this.lbValorMonto.setText(String.valueOf(donacion.getMontoDonacion()));
+        this.lbValorMoneda.setText(donacion.getMoneda());
+        this.lbValorFrecuencia.setText(donacion.getFrecuencia().toString());
+        this.lbValorMedio.setText(donacion.getMedio().toString());
+    }//GEN-LAST:event_listPadrinosMouseClicked
+
+    private void setListaMascotas(Padrino padrino) {
+        this.modeloMascota.removeAllElements();
+        padrino.getQuiereApadrinar().forEach(
+                mascota -> this.modeloMascota.addElement(mascota)
+        );   
+    }
 
     private Sistema sistema;
     private PanelPadrino contenedor;
@@ -329,6 +414,9 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
     private LogicaPadrino logicaPadrino;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JLabel lbApadrinados;
     private javax.swing.JLabel lbApellido;
     private javax.swing.JLabel lbCiudad;
@@ -356,6 +444,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
     private javax.swing.JLabel lblValorApellido;
     private javax.swing.JList<Mascota> listAnimalesApadrinados;
     private javax.swing.JList<Padrino> listPadrinos;
+    private javax.swing.JPanel panelCamposInfoBasica;
     private javax.swing.JPanel panelDonacion;
     private javax.swing.JPanel panelInfoBasica;
     private javax.swing.JPanel panelListaPadrinos;

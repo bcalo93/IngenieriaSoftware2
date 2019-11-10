@@ -94,4 +94,9 @@ public class Padrino extends Persona {
         this.quiereApadrinar.remove(perro);
     }
     
+    @Override
+    public String toString() {
+        return String.format("%s %s", this.getNombre(), this.apellido);
+    }
+    
 }

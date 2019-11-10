@@ -25,8 +25,8 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
     
     public PanelEditarPadrino(Sistema sistema, PanelPadrino panelPadrino) {
         this(sistema);
-        this.panelPadrino = panelPadrino;
-        this.setSize(this.panelPadrino.getWidth(), this.panelPadrino.getHeight());
+        this.contenedor = panelPadrino;
+        this.setSize(this.contenedor.getWidth(), this.contenedor.getHeight());
         this.padrino = new Padrino();
         this.setComboAnimales();
         this.setListaAnimalesAgregados();
@@ -280,6 +280,11 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         );
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -345,6 +350,7 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         ));
         try {
             this.logicaPadrino.guardarPadrino(padrino);
+            this.contenedor.cambiarAInfoPadrino();
         } catch (LogicaNegocioException ex) {
             this.lblError.setVisible(true);
             this.lblError.setText(ex.getMessage());
@@ -361,11 +367,15 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.contenedor.cambiarAInfoPadrino();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     private Sistema sistema;
     private Padrino padrino;
     private LogicaMascota logicaMascota;
     private LogicaPadrino logicaPadrino;
-    private PanelPadrino panelPadrino;
+    private PanelPadrino contenedor;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

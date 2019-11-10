@@ -134,6 +134,7 @@ public class Sistema extends Observable {
     
     public void agregarPadrino(Padrino padrino) {
         this.listaPadrinos.add(padrino);
+        this.notificarCambios();
     }
     
     public void eliminarPadrino(Padrino padrino) {
