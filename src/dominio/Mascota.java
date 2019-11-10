@@ -165,7 +165,7 @@ public class Mascota {
 
     @Override
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
+        return this.nombre;
     }
     
 }

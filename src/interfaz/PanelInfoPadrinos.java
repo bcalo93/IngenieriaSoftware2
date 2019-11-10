@@ -35,6 +35,11 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         this.setListaPadrinos();
     }
     
+    public void mostrar() {
+        this.setVisible(true);
+        this.asignarCampos();
+    }
+    
     private void setListaPadrinos() {
         this.modeloPadrinos.removeAllElements();
         this.logicaPadrino.getPadrinos().forEach(
@@ -103,6 +108,11 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnBorrar.setText("Borrar");
 
@@ -157,16 +167,16 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lbTenefono.setText("Telefono:");
 
         lbValorCorreo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorCorreo.setText("Correo");
+        lbValorCorreo.setText(" ");
 
         lbValorCiudad.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorCiudad.setText("Ciudad");
+        lbValorCiudad.setText(" ");
 
         lbPais.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbPais.setText("Pais:");
 
         lblValorApellido.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblValorApellido.setText("Apellido");
+        lblValorApellido.setText(" ");
 
         lbCiudad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbCiudad.setText("Ciudad:");
@@ -175,10 +185,10 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lbCorreo.setText("Correo:");
 
         lbValorPais.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorPais.setText("Pais");
+        lbValorPais.setText(" ");
 
         lbValorTelefono.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorTelefono.setText("Telefono");
+        lbValorTelefono.setText(" ");
 
         lbApellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbApellido.setText("Apellido:");
@@ -187,7 +197,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lbNombre.setText("Nombre:");
 
         lbValorNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorNombre.setText("Nombre");
+        lbValorNombre.setText(" ");
 
         javax.swing.GroupLayout panelCamposInfoBasicaLayout = new javax.swing.GroupLayout(panelCamposInfoBasica);
         panelCamposInfoBasica.setLayout(panelCamposInfoBasicaLayout);
@@ -207,9 +217,9 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
                     .addComponent(lbValorNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblValorApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbValorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbValorTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(lbValorTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbValorCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbValorPais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbValorPais, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelCamposInfoBasicaLayout.setVerticalGroup(
@@ -283,25 +293,25 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         lbMonto.setText("Monto:");
 
         lbValorMonto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorMonto.setText("Monto");
+        lbValorMonto.setText(" ");
 
         lbMoneda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbMoneda.setText("Moneda:");
 
         lbValorMoneda.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorMoneda.setText("Moneda");
+        lbValorMoneda.setText(" ");
 
         lbFrecuencia.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbFrecuencia.setText("Frecuencia:");
 
         lbValorFrecuencia.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorFrecuencia.setText("Frecuencia");
+        lbValorFrecuencia.setText(" ");
 
         lbMedio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lbMedio.setText("Medio:");
 
         lbValorMedio.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lbValorMedio.setText("Medio");
+        lbValorMedio.setText(" ");
 
         javax.swing.GroupLayout panelDonacionLayout = new javax.swing.GroupLayout(panelDonacion);
         panelDonacion.setLayout(panelDonacionLayout);
@@ -384,21 +394,34 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void listPadrinosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listPadrinosMouseClicked
-        Padrino seleccionado = this.listPadrinos.getSelectedValue();
-        this.lbValorNombre.setText(seleccionado.getNombre());
-        this.lblValorApellido.setText(seleccionado.getApellido());
-        this.lbValorCorreo.setText(seleccionado.getMail());
-        this.lbValorTelefono.setText(seleccionado.getTelefono());
-        this.lbValorCiudad.setText(seleccionado.getCiudad());
-        this.lbValorPais.setText(seleccionado.getPais());
-        this.setListaMascotas(seleccionado);
-        
-        Donacion donacion = seleccionado.getDonacion();
-        this.lbValorMonto.setText(String.valueOf(donacion.getMontoDonacion()));
-        this.lbValorMoneda.setText(donacion.getMoneda());
-        this.lbValorFrecuencia.setText(donacion.getFrecuencia().toString());
-        this.lbValorMedio.setText(donacion.getMedio().toString());
+        this.asignarCampos();
     }//GEN-LAST:event_listPadrinosMouseClicked
+
+    private void asignarCampos() {
+        Padrino seleccionado = this.listPadrinos.getSelectedValue();
+        if (seleccionado != null) {
+            this.lbValorNombre.setText(seleccionado.getNombre());
+            this.lblValorApellido.setText(seleccionado.getApellido());
+            this.lbValorCorreo.setText(seleccionado.getMail());
+            this.lbValorTelefono.setText(seleccionado.getTelefono());
+            this.lbValorCiudad.setText(seleccionado.getCiudad());
+            this.lbValorPais.setText(seleccionado.getPais());
+            this.setListaMascotas(seleccionado);
+
+            Donacion donacion = seleccionado.getDonacion();
+            this.lbValorMonto.setText(String.valueOf(donacion.getMontoDonacion()));
+            this.lbValorMoneda.setText(donacion.getMoneda());
+            this.lbValorFrecuencia.setText(donacion.getFrecuencia().toString());
+            this.lbValorMedio.setText(donacion.getMedio().toString());
+        }
+    }
+    
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        Padrino seleccionado = this.listPadrinos.getSelectedValue();
+        if(seleccionado != null) {
+            this.contenedor.cambiarAEditarPadrino(seleccionado);
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void setListaMascotas(Padrino padrino) {
         this.modeloMascota.removeAllElements();

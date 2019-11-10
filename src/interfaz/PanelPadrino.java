@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import dominio.Padrino;
 import dominio.Sistema;
 
 /**
@@ -32,15 +33,20 @@ public class PanelPadrino extends javax.swing.JPanel {
     }
     
     protected void cambiarAEditarPadrino() {
-        this.editarPadrino.setVisible(true);
+        this.editarPadrino.mostrar();
+        this.infoPadrinos.setVisible(false);
+    }
+    
+    protected void cambiarAEditarPadrino(Padrino padrino) {
+        this.editarPadrino.mostrar(padrino);
         this.infoPadrinos.setVisible(false);
     }
     
     protected void cambiarAInfoPadrino() {
         this.editarPadrino.setVisible(false);
-        this.infoPadrinos.setVisible(true);
+        this.infoPadrinos.mostrar();
     }
-    
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

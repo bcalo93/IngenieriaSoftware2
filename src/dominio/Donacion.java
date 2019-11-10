@@ -22,6 +22,13 @@ public class Donacion {
         this.medio = medio;
     }
     
+    public Donacion(Donacion donacion) {
+        this.montoDonacion = donacion.getMontoDonacion();
+        this.moneda  = donacion.getMoneda();
+        this.frecuencia = donacion.getFrecuencia();
+        this.medio = donacion.getMedio();
+    }
+    
     public int getMontoDonacion() {
         return montoDonacion;
     }

@@ -21,14 +21,30 @@ public class LogicaPadrino {
     public void guardarPadrino(Padrino padrino) throws LogicaNegocioException {
         this.validarPadrino(padrino);
         this.validarDonacion(padrino.getDonacion());
-        padrino.setId(GeneradorId.getInstancia().generarId());
-        this.sistema.agregarPadrino(padrino);
+        if(padrino.getId() == null) {
+            padrino.setId(GeneradorId.getInstancia().generarId());
+            this.sistema.agregarPadrino(padrino);        
+        
+        } else {
+            Padrino paraActualizar = this.getPadrinoPorId(padrino.getId());
+            if(paraActualizar != null) {
+                paraActualizar.actualizar(padrino);
+            }
+        }
     }
     
     public List<Padrino> getPadrinos() {
         return this.sistema.getPadrinos();
     }
     
+    public Padrino getPadrinoPorId(Integer id) {
+        return this.sistema.getPadrinos()
+                .stream()
+                .filter(padrino -> padrino.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+     
     private void validarPadrino(Padrino padrino) throws LogicaNegocioException {
         if (!this.textoValido(padrino.getNombre()) || padrino.getNombre().equals("Sin-Nombre")) {
             throw new LogicaNegocioException("Nombre es requerido.");

@@ -31,6 +31,17 @@ public class Padrino extends Persona {
         this.donacion = donacion;
         this.quiereApadrinar = new ArrayList<>();
     }
+    
+    public Padrino(Padrino padrino) {
+        super(padrino.getNombre(), padrino.getMail());
+        this.id = padrino.id;
+        this.apellido = padrino.getApellido();
+        this.telefono = padrino.getTelefono();
+        this.ciudad = padrino.getCiudad();
+        this.pais = padrino.getPais();
+        this.donacion = new Donacion(padrino.getDonacion());
+        this.quiereApadrinar = new ArrayList<>(padrino.getQuiereApadrinar());
+    }
 
     public Integer getId() {
         return this.id;
@@ -92,6 +103,17 @@ public class Padrino extends Persona {
     
     public void borrarMascota(Mascota perro) {
         this.quiereApadrinar.remove(perro);
+    }
+    
+    public void actualizar(Padrino padrino) {
+        this.setNombre(padrino.getNombre());
+        this.setMail(padrino.getMail());
+        this.setApellido(padrino.getApellido());
+        this.setTelefono(padrino.getTelefono());
+        this.setCiudad(padrino.getCiudad());
+        this.setPais(padrino.getPais());
+        this.quiereApadrinar = padrino.getQuiereApadrinar();
+        this.setDonacion(padrino.getDonacion());
     }
     
     @Override

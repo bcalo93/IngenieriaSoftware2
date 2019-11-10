@@ -21,6 +21,17 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.logicaMascota = new LogicaMascota(sistema);
         this.logicaPadrino = new LogicaPadrino(sistema);
         this.sistema.addObserver(this);
+        
+        // TODO BORRAR
+        this.txNombre.setText("Prueba Nombre");
+        this.txApellido.setText("Prueba Apellido");
+        this.txMail.setText("test@test.com");
+        this.txCiudad.setText("Ciudad");
+        this.txPais.setText("Pais");
+        this.txTelefono.setText("telefono");
+        this.spMontoDonacion.setValue(3000);
+        // /TODO BORRAR
+        
     }
     
     public PanelEditarPadrino(Sistema sistema, PanelPadrino panelPadrino) {
@@ -32,10 +43,47 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.setListaAnimalesAgregados();
     }
     
+    public void mostrar() {
+        this.padrino = new Padrino();
+        this.limpiarFormulario();
+        this.setVisible(true);
+    }
+    
+    public void mostrar(Padrino padrino) {
+        this.padrino = new Padrino(padrino);
+        this.txNombre.setText(this.padrino.getNombre());
+        this.txApellido.setText(this.padrino.getApellido());
+        this.txMail.setText(this.padrino.getMail());
+        this.txCiudad.setText(this.padrino.getCiudad());
+        this.txPais.setText(this.padrino.getPais());
+        this.txTelefono.setText(this.padrino.getTelefono());
+        
+        Donacion donacion = this.padrino.getDonacion();
+        this.spMontoDonacion.setValue(donacion.getMontoDonacion());
+        this.comboMonedaDonacion.setSelectedItem(donacion.getMoneda());
+        this.comboFrecuenciaDonacion.setSelectedItem(donacion.getFrecuencia().toString());
+        this.comboMedioDonacion.setSelectedItem(donacion.getMedio().toString());
+        this.setVisible(true);
+    }
     
     @Override
     public void update(Observable o, Object arg) {
         this.setComboAnimales();
+    }
+    
+    private void limpiarFormulario() {
+        // TODO  agregar limpiar lista de mascotas cuando este implementado.
+        this.txNombre.setText("");
+        this.txApellido.setText("");
+        this.txMail.setText("");
+        this.txCiudad.setText("");
+        this.txPais.setText("");
+        this.txTelefono.setText("");
+        
+        this.spMontoDonacion.setValue(0);
+        this.comboMonedaDonacion.setSelectedItem("");
+        this.comboFrecuenciaDonacion.setSelectedIndex(0);
+        this.comboMedioDonacion.setSelectedIndex(0);
     }
     
     private void setComboAnimales() {
@@ -334,9 +382,6 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         this.lblError.setVisible(false);
-        if(this.padrino == null) {
-            this.padrino = new Padrino();
-        }
         this.padrino.setNombre(this.txNombre.getText());
         this.padrino.setApellido(this.txApellido.getText());
         this.padrino.setMail(this.txMail.getText());
