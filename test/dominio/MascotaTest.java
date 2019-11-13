@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
 import javax.swing.ImageIcon;
@@ -13,10 +8,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-/**
- *
- * @author marce
- */
 public class MascotaTest {
     private Mascota mascota;
     
@@ -139,11 +130,7 @@ public class MascotaTest {
     @Test
     public void testToString(){
         String resToString = mascota.toString();
-        String nombre = mascota.getNombre();
-        double altura = mascota.getAltura();
-        double peso = mascota.getPeso();
-        String comentarios = mascota.getComentarios();
-        assertEquals("Mascota{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}', resToString);
+        assertEquals(mascota.getNombre(), resToString);
     }
     
     

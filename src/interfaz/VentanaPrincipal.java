@@ -51,6 +51,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         sistema = sis;
         fechaSeleccionada = new Fecha();
         initComponents();
+        this.panelPadrinos.add(new PanelPadrino(sistema, this.panelPadrinos.getWidth(), 
+                this.panelPadrinos.getHeight()));
         this.setLocationRelativeTo(null);
         try {
             PerroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
@@ -234,6 +236,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnBorrar = new javax.swing.JButton();
         PerroTxtComentarios = new javax.swing.JTextField();
         PerroLblComentarios = new javax.swing.JLabel();
+        panelPadrinos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Pets");
@@ -1032,6 +1035,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
 
         Panel.addTab("Perros", panPerros);
+
+        javax.swing.GroupLayout panelPadrinosLayout = new javax.swing.GroupLayout(panelPadrinos);
+        panelPadrinos.setLayout(panelPadrinosLayout);
+        panelPadrinosLayout.setHorizontalGroup(
+            panelPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 899, Short.MAX_VALUE)
+        );
+        panelPadrinosLayout.setVerticalGroup(
+            panelPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        Panel.addTab("Padrinos", panelPadrinos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2193,6 +2209,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panCalendario;
     private javax.swing.JPanel panPerros;
     private javax.swing.JPanel panUsuarios;
+    private javax.swing.JPanel panelPadrinos;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
