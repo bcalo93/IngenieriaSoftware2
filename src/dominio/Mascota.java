@@ -1,5 +1,6 @@
 package dominio;
 
+import java.util.Objects;
 import javax.swing.ImageIcon;
 
 public class Mascota {
@@ -137,8 +138,34 @@ public class Mascota {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mascota other = (Mascota) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+    
+
+    @Override
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", altura=" + altura + ", peso=" + peso + ", comentarios=" + comentarios + '}';
+        return this.nombre;
     }
     
 }

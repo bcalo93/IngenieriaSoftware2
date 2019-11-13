@@ -51,6 +51,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         sistema = sis;
         fechaSeleccionada = new Fecha();
         initComponents();
+        this.panelPadrinos.add(new PanelPadrino(sistema, this.panelPadrinos.getWidth(), 
+                this.panelPadrinos.getHeight()));
         this.setLocationRelativeTo(null);
         try {
             perroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
@@ -234,6 +236,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnBorrar = new javax.swing.JButton();
         perroTxtComentarios = new javax.swing.JTextField();
         perroLblComentarios = new javax.swing.JLabel();
+        panelPadrinos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Pets");
@@ -1032,6 +1035,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
 
         panel.addTab("Perros", panPerros);
+
+        javax.swing.GroupLayout panelPadrinosLayout = new javax.swing.GroupLayout(panelPadrinos);
+        panelPadrinos.setLayout(panelPadrinosLayout);
+        panelPadrinosLayout.setHorizontalGroup(
+            panelPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 899, Short.MAX_VALUE)
+        );
+        panelPadrinosLayout.setVerticalGroup(
+            panelPadrinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        panel.addTab("Padrinos", panelPadrinos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2194,5 +2210,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField usuarioTxtMail;
     private javax.swing.JTextField usuarioTxtNombre;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+    private javax.swing.JPanel panelPadrinos;
     // End of variables declaration//GEN-END:variables
 }
