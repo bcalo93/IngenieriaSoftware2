@@ -72,7 +72,7 @@ public class Veterinaria {
         return true;
     }
 
-    public void EliminarActividadAgendada(Actividad act) {
+    public void eliminarActividadAgendada(Actividad act) {
         if (actividadesAgendadas.contains(act)) {
             actividadesAgendadas.remove(act);
         }

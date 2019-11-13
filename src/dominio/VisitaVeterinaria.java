@@ -116,7 +116,7 @@ public class VisitaVeterinaria extends Actividad {
     public void setFueRealizado(boolean seCompleto) {
         this.fueRealizado = seCompleto;
         if(fueRealizado)
-            veterinaria.EliminarActividadAgendada(this);
+            veterinaria.eliminarActividadAgendada(this);
     }
 
     @Override

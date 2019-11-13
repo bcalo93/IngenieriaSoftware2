@@ -222,7 +222,7 @@ public class VeterinariaTest {
     public void testEliminarActividadAgendadaNoEsta() {
         VisitaVeterinaria act = new VisitaVeterinaria();
         assertTrue(!vet.getActividadesAgendadas().contains(act));
-        vet.EliminarActividadAgendada(act);
+        vet.eliminarActividadAgendada(act);
         assertTrue(!vet.getActividadesAgendadas().contains(act));
     }
 
@@ -233,7 +233,7 @@ public class VeterinariaTest {
         vet.setHoraFinal(23);
         vet.agendarActividad(act);
         assertTrue(vet.getActividadesAgendadas().contains(act));
-        vet.EliminarActividadAgendada(act);
+        vet.eliminarActividadAgendada(act);
         assertTrue(!vet.getActividadesAgendadas().contains(act));
     }
 
