@@ -53,56 +53,56 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         try {
-            PerroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
+            perroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource(PERRO_POR_DEFECTO))
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
         } catch (IOException ex) {
             System.out.println(ex);
         }
-        PerroBtnEditar.setVisible(false);
+        perroBtnEditar.setVisible(false);
         btnBorrar.setVisible(false);
-        PerroBtnGuardar.setVisible(false);
-        CalPanHoraPersonalizada.setVisible(false);
-        CalPanVeterinaria.setVisible(false);
-        CalComboVeterinaria.setVisible(false);
-        CalBtnVerRuta.setVisible(false);
-        CalBtnGroupVeterinaria.clearSelection();
-        CalBtnVeterinariaNo.setSelected(true);
-        CalBtnGroupRepetir.clearSelection();
-        CalBtnGroupRealizada.clearSelection();
-        CalBtnRealizadaNo.setSelected(true);
-        CalTxtTipoAlimento.setVisible(false);
-        CalLblTipoAlimento.setVisible(false);
-        CalPanVeterinaria.setVisible(false);
-        CalBtnEditar.setVisible(false);
-        CalLblHorarios.setVisible(false);
+        perroBtnGuardar.setVisible(false);
+        calPanHoraPersonalizada.setVisible(false);
+        calPanVeterinaria.setVisible(false);
+        calComboVeterinaria.setVisible(false);
+        calBtnVerRuta.setVisible(false);
+        calBtnGroupVeterinaria.clearSelection();
+        calBtnVeterinariaNo.setSelected(true);
+        calBtnGroupRepetir.clearSelection();
+        calBtnGroupRealizada.clearSelection();
+        calBtnRealizadaNo.setSelected(true);
+        calTxtTipoAlimento.setVisible(false);
+        calLblTipoAlimento.setVisible(false);
+        calPanVeterinaria.setVisible(false);
+        calBtnEditar.setVisible(false);
+        calLblHorarios.setVisible(false);
         rutaImagenAgregar = "";
         rutaImagenRuta = "";
         agregarMascotaSeleccionada = true;
         agregarUsuarioSeleccionado = true;
-        CalPanRuta.setVisible(false);
+        calPanRuta.setVisible(false);
         this.setSize(950, 625);
     }
 
     public void resetearPestanaPerros() {
         setearListaMascotas();
-        if (PerroComboPerros.getItemCount() != 0) {
-            Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(PerroComboPerros.getSelectedItem().toString());
-            PerroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
-            PerroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
-            PerroLblAltura.setText("Mide:       " + mascotaSeleccionada.getAltura());
-            PerroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
-            PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
-            PerroBtnEditar.setVisible(true);
+        if (perroComboPerros.getItemCount() != 0) {
+            Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(perroComboPerros.getSelectedItem().toString());
+            perroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
+            perroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
+            perroLblAltura.setText("Mide:       " + mascotaSeleccionada.getAltura());
+            perroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
+            perroLblFoto.setIcon(mascotaSeleccionada.getFoto());
+            perroBtnEditar.setVisible(true);
             btnBorrar.setVisible(true);
             ocultarAgregarMascota();
         } else {
-            PerroLblNombre.setText("Nombre:");
-            PerroLblPeso.setText("Peso:");
-            PerroLblAltura.setText("Altura:");
-            PerroLblComentarios.setText("Comentarios:");
-            PerroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
-            PerroBtnEditar.setVisible(false);
+            perroLblNombre.setText("Nombre:");
+            perroLblPeso.setText("Peso:");
+            perroLblAltura.setText("Altura:");
+            perroLblComentarios.setText("Comentarios:");
+            perroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
+            perroBtnEditar.setVisible(false);
             btnBorrar.setVisible(false);
             mostrarAgregarMascota();
         }
@@ -112,15 +112,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public void inicializarPestanaUsuarios() {
 
         resetearListaUsuarios();
-        if (UsuarioComboUsuarios.getItemCount() != 0) {
+        if (usuarioComboUsuarios.getItemCount() != 0) {
             Usuario usuarioSeleccionado = sistema.buscarUsuarioPorNombre(
-                    UsuarioComboUsuarios.getSelectedItem().toString());
-            UsuarioLblNombre.setText("Nombre: " + usuarioSeleccionado
+                    usuarioComboUsuarios.getSelectedItem().toString());
+            usuarioLblNombre.setText("Nombre: " + usuarioSeleccionado
                     .getNombre());
-            UsuarioLblMail.setText("Mail: " + usuarioSeleccionado.getMail());
+            usuarioLblMail.setText("Mail: " + usuarioSeleccionado.getMail());
         } else {
-            UsuarioLblNombre.setText("Nombre: ");
-            UsuarioLblMail.setText("Mail: ");
+            usuarioLblNombre.setText("Nombre: ");
+            usuarioLblMail.setText("Mail: ");
         }
         ocultarAgregarUsuario();
         agregarUsuarioSeleccionado = false;
@@ -136,139 +136,139 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        CalBtnGroupRepetir = new javax.swing.ButtonGroup();
-        CalBtnGroupVeterinaria = new javax.swing.ButtonGroup();
-        CalBtnGroupRealizada = new javax.swing.ButtonGroup();
-        Panel = new javax.swing.JTabbedPane();
+        calBtnGroupRepetir = new javax.swing.ButtonGroup();
+        calBtnGroupVeterinaria = new javax.swing.ButtonGroup();
+        calBtnGroupRealizada = new javax.swing.ButtonGroup();
+        panel = new javax.swing.JTabbedPane();
         panCalendario = new javax.swing.JPanel();
-        CalDayChooser = new com.toedter.calendar.JDayChooser();
-        CalMonthChooser = new com.toedter.calendar.JMonthChooser();
-        CalYearChooser = new com.toedter.calendar.JYearChooser();
-        CalScrollActividades = new javax.swing.JScrollPane();
-        CalLstActividades = new javax.swing.JList<>();
+        calDayChooser = new com.toedter.calendar.JDayChooser();
+        calMonthChooser = new com.toedter.calendar.JMonthChooser();
+        calYearChooser = new com.toedter.calendar.JYearChooser();
+        calScrollActividades = new javax.swing.JScrollPane();
+        calLstActividades = new javax.swing.JList<>();
         btnGuardarActividad = new javax.swing.JButton();
-        CalLblTipo = new javax.swing.JLabel();
-        CalLblUsuario = new javax.swing.JLabel();
-        CalLblPerro = new javax.swing.JLabel();
-        CalLblFecha = new javax.swing.JLabel();
-        CalComboTipo = new javax.swing.JComboBox<>();
-        CalComboUsuario = new javax.swing.JComboBox<>();
-        CalComboPerro = new javax.swing.JComboBox<>();
-        CalComboHora = new javax.swing.JComboBox<>();
-        CalLblHora = new javax.swing.JLabel();
-        CalPanHoraPersonalizada = new javax.swing.JPanel();
-        CalPanLblMinutos = new javax.swing.JLabel();
-        CalPanSpinMinutos = new javax.swing.JSpinner();
-        CalPanSpinHora = new javax.swing.JSpinner();
-        CalPanLblHora = new javax.swing.JLabel();
-        CalLblFechaResp = new javax.swing.JLabel();
-        CalLblTituloFecha = new javax.swing.JLabel();
-        CalLblTituloActividad = new javax.swing.JLabel();
-        CalLblNombre = new javax.swing.JLabel();
-        CalTxtNombreResp = new javax.swing.JTextField();
-        CalPanVeterinaria = new javax.swing.JPanel();
-        CalLblVeterinaria = new javax.swing.JLabel();
-        CalBtnVeterinariaSi = new javax.swing.JRadioButton();
-        CalBtnVeterinariaNo = new javax.swing.JRadioButton();
-        CalComboVeterinaria = new javax.swing.JComboBox<>();
-        CalLblMotivo = new javax.swing.JLabel();
-        CalComboMotivo = new javax.swing.JComboBox<>();
-        CalLblHorarios = new javax.swing.JLabel();
-        CalTxtTipoAlimento = new javax.swing.JTextField();
-        CalLblTipoAlimento = new javax.swing.JLabel();
-        CalLblActividadesDelDia = new javax.swing.JLabel();
-        CalScrollInfoAct = new javax.swing.JScrollPane();
-        CalTxtAreaInfoAct = new javax.swing.JTextArea();
-        CalLblInfoActividad = new javax.swing.JLabel();
-        CalBtnEditar = new javax.swing.JButton();
-        CalLblRealizada = new javax.swing.JLabel();
-        CalBtnRealizadaSi = new javax.swing.JRadioButton();
-        CalBtnRealizadaNo = new javax.swing.JRadioButton();
-        CalPanRuta = new javax.swing.JPanel();
-        CalSpinDistancia = new javax.swing.JSpinner();
-        CalLblKilometros = new javax.swing.JLabel();
-        CalBtnRuta = new javax.swing.JButton();
-        CalLblRuta = new javax.swing.JLabel();
-        CalLblDistancia = new javax.swing.JLabel();
-        CalBtnAgregarDatos = new javax.swing.JButton();
-        CalLblAdvertencia = new javax.swing.JLabel();
-        CalBtnVerRuta = new javax.swing.JButton();
+        calLblTipo = new javax.swing.JLabel();
+        calLblUsuario = new javax.swing.JLabel();
+        calLblPerro = new javax.swing.JLabel();
+        calLblFecha = new javax.swing.JLabel();
+        calComboTipo = new javax.swing.JComboBox<>();
+        calComboUsuario = new javax.swing.JComboBox<>();
+        calComboPerro = new javax.swing.JComboBox<>();
+        calComboHora = new javax.swing.JComboBox<>();
+        calLblHora = new javax.swing.JLabel();
+        calPanHoraPersonalizada = new javax.swing.JPanel();
+        calPanLblMinutos = new javax.swing.JLabel();
+        calPanSpinMinutos = new javax.swing.JSpinner();
+        calPanSpinHora = new javax.swing.JSpinner();
+        calPanLblHora = new javax.swing.JLabel();
+        calLblFechaResp = new javax.swing.JLabel();
+        calLblTituloFecha = new javax.swing.JLabel();
+        calLblTituloActividad = new javax.swing.JLabel();
+        calLblNombre = new javax.swing.JLabel();
+        calTxtNombreResp = new javax.swing.JTextField();
+        calPanVeterinaria = new javax.swing.JPanel();
+        calLblVeterinaria = new javax.swing.JLabel();
+        calBtnVeterinariaSi = new javax.swing.JRadioButton();
+        calBtnVeterinariaNo = new javax.swing.JRadioButton();
+        calComboVeterinaria = new javax.swing.JComboBox<>();
+        calLblMotivo = new javax.swing.JLabel();
+        calComboMotivo = new javax.swing.JComboBox<>();
+        calLblHorarios = new javax.swing.JLabel();
+        calTxtTipoAlimento = new javax.swing.JTextField();
+        calLblTipoAlimento = new javax.swing.JLabel();
+        calLblActividadesDelDia = new javax.swing.JLabel();
+        calScrollInfoAct = new javax.swing.JScrollPane();
+        calTxtAreaInfoAct = new javax.swing.JTextArea();
+        calLblInfoActividad = new javax.swing.JLabel();
+        calBtnEditar = new javax.swing.JButton();
+        calLblRealizada = new javax.swing.JLabel();
+        calBtnRealizadaSi = new javax.swing.JRadioButton();
+        calBtnRealizadaNo = new javax.swing.JRadioButton();
+        calPanRuta = new javax.swing.JPanel();
+        calSpinDistancia = new javax.swing.JSpinner();
+        calLblKilometros = new javax.swing.JLabel();
+        calBtnRuta = new javax.swing.JButton();
+        calLblRuta = new javax.swing.JLabel();
+        calLblDistancia = new javax.swing.JLabel();
+        calBtnAgregarDatos = new javax.swing.JButton();
+        calLblAdvertencia = new javax.swing.JLabel();
+        calBtnVerRuta = new javax.swing.JButton();
         panUsuarios = new javax.swing.JPanel();
-        UsuarioLblUsuarios = new javax.swing.JLabel();
-        UsuarioComboUsuarios = new javax.swing.JComboBox<>();
-        UsuarioLblNombre = new javax.swing.JLabel();
-        UsuarioLblMail = new javax.swing.JLabel();
-        UsuarioTxtNombre = new javax.swing.JTextField();
-        UsuarioTxtMail = new javax.swing.JTextField();
-        UsuarioBtnAgregar = new javax.swing.JButton();
-        UsuarioLblActividades = new javax.swing.JLabel();
-        UsuarioScrollActividades = new javax.swing.JScrollPane();
-        UsuarioLstActividades = new javax.swing.JList<>();
-        UsuarioLblActividad = new javax.swing.JLabel();
-        UsuarioLblFecha = new javax.swing.JLabel();
-        UsuarioScrollFechas = new javax.swing.JScrollPane();
-        UsuarioLstFechas = new javax.swing.JList<>();
-        UsuarioLblAdvertencia = new javax.swing.JLabel();
+        usuarioLblUsuarios = new javax.swing.JLabel();
+        usuarioComboUsuarios = new javax.swing.JComboBox<>();
+        usuarioLblNombre = new javax.swing.JLabel();
+        usuarioLblMail = new javax.swing.JLabel();
+        usuarioTxtNombre = new javax.swing.JTextField();
+        usuarioTxtMail = new javax.swing.JTextField();
+        usuarioBtnAgregar = new javax.swing.JButton();
+        usuarioLblActividades = new javax.swing.JLabel();
+        usuarioScrollActividades = new javax.swing.JScrollPane();
+        usuarioLstActividades = new javax.swing.JList<>();
+        usuarioLblActividad = new javax.swing.JLabel();
+        usuarioLblFecha = new javax.swing.JLabel();
+        usuarioScrollFechas = new javax.swing.JScrollPane();
+        usuarioLstFechas = new javax.swing.JList<>();
+        usuarioLblAdvertencia = new javax.swing.JLabel();
         panPerros = new javax.swing.JPanel();
-        PerroBtnAgregar = new javax.swing.JButton();
-        PerroLblPerros = new javax.swing.JLabel();
-        PerroPanInformacion = new javax.swing.JPanel();
-        PerroPanFoto = new javax.swing.JPanel();
-        PerroLblFoto = new javax.swing.JLabel();
-        PerroLblAltura = new javax.swing.JLabel();
-        PerroLblNombre = new javax.swing.JLabel();
-        PerroLblPeso = new javax.swing.JLabel();
-        PerroTxtNombre = new javax.swing.JTextField();
-        PerroBtnExaminar = new javax.swing.JButton();
-        PerroLblFotoBoton = new javax.swing.JLabel();
-        PerroSpinAltura = new javax.swing.JSpinner();
-        PerroSpinPeso = new javax.swing.JSpinner();
-        CalLblCentimetros = new javax.swing.JLabel();
-        CalLblKilogramos = new javax.swing.JLabel();
+        perroBtnAgregar = new javax.swing.JButton();
+        perroLblPerros = new javax.swing.JLabel();
+        perroPanInformacion = new javax.swing.JPanel();
+        perroPanFoto = new javax.swing.JPanel();
+        perroLblFoto = new javax.swing.JLabel();
+        perroLblAltura = new javax.swing.JLabel();
+        perroLblNombre = new javax.swing.JLabel();
+        perroLblPeso = new javax.swing.JLabel();
+        perroTxtNombre = new javax.swing.JTextField();
+        perroBtnExaminar = new javax.swing.JButton();
+        perroLblFotoBoton = new javax.swing.JLabel();
+        perroSpinAltura = new javax.swing.JSpinner();
+        perroSpinPeso = new javax.swing.JSpinner();
+        calLblCentimetros = new javax.swing.JLabel();
+        calLblKilogramos = new javax.swing.JLabel();
         comboTipoMascota = new javax.swing.JComboBox<>();
         labelTipo = new javax.swing.JLabel();
-        PerroComboPerros = new javax.swing.JComboBox<>();
-        PerroBtnEditar = new javax.swing.JButton();
-        PerroBtnGuardar = new javax.swing.JButton();
-        PerroLblAdvertencia = new javax.swing.JLabel();
+        perroComboPerros = new javax.swing.JComboBox<>();
+        perroBtnEditar = new javax.swing.JButton();
+        perroBtnGuardar = new javax.swing.JButton();
+        perroLblAdvertencia = new javax.swing.JLabel();
         btnBorrar = new javax.swing.JButton();
-        PerroTxtComentarios = new javax.swing.JTextField();
-        PerroLblComentarios = new javax.swing.JLabel();
+        perroTxtComentarios = new javax.swing.JTextField();
+        perroLblComentarios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Pets");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Panel.addMouseListener(new java.awt.event.MouseAdapter() {
+        panel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PanelMouseClicked(evt);
+                panelMouseClicked(evt);
             }
         });
 
-        CalDayChooser.setBorder(new javax.swing.border.MatteBorder(null));
+        calDayChooser.setBorder(new javax.swing.border.MatteBorder(null));
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, CalMonthChooser, org.jdesktop.beansbinding.ELProperty.create("${month}"), CalDayChooser, org.jdesktop.beansbinding.BeanProperty.create("month"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, calMonthChooser, org.jdesktop.beansbinding.ELProperty.create("${month}"), calDayChooser, org.jdesktop.beansbinding.BeanProperty.create("month"));
         bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, CalYearChooser, org.jdesktop.beansbinding.ELProperty.create("${year}"), CalDayChooser, org.jdesktop.beansbinding.BeanProperty.create("year"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, calYearChooser, org.jdesktop.beansbinding.ELProperty.create("${year}"), calDayChooser, org.jdesktop.beansbinding.BeanProperty.create("year"));
         bindingGroup.addBinding(binding);
 
-        CalDayChooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        calDayChooser.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                CalDayChooserPropertyChange(evt);
+                calDayChooserPropertyChange(evt);
             }
         });
 
-        CalMonthChooser.setBorder(new javax.swing.border.MatteBorder(null));
-        CalMonthChooser.setToolTipText("");
+        calMonthChooser.setBorder(new javax.swing.border.MatteBorder(null));
+        calMonthChooser.setToolTipText("");
 
-        CalYearChooser.setBorder(new javax.swing.border.MatteBorder(null));
+        calYearChooser.setBorder(new javax.swing.border.MatteBorder(null));
 
-        CalLstActividades.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        calLstActividades.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                CalLstActividadesValueChanged(evt);
+                calLstActividadesValueChanged(evt);
             }
         });
-        CalScrollActividades.setViewportView(CalLstActividades);
+        calScrollActividades.setViewportView(calLstActividades);
 
         btnGuardarActividad.setText("Guardar Actividad");
         btnGuardarActividad.addActionListener(new java.awt.event.ActionListener() {
@@ -277,248 +277,248 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        CalLblTipo.setText("Tipo de actividad:");
+        calLblTipo.setText("Tipo de actividad:");
 
-        CalLblUsuario.setText("Usuario:");
+        calLblUsuario.setText("Usuario:");
 
-        CalLblPerro.setText("Perro:");
+        calLblPerro.setText("Perro:");
 
-        CalLblFecha.setText("Fecha:");
+        calLblFecha.setText("Fecha:");
 
-        CalComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paseo", "Alimentación", "Otra" }));
-        CalComboTipo.addActionListener(new java.awt.event.ActionListener() {
+        calComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paseo", "Alimentación", "Otra" }));
+        calComboTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalComboTipoActionPerformed(evt);
+                calComboTipoActionPerformed(evt);
             }
         });
 
-        CalComboHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ahora", "Personalizado" }));
-        CalComboHora.addActionListener(new java.awt.event.ActionListener() {
+        calComboHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ahora", "Personalizado" }));
+        calComboHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalComboHoraActionPerformed(evt);
+                calComboHoraActionPerformed(evt);
             }
         });
 
-        CalLblHora.setText("Hora");
+        calLblHora.setText("Hora");
 
-        CalPanLblMinutos.setText("Minutos");
+        calPanLblMinutos.setText("Minutos");
 
-        CalPanSpinMinutos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 5));
+        calPanSpinMinutos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 5));
 
-        CalPanSpinHora.setModel(new javax.swing.SpinnerListModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
+        calPanSpinHora.setModel(new javax.swing.SpinnerListModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
 
-        CalPanLblHora.setText("Hora");
+        calPanLblHora.setText("Hora");
 
-        javax.swing.GroupLayout CalPanHoraPersonalizadaLayout = new javax.swing.GroupLayout(CalPanHoraPersonalizada);
-        CalPanHoraPersonalizada.setLayout(CalPanHoraPersonalizadaLayout);
-        CalPanHoraPersonalizadaLayout.setHorizontalGroup(
-            CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalPanHoraPersonalizadaLayout.createSequentialGroup()
+        javax.swing.GroupLayout calPanHoraPersonalizadaLayout = new javax.swing.GroupLayout(calPanHoraPersonalizada);
+        calPanHoraPersonalizada.setLayout(calPanHoraPersonalizadaLayout);
+        calPanHoraPersonalizadaLayout.setHorizontalGroup(
+            calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calPanHoraPersonalizadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CalPanLblHora)
-                    .addComponent(CalPanLblMinutos))
+                .addGroup(calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calPanLblHora)
+                    .addComponent(calPanLblMinutos))
                 .addGap(18, 18, 18)
-                .addGroup(CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(CalPanSpinMinutos)
-                    .addComponent(CalPanSpinHora))
+                .addGroup(calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(calPanSpinMinutos)
+                    .addComponent(calPanSpinHora))
                 .addContainerGap())
         );
-        CalPanHoraPersonalizadaLayout.setVerticalGroup(
-            CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalPanHoraPersonalizadaLayout.createSequentialGroup()
+        calPanHoraPersonalizadaLayout.setVerticalGroup(
+            calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calPanHoraPersonalizadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CalPanLblHora)
-                    .addComponent(CalPanSpinHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calPanLblHora)
+                    .addComponent(calPanSpinHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CalPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CalPanLblMinutos)
-                    .addComponent(CalPanSpinMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(calPanHoraPersonalizadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calPanLblMinutos)
+                    .addComponent(calPanSpinMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        CalLblTituloFecha.setText("Fecha");
+        calLblTituloFecha.setText("Fecha");
 
-        CalLblTituloActividad.setText("Actividad");
+        calLblTituloActividad.setText("Actividad");
 
-        CalLblNombre.setText("Nombre:");
+        calLblNombre.setText("Nombre:");
 
-        CalTxtNombreResp.addActionListener(new java.awt.event.ActionListener() {
+        calTxtNombreResp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalTxtNombreRespActionPerformed(evt);
+                calTxtNombreRespActionPerformed(evt);
             }
         });
 
-        CalLblVeterinaria.setText("Veterinaria:");
+        calLblVeterinaria.setText("Veterinaria:");
 
-        CalBtnGroupVeterinaria.add(CalBtnVeterinariaSi);
-        CalBtnVeterinariaSi.setText("Si");
-        CalBtnVeterinariaSi.addActionListener(new java.awt.event.ActionListener() {
+        calBtnGroupVeterinaria.add(calBtnVeterinariaSi);
+        calBtnVeterinariaSi.setText("Si");
+        calBtnVeterinariaSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnVeterinariaSiActionPerformed(evt);
+                calBtnVeterinariaSiActionPerformed(evt);
             }
         });
 
-        CalBtnGroupVeterinaria.add(CalBtnVeterinariaNo);
-        CalBtnVeterinariaNo.setText("No");
-        CalBtnVeterinariaNo.addActionListener(new java.awt.event.ActionListener() {
+        calBtnGroupVeterinaria.add(calBtnVeterinariaNo);
+        calBtnVeterinariaNo.setText("No");
+        calBtnVeterinariaNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnVeterinariaNoActionPerformed(evt);
+                calBtnVeterinariaNoActionPerformed(evt);
             }
         });
 
-        CalComboVeterinaria.addActionListener(new java.awt.event.ActionListener() {
+        calComboVeterinaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalComboVeterinariaActionPerformed(evt);
+                calComboVeterinariaActionPerformed(evt);
             }
         });
 
-        CalLblMotivo.setText("Motivo:");
+        calLblMotivo.setText("Motivo:");
 
-        CalComboMotivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corte de Pelo", "Corte de Uñas", "Visita Médica", "Otro" }));
+        calComboMotivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corte de Pelo", "Corte de Uñas", "Visita Médica", "Otro" }));
 
-        javax.swing.GroupLayout CalPanVeterinariaLayout = new javax.swing.GroupLayout(CalPanVeterinaria);
-        CalPanVeterinaria.setLayout(CalPanVeterinariaLayout);
-        CalPanVeterinariaLayout.setHorizontalGroup(
-            CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalPanVeterinariaLayout.createSequentialGroup()
+        javax.swing.GroupLayout calPanVeterinariaLayout = new javax.swing.GroupLayout(calPanVeterinaria);
+        calPanVeterinaria.setLayout(calPanVeterinariaLayout);
+        calPanVeterinariaLayout.setHorizontalGroup(
+            calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calPanVeterinariaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(CalLblHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(CalPanVeterinariaLayout.createSequentialGroup()
-                        .addGroup(CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CalLblVeterinaria)
-                            .addComponent(CalLblMotivo))
+                .addGroup(calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(calLblHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(calPanVeterinariaLayout.createSequentialGroup()
+                        .addGroup(calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(calLblVeterinaria)
+                            .addComponent(calLblMotivo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CalComboVeterinaria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CalComboMotivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(CalPanVeterinariaLayout.createSequentialGroup()
-                                .addComponent(CalBtnVeterinariaSi)
+                        .addGroup(calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(calComboVeterinaria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calComboMotivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(calPanVeterinariaLayout.createSequentialGroup()
+                                .addComponent(calBtnVeterinariaSi)
                                 .addGap(18, 18, 18)
-                                .addComponent(CalBtnVeterinariaNo)))))
+                                .addComponent(calBtnVeterinariaNo)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        CalPanVeterinariaLayout.setVerticalGroup(
-            CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalPanVeterinariaLayout.createSequentialGroup()
+        calPanVeterinariaLayout.setVerticalGroup(
+            calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calPanVeterinariaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CalLblVeterinaria)
-                    .addComponent(CalBtnVeterinariaSi)
-                    .addComponent(CalBtnVeterinariaNo))
+                .addGroup(calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calLblVeterinaria)
+                    .addComponent(calBtnVeterinariaSi)
+                    .addComponent(calBtnVeterinariaNo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CalComboVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(calComboVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CalPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CalComboMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CalLblMotivo))
+                .addGroup(calPanVeterinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calComboMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calLblMotivo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CalLblHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(calLblHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        CalTxtTipoAlimento.addActionListener(new java.awt.event.ActionListener() {
+        calTxtTipoAlimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalTxtTipoAlimentoActionPerformed(evt);
+                calTxtTipoAlimentoActionPerformed(evt);
             }
         });
 
-        CalLblTipoAlimento.setText("Tipo Alimento:");
+        calLblTipoAlimento.setText("Tipo Alimento:");
 
-        CalLblActividadesDelDia.setText("Actividades del Día:");
+        calLblActividadesDelDia.setText("Actividades del Día:");
 
-        CalTxtAreaInfoAct.setColumns(20);
-        CalTxtAreaInfoAct.setRows(5);
-        CalScrollInfoAct.setViewportView(CalTxtAreaInfoAct);
+        calTxtAreaInfoAct.setColumns(20);
+        calTxtAreaInfoAct.setRows(5);
+        calScrollInfoAct.setViewportView(calTxtAreaInfoAct);
 
-        CalLblInfoActividad.setText("Información de la Actividad: ");
+        calLblInfoActividad.setText("Información de la Actividad: ");
 
-        CalBtnEditar.setText("Editar");
-        CalBtnEditar.addActionListener(new java.awt.event.ActionListener() {
+        calBtnEditar.setText("Editar");
+        calBtnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnEditarActionPerformed(evt);
+                calBtnEditarActionPerformed(evt);
             }
         });
 
-        CalLblRealizada.setText("Fue realizada:");
+        calLblRealizada.setText("Fue realizada:");
 
-        CalBtnGroupRealizada.add(CalBtnRealizadaSi);
-        CalBtnRealizadaSi.setText("Si");
-        CalBtnRealizadaSi.addActionListener(new java.awt.event.ActionListener() {
+        calBtnGroupRealizada.add(calBtnRealizadaSi);
+        calBtnRealizadaSi.setText("Si");
+        calBtnRealizadaSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnRealizadaSiActionPerformed(evt);
+                calBtnRealizadaSiActionPerformed(evt);
             }
         });
 
-        CalBtnGroupRealizada.add(CalBtnRealizadaNo);
-        CalBtnRealizadaNo.setText("No");
-        CalBtnRealizadaNo.addActionListener(new java.awt.event.ActionListener() {
+        calBtnGroupRealizada.add(calBtnRealizadaNo);
+        calBtnRealizadaNo.setText("No");
+        calBtnRealizadaNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnRealizadaNoActionPerformed(evt);
+                calBtnRealizadaNoActionPerformed(evt);
             }
         });
 
-        CalSpinDistancia.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
+        calSpinDistancia.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
 
-        CalLblKilometros.setText("Kilómetros");
+        calLblKilometros.setText("Kilómetros");
 
-        CalBtnRuta.setText("Agregar Ruta");
-        CalBtnRuta.addActionListener(new java.awt.event.ActionListener() {
+        calBtnRuta.setText("Agregar Ruta");
+        calBtnRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnRutaActionPerformed(evt);
+                calBtnRutaActionPerformed(evt);
             }
         });
 
-        CalLblRuta.setText("Ruta:");
+        calLblRuta.setText("Ruta:");
 
-        CalLblDistancia.setText("Distancia:");
+        calLblDistancia.setText("Distancia:");
 
-        javax.swing.GroupLayout CalPanRutaLayout = new javax.swing.GroupLayout(CalPanRuta);
-        CalPanRuta.setLayout(CalPanRutaLayout);
-        CalPanRutaLayout.setHorizontalGroup(
-            CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalPanRutaLayout.createSequentialGroup()
-                .addGroup(CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CalLblRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CalLblDistancia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                .addGroup(CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CalPanRutaLayout.createSequentialGroup()
+        javax.swing.GroupLayout calPanRutaLayout = new javax.swing.GroupLayout(calPanRuta);
+        calPanRuta.setLayout(calPanRutaLayout);
+        calPanRutaLayout.setHorizontalGroup(
+            calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calPanRutaLayout.createSequentialGroup()
+                .addGroup(calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calLblRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(calLblDistancia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                .addGroup(calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calPanRutaLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(CalSpinDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(calSpinDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CalLblKilometros))
-                    .addGroup(CalPanRutaLayout.createSequentialGroup()
+                        .addComponent(calLblKilometros))
+                    .addGroup(calPanRutaLayout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(CalBtnRuta)))
+                        .addComponent(calBtnRuta)))
                 .addContainerGap())
         );
-        CalPanRutaLayout.setVerticalGroup(
-            CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CalPanRutaLayout.createSequentialGroup()
-                .addGroup(CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CalBtnRuta)
-                    .addComponent(CalLblRuta))
+        calPanRutaLayout.setVerticalGroup(
+            calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calPanRutaLayout.createSequentialGroup()
+                .addGroup(calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calBtnRuta)
+                    .addComponent(calLblRuta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(CalPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CalSpinDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CalLblKilometros)
-                    .addComponent(CalLblDistancia))
+                .addGroup(calPanRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calSpinDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calLblKilometros)
+                    .addComponent(calLblDistancia))
                 .addGap(49, 49, 49))
         );
 
-        CalBtnAgregarDatos.setText("Agregar Datos Precargados");
-        CalBtnAgregarDatos.addActionListener(new java.awt.event.ActionListener() {
+        calBtnAgregarDatos.setText("Agregar Datos Precargados");
+        calBtnAgregarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnAgregarDatosActionPerformed(evt);
+                calBtnAgregarDatosActionPerformed(evt);
             }
         });
 
-        CalBtnVerRuta.setText("Ver Ruta");
-        CalBtnVerRuta.addActionListener(new java.awt.event.ActionListener() {
+        calBtnVerRuta.setText("Ver Ruta");
+        calBtnVerRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CalBtnVerRutaActionPerformed(evt);
+                calBtnVerRutaActionPerformed(evt);
             }
         });
 
@@ -531,25 +531,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CalDayChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calDayChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
-                                        .addComponent(CalLblActividadesDelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(calLblActividadesDelDia, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(70, 70, 70))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCalendarioLayout.createSequentialGroup()
-                                        .addComponent(CalScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(calScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CalLblInfoActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CalScrollInfoAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(calLblInfoActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(calScrollInfoAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panCalendarioLayout.createSequentialGroup()
-                                .addComponent(CalMonthChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(calMonthChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CalYearChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(calYearChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addGap(189, 189, 189)
-                        .addComponent(CalLblTituloFecha)))
+                        .addComponent(calLblTituloFecha)))
                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -558,56 +558,56 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
                                         .addGap(116, 116, 116)
-                                        .addComponent(CalBtnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(calBtnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
                                         .addGap(25, 25, 25)
-                                        .addComponent(CalBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(CalLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(calBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(calLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
-                                        .addComponent(CalPanRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(calPanRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(CalBtnVerRuta))
+                                        .addComponent(calBtnVerRuta))
                                     .addGroup(panCalendarioLayout.createSequentialGroup()
                                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(CalTxtTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(calTxtTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panCalendarioLayout.createSequentialGroup()
                                                     .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                            .addComponent(CalLblTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(CalLblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(CalLblPerro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(CalLblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(CalLblHora))
-                                                        .addComponent(CalLblNombre))
+                                                            .addComponent(calLblTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(calLblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(calLblPerro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(calLblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(calLblHora))
+                                                        .addComponent(calLblNombre))
                                                     .addGap(18, 18, 18)
                                                     .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(CalComboTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(CalComboUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 134, Short.MAX_VALUE)
-                                                        .addComponent(CalComboPerro, javax.swing.GroupLayout.Alignment.LEADING, 0, 134, Short.MAX_VALUE)
-                                                        .addComponent(CalLblFechaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(CalTxtNombreResp)
-                                                        .addComponent(CalComboHora, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                        .addComponent(calComboTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(calComboUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 134, Short.MAX_VALUE)
+                                                        .addComponent(calComboPerro, javax.swing.GroupLayout.Alignment.LEADING, 0, 134, Short.MAX_VALUE)
+                                                        .addComponent(calLblFechaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(calTxtNombreResp)
+                                                        .addComponent(calComboHora, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(CalLblRealizada)
-                                                    .addComponent(CalLblTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(calLblRealizada)
+                                                    .addComponent(calLblTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(29, 29, 29)
-                                                .addComponent(CalBtnRealizadaSi)
+                                                .addComponent(calBtnRealizadaSi)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(CalBtnRealizadaNo)))
+                                                .addComponent(calBtnRealizadaNo)))
                                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(CalPanVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(calPanVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(CalPanHoraPersonalizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addContainerGap(18, Short.MAX_VALUE))))
+                                                .addComponent(calPanHoraPersonalizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCalendarioLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CalLblTituloActividad)
+                        .addComponent(calLblTituloActividad)
                         .addGap(291, 291, 291))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
@@ -623,114 +623,114 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblTipo)
-                                    .addComponent(CalComboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(calLblTipo)
+                                    .addComponent(calComboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblNombre)
-                                    .addComponent(CalTxtNombreResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(calLblNombre)
+                                    .addComponent(calTxtNombreResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(8, 8, 8)
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblUsuario)
-                                    .addComponent(CalComboUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(calLblUsuario)
+                                    .addComponent(calComboUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                 .addGap(28, 28, 28)
-                                .addComponent(CalPanVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(calPanVeterinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CalLblPerro)
-                            .addComponent(CalComboPerro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(calLblPerro)
+                            .addComponent(calComboPerro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panCalendarioLayout.createSequentialGroup()
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(CalLblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CalLblFechaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(calLblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(calLblFechaResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblHora)
-                                    .addComponent(CalComboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(calLblHora)
+                                    .addComponent(calComboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblRealizada)
-                                    .addComponent(CalBtnRealizadaSi)
-                                    .addComponent(CalBtnRealizadaNo))
+                                    .addComponent(calLblRealizada)
+                                    .addComponent(calBtnRealizadaSi)
+                                    .addComponent(calBtnRealizadaNo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(CalLblTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CalTxtTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(CalPanHoraPersonalizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(calLblTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(calTxtTipoAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(calPanHoraPersonalizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CalPanRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CalBtnVerRuta))
+                            .addComponent(calPanRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calBtnVerRuta))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CalBtnEditar)
+                        .addComponent(calBtnEditar)
                         .addGap(12, 12, 12)
-                        .addComponent(CalLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(calLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnGuardarActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CalBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(calBtnAgregarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panCalendarioLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CalLblTituloFecha)
-                            .addComponent(CalLblTituloActividad))
+                            .addComponent(calLblTituloFecha)
+                            .addComponent(calLblTituloActividad))
                         .addGap(3, 3, 3)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CalMonthChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CalYearChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(calMonthChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calYearChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CalDayChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(calDayChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CalLblActividadesDelDia)
-                            .addComponent(CalLblInfoActividad))
+                            .addComponent(calLblActividadesDelDia)
+                            .addComponent(calLblInfoActividad))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panCalendarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panCalendarioLayout.createSequentialGroup()
-                                .addComponent(CalScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(calScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(CalScrollInfoAct))))
+                            .addComponent(calScrollInfoAct))))
                 .addGap(326, 326, 326))
         );
 
-        Panel.addTab("Calendario", panCalendario);
+        panel.addTab("Calendario", panCalendario);
 
-        UsuarioLblUsuarios.setText("Usuario");
+        usuarioLblUsuarios.setText("Usuario");
 
-        UsuarioComboUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        usuarioComboUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioComboUsuariosActionPerformed(evt);
+                usuarioComboUsuariosActionPerformed(evt);
             }
         });
 
-        UsuarioLblNombre.setText("Nombre:");
+        usuarioLblNombre.setText("Nombre:");
 
-        UsuarioLblMail.setText("Mail:");
+        usuarioLblMail.setText("Mail:");
 
-        UsuarioTxtMail.addActionListener(new java.awt.event.ActionListener() {
+        usuarioTxtMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioTxtMailActionPerformed(evt);
+                usuarioTxtMailActionPerformed(evt);
             }
         });
 
-        UsuarioBtnAgregar.setText("Agregar Usuario");
-        UsuarioBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        usuarioBtnAgregar.setText("Agregar Usuario");
+        usuarioBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioBtnAgregarActionPerformed(evt);
+                usuarioBtnAgregarActionPerformed(evt);
             }
         });
 
-        UsuarioLblActividades.setText("Próximas Actividades");
+        usuarioLblActividades.setText("Próximas Actividades");
 
-        UsuarioScrollActividades.setViewportView(UsuarioLstActividades);
+        usuarioScrollActividades.setViewportView(usuarioLstActividades);
 
-        UsuarioLblActividad.setText("Activiad:");
+        usuarioLblActividad.setText("Activiad:");
 
-        UsuarioLblFecha.setText("Fecha");
+        usuarioLblFecha.setText("Fecha");
 
-        UsuarioScrollFechas.setViewportView(UsuarioLstFechas);
+        usuarioScrollFechas.setViewportView(usuarioLstFechas);
 
         javax.swing.GroupLayout panUsuariosLayout = new javax.swing.GroupLayout(panUsuarios);
         panUsuarios.setLayout(panUsuariosLayout);
@@ -741,35 +741,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panUsuariosLayout.createSequentialGroup()
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsuarioLblUsuarios)
+                            .addComponent(usuarioLblUsuarios)
                             .addGroup(panUsuariosLayout.createSequentialGroup()
-                                .addComponent(UsuarioComboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(usuarioComboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58)
                                 .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panUsuariosLayout.createSequentialGroup()
                                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(UsuarioLblNombre)
-                                            .addComponent(UsuarioLblMail))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                            .addComponent(usuarioLblNombre)
+                                            .addComponent(usuarioLblMail))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(UsuarioTxtMail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(UsuarioTxtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(UsuarioLblAdvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(usuarioTxtMail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(usuarioTxtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(usuarioLblAdvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(39, 39, 39))
                     .addGroup(panUsuariosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(UsuarioBtnAgregar)
+                        .addComponent(usuarioBtnAgregar)
                         .addGap(102, 102, 102)))
                 .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UsuarioLblActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuarioLblActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panUsuariosLayout.createSequentialGroup()
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsuarioLblActividad)
-                            .addComponent(UsuarioScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usuarioLblActividad)
+                            .addComponent(usuarioScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsuarioLblFecha)
-                            .addComponent(UsuarioScrollFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(usuarioLblFecha)
+                            .addComponent(usuarioScrollFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(89, 89, 89))
         );
         panUsuariosLayout.setVerticalGroup(
@@ -779,180 +779,180 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(panUsuariosLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(UsuarioLblNombre)
-                            .addComponent(UsuarioTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usuarioLblNombre)
+                            .addComponent(usuarioTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(UsuarioTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UsuarioLblMail))
+                            .addComponent(usuarioTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usuarioLblMail))
                         .addGap(18, 18, 18)
-                        .addComponent(UsuarioLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(usuarioLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(UsuarioBtnAgregar))
+                        .addComponent(usuarioBtnAgregar))
                     .addGroup(panUsuariosLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panUsuariosLayout.createSequentialGroup()
-                                .addComponent(UsuarioLblActividades)
+                                .addComponent(usuarioLblActividades)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(UsuarioLblActividad)
-                                    .addComponent(UsuarioLblFecha))
+                                    .addComponent(usuarioLblActividad)
+                                    .addComponent(usuarioLblFecha))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(UsuarioScrollFechas)
-                                    .addComponent(UsuarioScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(usuarioScrollFechas)
+                                    .addComponent(usuarioScrollActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panUsuariosLayout.createSequentialGroup()
-                                .addComponent(UsuarioLblUsuarios)
+                                .addComponent(usuarioLblUsuarios)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(UsuarioComboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(255, Short.MAX_VALUE))
+                                .addComponent(usuarioComboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(561, Short.MAX_VALUE))
         );
 
-        Panel.addTab("Usuarios", panUsuarios);
+        panel.addTab("Usuarios", panUsuarios);
 
-        PerroBtnAgregar.setText("Ingresar Perro");
-        PerroBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        perroBtnAgregar.setText("Ingresar Perro");
+        perroBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroBtnAgregarActionPerformed(evt);
+                perroBtnAgregarActionPerformed(evt);
             }
         });
 
-        PerroLblPerros.setText("Perros");
+        perroLblPerros.setText("Perros");
 
-        javax.swing.GroupLayout PerroPanFotoLayout = new javax.swing.GroupLayout(PerroPanFoto);
-        PerroPanFoto.setLayout(PerroPanFotoLayout);
-        PerroPanFotoLayout.setHorizontalGroup(
-            PerroPanFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PerroPanFotoLayout.createSequentialGroup()
+        javax.swing.GroupLayout perroPanFotoLayout = new javax.swing.GroupLayout(perroPanFoto);
+        perroPanFoto.setLayout(perroPanFotoLayout);
+        perroPanFotoLayout.setHorizontalGroup(
+            perroPanFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(perroPanFotoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PerroLblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(perroLblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PerroPanFotoLayout.setVerticalGroup(
-            PerroPanFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PerroPanFotoLayout.createSequentialGroup()
+        perroPanFotoLayout.setVerticalGroup(
+            perroPanFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(perroPanFotoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PerroLblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(perroLblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PerroLblAltura.setText("Altura:");
+        perroLblAltura.setText("Altura:");
 
-        PerroLblNombre.setText("Nombre:");
+        perroLblNombre.setText("Nombre:");
 
-        PerroLblPeso.setText("Peso");
+        perroLblPeso.setText("Peso");
 
-        PerroTxtNombre.addActionListener(new java.awt.event.ActionListener() {
+        perroTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroTxtNombreActionPerformed(evt);
+                perroTxtNombreActionPerformed(evt);
             }
         });
 
-        PerroBtnExaminar.setText("Examinar");
-        PerroBtnExaminar.addActionListener(new java.awt.event.ActionListener() {
+        perroBtnExaminar.setText("Examinar");
+        perroBtnExaminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroBtnExaminarActionPerformed(evt);
+                perroBtnExaminarActionPerformed(evt);
             }
         });
 
-        PerroLblFotoBoton.setText("Foto:");
+        perroLblFotoBoton.setText("Foto:");
 
-        PerroSpinAltura.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        perroSpinAltura.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        PerroSpinPeso.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
+        perroSpinPeso.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
 
-        CalLblCentimetros.setText("Centímetros");
+        calLblCentimetros.setText("Centímetros");
 
-        CalLblKilogramos.setText("Kilogramos");
+        calLblKilogramos.setText("Kilogramos");
 
         comboTipoMascota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perro", "Gato", "Caballo", "Vaca" }));
 
         labelTipo.setText("Tipo:");
 
-        javax.swing.GroupLayout PerroPanInformacionLayout = new javax.swing.GroupLayout(PerroPanInformacion);
-        PerroPanInformacion.setLayout(PerroPanInformacionLayout);
-        PerroPanInformacionLayout.setHorizontalGroup(
-            PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerroPanInformacionLayout.createSequentialGroup()
-                .addComponent(PerroPanFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout perroPanInformacionLayout = new javax.swing.GroupLayout(perroPanInformacion);
+        perroPanInformacion.setLayout(perroPanInformacionLayout);
+        perroPanInformacionLayout.setHorizontalGroup(
+            perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, perroPanInformacionLayout.createSequentialGroup()
+                .addComponent(perroPanFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PerroLblAltura)
-                    .addComponent(PerroLblNombre)
-                    .addComponent(PerroLblFotoBoton)
-                    .addComponent(PerroLblPeso)
+                .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(perroLblAltura)
+                    .addComponent(perroLblNombre)
+                    .addComponent(perroLblFotoBoton)
+                    .addComponent(perroLblPeso)
                     .addComponent(labelTipo))
                 .addGap(31, 31, 31)
-                .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(comboTipoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PerroTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(PerroBtnExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PerroPanInformacionLayout.createSequentialGroup()
-                            .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(PerroSpinPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                                .addComponent(PerroSpinAltura))
+                    .addComponent(perroTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(perroBtnExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(perroPanInformacionLayout.createSequentialGroup()
+                            .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(perroSpinPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                .addComponent(perroSpinAltura))
                             .addGap(18, 18, 18)
-                            .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(CalLblCentimetros)
-                                .addComponent(CalLblKilogramos)))))
+                            .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(calLblCentimetros)
+                                .addComponent(calLblKilogramos)))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
-        PerroPanInformacionLayout.setVerticalGroup(
-            PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PerroPanInformacionLayout.createSequentialGroup()
+        perroPanInformacionLayout.setVerticalGroup(
+            perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(perroPanInformacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PerroPanInformacionLayout.createSequentialGroup()
+                .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(perroPanInformacionLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PerroTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PerroLblNombre))
+                        .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(perroTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perroLblNombre))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comboTipoMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelTipo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PerroSpinAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PerroLblAltura)
-                            .addComponent(CalLblCentimetros))
+                        .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(perroSpinAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perroLblAltura)
+                            .addComponent(calLblCentimetros))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PerroSpinPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PerroLblPeso)
-                            .addComponent(CalLblKilogramos)))
-                    .addComponent(PerroPanFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(perroSpinPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perroLblPeso)
+                            .addComponent(calLblKilogramos)))
+                    .addComponent(perroPanFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PerroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PerroBtnExaminar)
-                    .addComponent(PerroLblFotoBoton))
+                .addGroup(perroPanInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(perroBtnExaminar)
+                    .addComponent(perroLblFotoBoton))
                 .addContainerGap())
         );
 
-        PerroComboPerros.addMouseListener(new java.awt.event.MouseAdapter() {
+        perroComboPerros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PerroComboPerrosMouseClicked(evt);
+                perroComboPerrosMouseClicked(evt);
             }
         });
-        PerroComboPerros.addActionListener(new java.awt.event.ActionListener() {
+        perroComboPerros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroComboPerrosActionPerformed(evt);
-            }
-        });
-
-        PerroBtnEditar.setText("Editar");
-        PerroBtnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroBtnEditarActionPerformed(evt);
+                perroComboPerrosActionPerformed(evt);
             }
         });
 
-        PerroBtnGuardar.setText("Guardar");
-        PerroBtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        perroBtnEditar.setText("Editar");
+        perroBtnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerroBtnGuardarActionPerformed(evt);
+                perroBtnEditarActionPerformed(evt);
+            }
+        });
+
+        perroBtnGuardar.setText("Guardar");
+        perroBtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perroBtnGuardarActionPerformed(evt);
             }
         });
 
@@ -963,7 +963,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        PerroLblComentarios.setText("Comentarios");
+        perroLblComentarios.setText("Comentarios");
 
         javax.swing.GroupLayout panPerrosLayout = new javax.swing.GroupLayout(panPerros);
         panPerros.setLayout(panPerrosLayout);
@@ -974,30 +974,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PerroLblPerros)
-                            .addComponent(PerroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(perroLblPerros)
+                            .addComponent(perroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panPerrosLayout.createSequentialGroup()
                         .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(PerroBtnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(perroBtnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
                         .addGap(12, 12, 12)))
                 .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addGap(268, 268, 268)
                         .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(PerroBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PerroBtnAgregar)))
+                            .addComponent(perroBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perroBtnAgregar)))
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PerroLblAdvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(perroLblAdvertencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(panPerrosLayout.createSequentialGroup()
-                                .addComponent(PerroTxtComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(perroTxtComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(panPerrosLayout.createSequentialGroup()
-                                .addComponent(PerroLblComentarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(perroLblComentarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PerroPanInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(perroPanInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(152, 152, 152))
         );
         panPerrosLayout.setVerticalGroup(
@@ -1005,46 +1005,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(panPerrosLayout.createSequentialGroup()
                 .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panPerrosLayout.createSequentialGroup()
-                        .addContainerGap(206, Short.MAX_VALUE)
-                        .addComponent(PerroLblComentarios))
+                        .addContainerGap(367, Short.MAX_VALUE)
+                        .addComponent(perroLblComentarios))
                     .addGroup(panPerrosLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(panPerrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PerroPanInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perroPanInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panPerrosLayout.createSequentialGroup()
-                                .addComponent(PerroLblPerros)
+                                .addComponent(perroLblPerros)
                                 .addGap(18, 18, 18)
-                                .addComponent(PerroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(perroComboPerros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(PerroBtnEditar)
+                                .addComponent(perroBtnEditar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnBorrar)))
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                        .addGap(0, 172, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PerroTxtComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(perroTxtComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PerroLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(perroLblAdvertencia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PerroBtnGuardar)
+                .addComponent(perroBtnGuardar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PerroBtnAgregar)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addComponent(perroBtnAgregar)
+                .addContainerGap(345, Short.MAX_VALUE))
         );
 
-        Panel.addTab("Perros", panPerros);
+        panel.addTab("Perros", panPerros);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 901, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 901, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 8, Short.MAX_VALUE))
         );
 
@@ -1053,14 +1053,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PerroBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnAgregarActionPerformed
+    private void perroBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroBtnAgregarActionPerformed
         if (!agregarMascotaSeleccionada) {
             mostrarAgregarMascota();
         } else {
-            Mascota mascotaAgregar = new Mascota(PerroTxtNombre.getText(),
-                    Integer.parseInt(PerroSpinAltura.getValue().toString()),
-                    Double.parseDouble(PerroSpinPeso.getValue().toString()),
-                    PerroTxtComentarios.getText(),(String)comboTipoMascota
+            Mascota mascotaAgregar = new Mascota(perroTxtNombre.getText(),
+                    Integer.parseInt(perroSpinAltura.getValue().toString()),
+                    Double.parseDouble(perroSpinPeso.getValue().toString()),
+                    perroTxtComentarios.getText(),(String)comboTipoMascota
                             .getSelectedItem());
             if(validarFormularioMascota(mascotaAgregar)) {
                 if (rutaImagenAgregar.equals("")) {
@@ -1079,30 +1079,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     rutaImagenAgregar = "";
                 }
                 sistema.anadirMascota(mascotaAgregar);
-                PerroTxtNombre.setText("");
-                PerroSpinPeso.setValue((Object) 0.0);
-                PerroSpinAltura.setValue((Object) 0.0);
-                PerroTxtComentarios.setText("");
-                PerroLblAdvertencia.setText("");
+                perroTxtNombre.setText("");
+                perroSpinPeso.setValue((Object) 0.0);
+                perroSpinAltura.setValue((Object) 0.0);
+                perroTxtComentarios.setText("");
+                perroLblAdvertencia.setText("");
                 ocultarAgregarMascota();
                 setearListaMascotas();
-                PerroComboPerros.setSelectedIndex(sistema.getMascotas().size() - 1);
+                perroComboPerros.setSelectedIndex(sistema.getMascotas().size() - 1);
                 btnBorrar.setVisible(true);
             }
         }
-    }//GEN-LAST:event_PerroBtnAgregarActionPerformed
+    }//GEN-LAST:event_perroBtnAgregarActionPerformed
 
     
     private boolean validarFormularioMascota(Mascota mascota) {
         boolean resultado = false;
         if (!mascota.nombreValido()) {
-            PerroLblAdvertencia.setText("Por favor ingrese un nombre");
+            perroLblAdvertencia.setText("Por favor ingrese un nombre");
             
         } else if (!mascota.alturaValida()) {
-            PerroLblAdvertencia.setText("Por favor ingrese una altura válida");
+            perroLblAdvertencia.setText("Por favor ingrese una altura válida");
             
         } else if (!mascota.pesoValido()) {
-            PerroLblAdvertencia.setText("Por favor ingrese un peso válido");
+            perroLblAdvertencia.setText("Por favor ingrese un peso válido");
             
         } else {
             resultado = true;
@@ -1121,37 +1121,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         return result;
     }
-    private void UsuarioBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioBtnAgregarActionPerformed
+    private void usuarioBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioBtnAgregarActionPerformed
         if (agregarUsuarioSeleccionado == false) {
             mostrarAgregarUsuario();
         } else {
-            if (UsuarioTxtNombre.getText().equals("")) {
-                UsuarioLblAdvertencia.setText("Por favor ingrese un nombre para el usuario");
-            } else if (UsuarioTxtMail.getText().equals("")) {
-                UsuarioLblAdvertencia.setText("Por favor ingrese un email para el usuario");
-            } else if (!isValidEmailAddress(UsuarioTxtMail.getText())) {
-                UsuarioLblAdvertencia.setText("Por favor ingrese un email correcto");
+            if (usuarioTxtNombre.getText().equals("")) {
+                usuarioLblAdvertencia.setText("Por favor ingrese un nombre para el usuario");
+            } else if (usuarioTxtMail.getText().equals("")) {
+                usuarioLblAdvertencia.setText("Por favor ingrese un email para el usuario");
+            } else if (!isValidEmailAddress(usuarioTxtMail.getText())) {
+                usuarioLblAdvertencia.setText("Por favor ingrese un email correcto");
             } else {
-                Usuario usuarioAgregar = new Usuario(UsuarioTxtNombre.getText(), 
-                        UsuarioTxtMail.getText());
-                sistema.AnadirUsuario(usuarioAgregar);
-                UsuarioTxtNombre.setText("");
-                UsuarioTxtMail.setText("");
+                Usuario usuarioAgregar = new Usuario(usuarioTxtNombre.getText(), 
+                        usuarioTxtMail.getText());
+                sistema.anadirUsuario(usuarioAgregar);
+                usuarioTxtNombre.setText("");
+                usuarioTxtMail.setText("");
                 ocultarAgregarUsuario();
                 resetearListaUsuarios();
-                UsuarioLblAdvertencia.setText("");
+                usuarioLblAdvertencia.setText("");
             }
         }
-    }//GEN-LAST:event_UsuarioBtnAgregarActionPerformed
+    }//GEN-LAST:event_usuarioBtnAgregarActionPerformed
 
-    private void UsuarioComboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioComboUsuariosActionPerformed
+    private void usuarioComboUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioComboUsuariosActionPerformed
         ocultarAgregarUsuario();
-        if (UsuarioComboUsuarios.getItemCount() > 0) {
+        if (usuarioComboUsuarios.getItemCount() > 0) {
             Usuario usuarioSeleccionado = sistema.buscarUsuarioPorNombre(
-                    UsuarioComboUsuarios.getSelectedItem().toString());
-            UsuarioLblNombre.setText("Nombre: " + usuarioSeleccionado
+                    usuarioComboUsuarios.getSelectedItem().toString());
+            usuarioLblNombre.setText("Nombre: " + usuarioSeleccionado
                     .getNombre());
-            UsuarioLblMail.setText("Mail: " + usuarioSeleccionado.getMail());
+            usuarioLblMail.setText("Mail: " + usuarioSeleccionado.getMail());
             int cantidadActividades = usuarioSeleccionado.getActividades().size();
             String[] arrayActividades = new String[cantidadActividades];
             String[] arrayFechas = new String[cantidadActividades];
@@ -1163,155 +1163,155 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 arrayFechas[i] = fechaActividad.getDia() + "/" + 
                         fechaActividad.getMes() + "/" + fechaActividad.getAno();
             }
-            UsuarioLstActividades.setListData(arrayActividades);
-            UsuarioLstFechas.setListData(arrayFechas);
+            usuarioLstActividades.setListData(arrayActividades);
+            usuarioLstFechas.setListData(arrayFechas);
         } else {
-            UsuarioLblNombre.setText("Nombre: ");
-            UsuarioLblMail.setText("Mail: ");
+            usuarioLblNombre.setText("Nombre: ");
+            usuarioLblMail.setText("Mail: ");
             String[] arrayVacio = new String[0];
-            UsuarioLstActividades.setListData(arrayVacio);
-            UsuarioLstFechas.setListData(arrayVacio);
+            usuarioLstActividades.setListData(arrayVacio);
+            usuarioLstFechas.setListData(arrayVacio);
         }
-    }//GEN-LAST:event_UsuarioComboUsuariosActionPerformed
+    }//GEN-LAST:event_usuarioComboUsuariosActionPerformed
 
     private void setearListaDeVeterinarias() {
-        if (CalComboVeterinaria.getItemCount() > 0) {
-            CalComboVeterinaria.removeAllItems();
+        if (calComboVeterinaria.getItemCount() > 0) {
+            calComboVeterinaria.removeAllItems();
         }
         for (int i = 0; i < sistema.getVeterinarias().size(); i++) {
-            CalComboVeterinaria.addItem(sistema.getVeterinarias().get(i).getNombre());
+            calComboVeterinaria.addItem(sistema.getVeterinarias().get(i).getNombre());
         }
     }
 
     private void mostrarAgregarMascota() {
         agregarMascotaSeleccionada = true;
         mostrarFormularioMascota();
-        PerroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
+        perroLblFoto.setIcon(crearIcono(PERRO_POR_DEFECTO, 100));
     }
     
     private void mostrarFormularioMascota() {
-        PerroLblNombre.setText("Nombre:");
-        PerroLblPeso.setText("Peso:");
-        PerroLblAltura.setText("Altura:");
-        PerroLblComentarios.setText("Comentarios:");
+        perroLblNombre.setText("Nombre:");
+        perroLblPeso.setText("Peso:");
+        perroLblAltura.setText("Altura:");
+        perroLblComentarios.setText("Comentarios:");
         labelTipo.setText("Tipo:");
-        PerroTxtNombre.setVisible(true);
-        PerroSpinPeso.setVisible(true);
-        PerroSpinAltura.setVisible(true);
-        PerroTxtComentarios.setVisible(true);
-        PerroLblFotoBoton.setVisible(true);
-        PerroBtnExaminar.setVisible(true);
+        perroTxtNombre.setVisible(true);
+        perroSpinPeso.setVisible(true);
+        perroSpinAltura.setVisible(true);
+        perroTxtComentarios.setVisible(true);
+        perroLblFotoBoton.setVisible(true);
+        perroBtnExaminar.setVisible(true);
         comboTipoMascota.setVisible(true);
     }
 
     private void ocultarAgregarMascota() {
-        PerroTxtNombre.setVisible(false);
-        PerroTxtNombre.setText("");
-        PerroSpinPeso.setVisible(false);
-        PerroSpinPeso.setValue(0.0);
-        PerroSpinAltura.setVisible(false);
-        PerroSpinAltura.setValue(0.0);
-        PerroTxtComentarios.setVisible(false);
-        PerroTxtComentarios.setText("");
+        perroTxtNombre.setVisible(false);
+        perroTxtNombre.setText("");
+        perroSpinPeso.setVisible(false);
+        perroSpinPeso.setValue(0.0);
+        perroSpinAltura.setVisible(false);
+        perroSpinAltura.setValue(0.0);
+        perroTxtComentarios.setVisible(false);
+        perroTxtComentarios.setText("");
         comboTipoMascota.setSelectedIndex(0);
         comboTipoMascota.setVisible(false);
-        PerroLblFotoBoton.setVisible(false);
-        PerroBtnExaminar.setVisible(false);
+        perroLblFotoBoton.setVisible(false);
+        perroBtnExaminar.setVisible(false);
         agregarMascotaSeleccionada = false;
     }
 
     private void mostrarEditarMascota() {
-        PerroBtnGuardar.setVisible(true);
-        PerroBtnAgregar.setVisible(false);
+        perroBtnGuardar.setVisible(true);
+        perroBtnAgregar.setVisible(false);
         agregarMascotaSeleccionada = true;
         mostrarFormularioMascota();
-        Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(PerroComboPerros
+        Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(perroComboPerros
                 .getSelectedItem().toString());
-        PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
-        PerroTxtNombre.setText(mascotaSeleccionada.getNombre());
-        PerroSpinPeso.setValue(mascotaSeleccionada.getPeso());
-        PerroSpinAltura.setValue(mascotaSeleccionada.getAltura());
-        PerroTxtComentarios.setText("" + mascotaSeleccionada.getComentarios());
+        perroLblFoto.setIcon(mascotaSeleccionada.getFoto());
+        perroTxtNombre.setText(mascotaSeleccionada.getNombre());
+        perroSpinPeso.setValue(mascotaSeleccionada.getPeso());
+        perroSpinAltura.setValue(mascotaSeleccionada.getAltura());
+        perroTxtComentarios.setText("" + mascotaSeleccionada.getComentarios());
         comboTipoMascota.setSelectedItem(mascotaSeleccionada.getTipo());
     }
 
     private void setearListaMascotas() {
-        if (PerroComboPerros.getItemCount() > 0) {
-            PerroComboPerros.removeAllItems();
+        if (perroComboPerros.getItemCount() > 0) {
+            perroComboPerros.removeAllItems();
         }
-        if (CalComboPerro.getItemCount() > 0) {
-            CalComboPerro.removeAllItems();
+        if (calComboPerro.getItemCount() > 0) {
+            calComboPerro.removeAllItems();
         }
         for (int i = 0; i < sistema.getMascotas().size(); i++) {
-            PerroComboPerros.addItem(sistema.getMascotas().get(i).getNombre());
-            CalComboPerro.addItem(sistema.getMascotas().get(i).getNombre());
+            perroComboPerros.addItem(sistema.getMascotas().get(i).getNombre());
+            calComboPerro.addItem(sistema.getMascotas().get(i).getNombre());
         }
 
     }
 
     private void mostrarAgregarUsuario() {
         agregarUsuarioSeleccionado = true;
-        UsuarioLblNombre.setText("Nombre:");
-        UsuarioLblMail.setText("Mail:");
-        UsuarioTxtNombre.setVisible(true);
-        UsuarioTxtMail.setVisible(true);
+        usuarioLblNombre.setText("Nombre:");
+        usuarioLblMail.setText("Mail:");
+        usuarioTxtNombre.setVisible(true);
+        usuarioTxtMail.setVisible(true);
     }
 
     private void ocultarAgregarUsuario() {
-        UsuarioTxtNombre.setVisible(false);
-        UsuarioTxtMail.setVisible(false);
+        usuarioTxtNombre.setVisible(false);
+        usuarioTxtMail.setVisible(false);
         agregarUsuarioSeleccionado = false;
     }
 
     private void resetearListaUsuarios() {
-        if (UsuarioComboUsuarios.getItemCount() > 0) {
-            UsuarioComboUsuarios.removeAllItems();
+        if (usuarioComboUsuarios.getItemCount() > 0) {
+            usuarioComboUsuarios.removeAllItems();
         }
-        if (CalComboUsuario.getItemCount() > 0) {
-            CalComboUsuario.removeAllItems();
+        if (calComboUsuario.getItemCount() > 0) {
+            calComboUsuario.removeAllItems();
         }
         for (int i = 0; i < sistema.getUsuarios().size(); i++) {
-            UsuarioComboUsuarios.addItem(sistema.getUsuarios().get(i)
+            usuarioComboUsuarios.addItem(sistema.getUsuarios().get(i)
                     .getNombre());
-            CalComboUsuario.addItem(sistema.getUsuarios().get(i).getNombre());
+            calComboUsuario.addItem(sistema.getUsuarios().get(i).getNombre());
         }
     }
 
-    private void UsuarioTxtMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioTxtMailActionPerformed
+    private void usuarioTxtMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTxtMailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioTxtMailActionPerformed
+    }//GEN-LAST:event_usuarioTxtMailActionPerformed
 
-    private void PanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelMouseClicked
+    private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_PanelMouseClicked
+    }//GEN-LAST:event_panelMouseClicked
 
-    private void PerroComboPerrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerroComboPerrosMouseClicked
+    private void perroComboPerrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perroComboPerrosMouseClicked
 
-    }//GEN-LAST:event_PerroComboPerrosMouseClicked
+    }//GEN-LAST:event_perroComboPerrosMouseClicked
 
-    private void PerroComboPerrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroComboPerrosActionPerformed
+    private void perroComboPerrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroComboPerrosActionPerformed
         ocultarAgregarMascota();
-        if (PerroComboPerros.getItemCount() > 0) {
+        if (perroComboPerros.getItemCount() > 0) {
             Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(
-                    PerroComboPerros.getSelectedItem().toString());
-            PerroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
-            PerroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
-            PerroLblAltura.setText("Mide:       " + mascotaSeleccionada
+                    perroComboPerros.getSelectedItem().toString());
+            perroLblNombre.setText(mascotaSeleccionada.getNombre().toUpperCase());
+            perroLblPeso.setText("Pesa:       " + mascotaSeleccionada.getPeso());
+            perroLblAltura.setText("Mide:       " + mascotaSeleccionada
                     .getAltura());
-            PerroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
+            perroLblComentarios.setText("" + mascotaSeleccionada.getComentarios());
             labelTipo.setText("Tipo:       " + mascotaSeleccionada.getTipo());
-            PerroLblFoto.setIcon(mascotaSeleccionada.getFoto());
-            PerroBtnGuardar.setVisible(false);
-            PerroBtnEditar.setVisible(true);
-            PerroBtnAgregar.setVisible(true);
+            perroLblFoto.setIcon(mascotaSeleccionada.getFoto());
+            perroBtnGuardar.setVisible(false);
+            perroBtnEditar.setVisible(true);
+            perroBtnAgregar.setVisible(true);
         } else {
-            PerroLblNombre.setText("Nombre: ");
-            PerroLblPeso.setText("Peso ");
-            PerroLblAltura.setText("Altura: ");
-            PerroLblComentarios.setText("Comentarios: ");
+            perroLblNombre.setText("Nombre: ");
+            perroLblPeso.setText("Peso ");
+            perroLblAltura.setText("Altura: ");
+            perroLblComentarios.setText("Comentarios: ");
             labelTipo.setText("Tipo: ");
             try {
-                PerroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
+                perroLblFoto.setIcon(new ImageIcon(ImageIO.read(this.getClass()
                         .getResource(PERRO_POR_DEFECTO))
                         .getScaledInstance(100, 100, 
                                 java.awt.Image.SCALE_SMOOTH)));
@@ -1319,24 +1319,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 System.out.println(ex);
             }
         }
-    }//GEN-LAST:event_PerroComboPerrosActionPerformed
+    }//GEN-LAST:event_perroComboPerrosActionPerformed
 
-    private void PerroBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnEditarActionPerformed
+    private void perroBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroBtnEditarActionPerformed
         mostrarEditarMascota();
-    }//GEN-LAST:event_PerroBtnEditarActionPerformed
+    }//GEN-LAST:event_perroBtnEditarActionPerformed
 
-    private void PerroBtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnGuardarActionPerformed
-        String valor = PerroSpinAltura.getValue() + "";
+    private void perroBtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroBtnGuardarActionPerformed
+        String valor = perroSpinAltura.getValue() + "";
         double altura = Double.parseDouble(valor);
-        valor = PerroSpinPeso.getValue() + "";
+        valor = perroSpinPeso.getValue() + "";
         double peso = Double.parseDouble(valor);
         
-        Mascota nuevosValores = new Mascota(PerroTxtNombre.getText(),
-                altura, peso, PerroTxtComentarios.getText(), 
+        Mascota nuevosValores = new Mascota(perroTxtNombre.getText(),
+                altura, peso, perroTxtComentarios.getText(), 
                 (String)comboTipoMascota.getSelectedItem());
         if(validarFormularioMascota(nuevosValores)) {
             Mascota mascotaSeleccionada = sistema.buscarMascotaPorNombre(
-                PerroComboPerros.getSelectedItem().toString());
+                perroComboPerros.getSelectedItem().toString());
             mascotaSeleccionada.actualizar(nuevosValores);
         if (!rutaImagenAgregar.equals("")) {
             File imagen = new File(rutaImagenAgregar);
@@ -1344,16 +1344,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             rutaImagenAgregar = "";
         }
         ocultarAgregarMascota();
-        int pos = PerroComboPerros.getSelectedIndex();
+        int pos = perroComboPerros.getSelectedIndex();
         setearListaMascotas();
-        PerroComboPerros.setSelectedIndex(pos);
+        perroComboPerros.setSelectedIndex(pos);
         }
-    }//GEN-LAST:event_PerroBtnGuardarActionPerformed
+    }//GEN-LAST:event_perroBtnGuardarActionPerformed
 
-    private void CalBtnAgregarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnAgregarDatosActionPerformed
+    private void calBtnAgregarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnAgregarDatosActionPerformed
         try {
             Usuario persona = new Usuario("Alex", "alexkmass@gmail.com");
-            sistema.AnadirUsuario(persona);
+            sistema.anadirUsuario(persona);
             Mascota rasta = new Mascota("Rasta", 50, 23, 
                     "Es un buen perro, le gusta comer", "Perro");
             rasta.setFoto(new ImageIcon(ImageIO.read(this.getClass()
@@ -1361,30 +1361,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
             sistema.anadirMascota(rasta);
             Usuario persona2 = new Usuario("Marcelo", "marcelo@gmail.com");
-            sistema.AnadirUsuario(persona2);
+            sistema.anadirUsuario(persona2);
             Mascota ori = new Mascota("Ori", 50, 23, "Es un buen perro", "Perro");
             ori.setFoto(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource("images/perroFoto.png"))
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
             sistema.anadirMascota(ori);
             Fecha fecha = new Fecha(22, 11, 2018);
-            sistema.AnadirFecha(fecha);
+            sistema.anadirFecha(fecha);
             LocalTime hora = LocalTime.now();
             Paseo act = new Paseo("Paseo Rasta", persona, rasta, 0.0, false, 
                     hora, fecha);
             act.setRuta(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource("images/rutaPorDefecto.png"))
                     .getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH)));
-            sistema.AnadirActividad(act);
+            sistema.anadirActividad(act);
             sistema.getPaseos().add(act);
             hora = LocalTime.now();
             Alimentacion act2 = new Alimentacion("Alimentación de Ori", persona, 
                     ori, "DogChow", false, hora, fecha);
-            sistema.AnadirActividad(act2);
+            sistema.anadirActividad(act2);
             sistema.getAlimentaciones().add(act2);
             ActividadCualquiera act3 = new ActividadCualquiera(
                     "Ir a una cita con Rasta", persona, rasta, true, hora, fecha);
-            sistema.AnadirActividad(act3);
+            sistema.anadirActividad(act3);
             sistema.getActsCualquieras().add(act3);
             Veterinaria vet1 = new Veterinaria("Pocitos", new ArrayList<>(), 8, 16);
             sistema.getVeterinarias().add(vet1);
@@ -1394,7 +1394,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             sistema.getVeterinarias().add(vet3);
             VisitaVeterinaria visita = new VisitaVeterinaria("Visita a VetCordon", 
                     hora, persona, rasta, false, fecha, vet3, "Rasta tiene fiebre");
-            sistema.AnadirActividad(visita);
+            sistema.anadirActividad(visita);
             sistema.getVisitas().add(visita);
         } catch (IOException ex) {
             System.out.println(ex);
@@ -1402,10 +1402,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         resetearPestanaPerros();
         inicializarPestanaUsuarios();
         setearListaDeVeterinarias();
-        CalBtnAgregarDatos.setVisible(false);
-        int dia = CalDayChooser.getDay();
-        int mes = CalMonthChooser.getMonth() + 1;
-        int ano = CalYearChooser.getYear();
+        calBtnAgregarDatos.setVisible(false);
+        int dia = calDayChooser.getDay();
+        int mes = calMonthChooser.getMonth() + 1;
+        int ano = calYearChooser.getYear();
         ArrayList<Actividad> listaActividades = sistema.listaActividadesPorFecha(
                 dia, mes, ano);
         String[] arrActividades = new String[listaActividades.size()];
@@ -1413,13 +1413,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Actividad act = listaActividades.get(i);
             arrActividades[i] = act.getNombre();
         }
-        CalLstActividades.setListData(arrActividades);
+        calLstActividades.setListData(arrActividades);
 
-        CalLblFechaResp.setText(dia + "/" + mes + "/" + ano);
+        calLblFechaResp.setText(dia + "/" + mes + "/" + ano);
         fechaSeleccionada = new Fecha(dia, mes, ano);
-    }//GEN-LAST:event_CalBtnAgregarDatosActionPerformed
+    }//GEN-LAST:event_calBtnAgregarDatosActionPerformed
 
-    private void CalBtnRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnRutaActionPerformed
+    private void calBtnRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnRutaActionPerformed
         JFileChooser elegirImagen = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg", "gif", "png");
         elegirImagen.setFileFilter(filter);
@@ -1428,186 +1428,186 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             File imgSeleccionada = elegirImagen.getSelectedFile();
             rutaImagenRuta = imgSeleccionada.getAbsolutePath();
         } else {
-            CalLblAdvertencia.setText("No se pudo ingresar la ruta correctamente");
+            calLblAdvertencia.setText("No se pudo ingresar la ruta correctamente");
         }
-    }//GEN-LAST:event_CalBtnRutaActionPerformed
+    }//GEN-LAST:event_calBtnRutaActionPerformed
 
-    private void CalBtnRealizadaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnRealizadaNoActionPerformed
-        CalPanRuta.setVisible(false);
-    }//GEN-LAST:event_CalBtnRealizadaNoActionPerformed
+    private void calBtnRealizadaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnRealizadaNoActionPerformed
+        calPanRuta.setVisible(false);
+    }//GEN-LAST:event_calBtnRealizadaNoActionPerformed
 
-    private void CalBtnRealizadaSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnRealizadaSiActionPerformed
-        if (CalComboTipo.getSelectedIndex() == 0) {
-            CalPanRuta.setVisible(true);
+    private void calBtnRealizadaSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnRealizadaSiActionPerformed
+        if (calComboTipo.getSelectedIndex() == 0) {
+            calPanRuta.setVisible(true);
         } else {
-            CalPanRuta.setVisible(false);
+            calPanRuta.setVisible(false);
         }
-    }//GEN-LAST:event_CalBtnRealizadaSiActionPerformed
+    }//GEN-LAST:event_calBtnRealizadaSiActionPerformed
 
-    private void CalBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnEditarActionPerformed
-        CalLstActividades.setEnabled(false);
-        String nombreAct = CalLstActividades.getSelectedValue();
+    private void calBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnEditarActionPerformed
+        calLstActividades.setEnabled(false);
+        String nombreAct = calLstActividades.getSelectedValue();
         Paseo paseo = sistema.buscarPaseoPorNombre(nombreAct);
-        CalBtnVeterinariaNo.setSelected(true);
-        CalBtnVeterinariaNoActionPerformed(evt);
-        CalBtnGroupRealizada.clearSelection();
-        CalBtnRealizadaNo.setSelected(true);
+        calBtnVeterinariaNo.setSelected(true);
+        calBtnVeterinariaNoActionPerformed(evt);
+        calBtnGroupRealizada.clearSelection();
+        calBtnRealizadaNo.setSelected(true);
         if (paseo != null) {
             if (paseo.getFueRealizado()) {
-                CalBtnRealizadaSi.setSelected(true);
+                calBtnRealizadaSi.setSelected(true);
             }
-            CalPanRuta.setVisible(true);
-            CalComboTipo.setSelectedIndex(0);
+            calPanRuta.setVisible(true);
+            calComboTipo.setSelectedIndex(0);
             if (paseo.getFueRealizado()) {
-                CalPanRuta.setVisible(true);
+                calPanRuta.setVisible(true);
             }
             if (paseo.getRuta() == null) {
-                CalBtnVerRuta.setVisible(false);
+                calBtnVerRuta.setVisible(false);
             }
-            CalTxtNombreResp.setText(nombreAct);
-            CalComboUsuario.setSelectedItem(paseo.getUsuario().getNombre());
-            CalComboPerro.setSelectedItem(paseo.getMascota().getNombre());
-            CalLblFechaResp.setText(paseo.getFecha().getDia() + "/" + 
+            calTxtNombreResp.setText(nombreAct);
+            calComboUsuario.setSelectedItem(paseo.getUsuario().getNombre());
+            calComboPerro.setSelectedItem(paseo.getMascota().getNombre());
+            calLblFechaResp.setText(paseo.getFecha().getDia() + "/" + 
                     paseo.getFecha().getMes() + "/" + paseo.getFecha().getAno());
-            CalComboHora.setSelectedIndex(1);
+            calComboHora.setSelectedIndex(1);
             int hora = paseo.getHora().getHour();
             String horaString = "" + hora;
             if (hora < 10) {
                 horaString = "0" + horaString;
             }
-            CalPanSpinHora.setValue((Object) horaString);
-            CalPanSpinMinutos.setValue(paseo.getHora().getMinute());
-            sistema.EliminarActividad(paseo);
+            calPanSpinHora.setValue((Object) horaString);
+            calPanSpinMinutos.setValue(paseo.getHora().getMinute());
+            sistema.eliminarActividad(paseo);
             sistema.getPaseos().remove(paseo);
         } else {
             Alimentacion alim = sistema.buscarAlimentacionPorNombre(nombreAct);
             if (alim != null) {
                 if (alim.getFueRealizado()) {
-                    CalBtnRealizadaSi.setSelected(true);
+                    calBtnRealizadaSi.setSelected(true);
                 }
-                CalComboTipo.setSelectedIndex(1);
-                CalTxtNombreResp.setText(nombreAct);
-                CalComboUsuario.setSelectedItem(alim.getUsuario().getNombre());
-                CalComboPerro.setSelectedItem(alim.getMascota().getNombre());
-                CalLblFechaResp.setText(alim.getFecha().getDia() + "/" + alim
+                calComboTipo.setSelectedIndex(1);
+                calTxtNombreResp.setText(nombreAct);
+                calComboUsuario.setSelectedItem(alim.getUsuario().getNombre());
+                calComboPerro.setSelectedItem(alim.getMascota().getNombre());
+                calLblFechaResp.setText(alim.getFecha().getDia() + "/" + alim
                         .getFecha().getMes() + "/" + alim.getFecha().getAno());
-                CalComboHora.setSelectedIndex(1);
+                calComboHora.setSelectedIndex(1);
                 int hora = alim.getHora().getHour();
                 String horaString = "" + hora;
                 if (hora < 10) {
                     horaString = "0" + horaString;
                 }
-                CalPanSpinHora.setValue((Object) horaString);
-                CalPanSpinMinutos.setValue(alim.getHora().getMinute());
-                CalTxtTipoAlimento.setText(alim.getTipoAlimento());
-                CalTxtTipoAlimento.setVisible(true);
-                sistema.EliminarActividad(alim);
+                calPanSpinHora.setValue((Object) horaString);
+                calPanSpinMinutos.setValue(alim.getHora().getMinute());
+                calTxtTipoAlimento.setText(alim.getTipoAlimento());
+                calTxtTipoAlimento.setVisible(true);
+                sistema.eliminarActividad(alim);
                 sistema.getAlimentaciones().remove(alim);
             } else {
                 VisitaVeterinaria visita = sistema.buscarVisitaPorNombre(nombreAct);
                 if (visita != null) {
                     if (visita.getFueRealizado()) {
-                        CalBtnRealizadaSi.setSelected(true);
+                        calBtnRealizadaSi.setSelected(true);
                     }
-                    CalComboTipo.setSelectedIndex(2);
-                    CalTxtNombreResp.setText(nombreAct);
-                    CalComboUsuario.setSelectedItem(visita.getUsuario().getNombre());
-                    CalComboPerro.setSelectedItem(visita.getMascota().getNombre());
-                    CalLblFechaResp.setText(visita.getFecha().getDia() + "/" + 
+                    calComboTipo.setSelectedIndex(2);
+                    calTxtNombreResp.setText(nombreAct);
+                    calComboUsuario.setSelectedItem(visita.getUsuario().getNombre());
+                    calComboPerro.setSelectedItem(visita.getMascota().getNombre());
+                    calLblFechaResp.setText(visita.getFecha().getDia() + "/" + 
                             visita.getFecha().getMes() + "/" + visita.getFecha()
                                     .getAno());
-                    CalComboHora.setSelectedIndex(1);
+                    calComboHora.setSelectedIndex(1);
                     int hora = visita.getHora().getHour();
                     String horaString = "" + hora;
                     if (hora < 10) {
                         horaString = "0" + horaString;
                     }
-                    CalPanSpinHora.setValue((Object) horaString);
-                    CalPanSpinMinutos.setValue(visita.getHora().getMinute());
-                    CalBtnVeterinariaSi.setSelected(true);
-                    CalComboVeterinaria.setSelectedItem(visita.getVeterinaria()
+                    calPanSpinHora.setValue((Object) horaString);
+                    calPanSpinMinutos.setValue(visita.getHora().getMinute());
+                    calBtnVeterinariaSi.setSelected(true);
+                    calComboVeterinaria.setSelectedItem(visita.getVeterinaria()
                             .getNombre());
-                    CalComboMotivo.setSelectedItem(visita.getMotivo());
-                    CalPanVeterinaria.setVisible(true);
-                    CalLblHorarios.setVisible(true);
+                    calComboMotivo.setSelectedItem(visita.getMotivo());
+                    calPanVeterinaria.setVisible(true);
+                    calLblHorarios.setVisible(true);
                     visita.getVeterinaria().getActividadesAgendadas()
                             .remove(visita);
-                    sistema.EliminarActividad(visita);
+                    sistema.eliminarActividad(visita);
                     sistema.getVisitas().remove(visita);
                 } else {
                     ActividadCualquiera actividad = sistema
                             .buscarActCualquieraPorNombre(nombreAct);
                     if (actividad.getFueRealizado()) {
-                        CalBtnRealizadaSi.setSelected(true);
+                        calBtnRealizadaSi.setSelected(true);
                     }
-                    CalComboTipo.setSelectedIndex(2);
-                    CalTxtNombreResp.setText(nombreAct);
-                    CalComboUsuario.setSelectedItem(actividad.getUsuario()
+                    calComboTipo.setSelectedIndex(2);
+                    calTxtNombreResp.setText(nombreAct);
+                    calComboUsuario.setSelectedItem(actividad.getUsuario()
                             .getNombre());
-                    CalComboPerro.setSelectedItem(actividad.getMascota()
+                    calComboPerro.setSelectedItem(actividad.getMascota()
                             .getNombre());
-                    CalLblFechaResp.setText(actividad.getFecha().getDia() + "/" 
+                    calLblFechaResp.setText(actividad.getFecha().getDia() + "/" 
                             + actividad.getFecha().getMes() + "/" 
                             + actividad.getFecha().getAno());
-                    CalComboHora.setSelectedIndex(1);
+                    calComboHora.setSelectedIndex(1);
                     int hora = actividad.getHora().getHour();
                     String horaString = "" + hora;
                     if (hora < 10) {
                         horaString = "0" + horaString;
                     }
-                    CalPanSpinHora.setValue((Object) horaString);
-                    CalPanSpinMinutos.setValue(actividad.getHora().getMinute());
-                    CalTxtTipoAlimento.setVisible(true);
-                    sistema.EliminarActividad(actividad);
+                    calPanSpinHora.setValue((Object) horaString);
+                    calPanSpinMinutos.setValue(actividad.getHora().getMinute());
+                    calTxtTipoAlimento.setVisible(true);
+                    sistema.eliminarActividad(actividad);
                     sistema.getActsCualquieras().remove(actividad);
                 }
             }
         }
-        CalLblAdvertencia.setText("Edite la actividad y agreguela");
-        CalBtnEditar.setVisible(false);
-    }//GEN-LAST:event_CalBtnEditarActionPerformed
+        calLblAdvertencia.setText("Edite la actividad y agreguela");
+        calBtnEditar.setVisible(false);
+    }//GEN-LAST:event_calBtnEditarActionPerformed
 
-    private void CalTxtTipoAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalTxtTipoAlimentoActionPerformed
+    private void calTxtTipoAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calTxtTipoAlimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CalTxtTipoAlimentoActionPerformed
+    }//GEN-LAST:event_calTxtTipoAlimentoActionPerformed
 
-    private void CalComboVeterinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalComboVeterinariaActionPerformed
-        Veterinaria vet = sistema.buscarVetPorNombre((String) CalComboVeterinaria
+    private void calComboVeterinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calComboVeterinariaActionPerformed
+        Veterinaria vet = sistema.buscarVetPorNombre((String) calComboVeterinaria
                 .getSelectedItem());
-        CalLblHorarios.setVisible(true);
-        CalLblHorarios.setText("Horarios: " + vet.getHoraInicial() + " - " + 
+        calLblHorarios.setVisible(true);
+        calLblHorarios.setText("Horarios: " + vet.getHoraInicial() + " - " + 
                 vet.getHoraFinal());
-    }//GEN-LAST:event_CalComboVeterinariaActionPerformed
+    }//GEN-LAST:event_calComboVeterinariaActionPerformed
 
-    private void CalBtnVeterinariaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnVeterinariaNoActionPerformed
-        CalComboVeterinaria.setVisible(false);
-        CalComboMotivo.setVisible(false);
-        CalLblMotivo.setVisible(false);
-        CalLblHorarios.setVisible(false);
-    }//GEN-LAST:event_CalBtnVeterinariaNoActionPerformed
+    private void calBtnVeterinariaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnVeterinariaNoActionPerformed
+        calComboVeterinaria.setVisible(false);
+        calComboMotivo.setVisible(false);
+        calLblMotivo.setVisible(false);
+        calLblHorarios.setVisible(false);
+    }//GEN-LAST:event_calBtnVeterinariaNoActionPerformed
 
-    private void CalBtnVeterinariaSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnVeterinariaSiActionPerformed
-        CalComboVeterinaria.setVisible(true);
-        CalComboMotivo.setVisible(true);
-        CalLblMotivo.setVisible(true);
-        CalLblHorarios.setVisible(true);
-    }//GEN-LAST:event_CalBtnVeterinariaSiActionPerformed
+    private void calBtnVeterinariaSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnVeterinariaSiActionPerformed
+        calComboVeterinaria.setVisible(true);
+        calComboMotivo.setVisible(true);
+        calLblMotivo.setVisible(true);
+        calLblHorarios.setVisible(true);
+    }//GEN-LAST:event_calBtnVeterinariaSiActionPerformed
 
-    private void CalTxtNombreRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalTxtNombreRespActionPerformed
+    private void calTxtNombreRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calTxtNombreRespActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CalTxtNombreRespActionPerformed
+    }//GEN-LAST:event_calTxtNombreRespActionPerformed
 
-    private void CalComboHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalComboHoraActionPerformed
-        if (CalComboHora.getSelectedIndex() == 0) {
-            CalPanHoraPersonalizada.setVisible(false);
+    private void calComboHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calComboHoraActionPerformed
+        if (calComboHora.getSelectedIndex() == 0) {
+            calPanHoraPersonalizada.setVisible(false);
         } else {
-            CalPanHoraPersonalizada.setVisible(true);
+            calPanHoraPersonalizada.setVisible(true);
         }
-    }//GEN-LAST:event_CalComboHoraActionPerformed
+    }//GEN-LAST:event_calComboHoraActionPerformed
 
-    private void CalComboTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalComboTipoActionPerformed
-        if (CalComboTipo.getSelectedIndex() == 2) {
-            if (CalBtnVeterinariaSi.isSelected()) {
+    private void calComboTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calComboTipoActionPerformed
+        if (calComboTipo.getSelectedIndex() == 2) {
+            if (calBtnVeterinariaSi.isSelected()) {
                 cambiarVisibilidadVeterinaria(true, true);
             } else {
                 cambiarVisibilidadVeterinaria(true, false);
@@ -1615,74 +1615,74 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else {
             cambiarVisibilidadVeterinaria(false, false);
         }
-        if (CalComboTipo.getSelectedIndex() == 1) {
-            CalLblTipoAlimento.setVisible(true);
-            CalTxtTipoAlimento.setVisible(true);
+        if (calComboTipo.getSelectedIndex() == 1) {
+            calLblTipoAlimento.setVisible(true);
+            calTxtTipoAlimento.setVisible(true);
         } else {
-            CalLblTipoAlimento.setVisible(false);
-            CalTxtTipoAlimento.setVisible(false);
-            CalTxtTipoAlimento.setText("");
+            calLblTipoAlimento.setVisible(false);
+            calTxtTipoAlimento.setVisible(false);
+            calTxtTipoAlimento.setText("");
         }
-        if (CalComboTipo.getSelectedIndex() == 0 && CalBtnRealizadaSi.isSelected()) {
-            CalPanRuta.setVisible(true);
+        if (calComboTipo.getSelectedIndex() == 0 && calBtnRealizadaSi.isSelected()) {
+            calPanRuta.setVisible(true);
         } else {
-            CalPanRuta.setVisible(false);
+            calPanRuta.setVisible(false);
         }
-    }//GEN-LAST:event_CalComboTipoActionPerformed
+    }//GEN-LAST:event_calComboTipoActionPerformed
 
     private void btnGuardarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActividadActionPerformed
-        String nombreAct = CalTxtNombreResp.getText();
-        boolean fueRealizada = !CalBtnRealizadaNo.isSelected();
+        String nombreAct = calTxtNombreResp.getText();
+        boolean fueRealizada = !calBtnRealizadaNo.isSelected();
         
         if (nombreAct.equals("")) {
-            CalLblAdvertencia.setText("No se ingresó un nombre, ingrese el nombre de la actividad.");
-        } else if (CalComboUsuario.getItemCount() == 0) {
-            CalLblAdvertencia.setText("Por favor, ingrese un usuario para agregar una actividad.");
-        } else if (CalComboPerro.getItemCount() == 0) {
-            CalLblAdvertencia.setText("Por favor, ingrese un perro para agregar una actividad.");
+            calLblAdvertencia.setText("No se ingresó un nombre, ingrese el nombre de la actividad.");
+        } else if (calComboUsuario.getItemCount() == 0) {
+            calLblAdvertencia.setText("Por favor, ingrese un usuario para agregar una actividad.");
+        } else if (calComboPerro.getItemCount() == 0) {
+            calLblAdvertencia.setText("Por favor, ingrese un perro para agregar una actividad.");
         } else {
-            Usuario usuario = sistema.buscarUsuarioPorNombre((String) CalComboUsuario.getSelectedItem());
-            Mascota mascota = sistema.buscarMascotaPorNombre((String) CalComboPerro.getSelectedItem());
+            Usuario usuario = sistema.buscarUsuarioPorNombre((String) calComboUsuario.getSelectedItem());
+            Mascota mascota = sistema.buscarMascotaPorNombre((String) calComboPerro.getSelectedItem());
             LocalTime time;
-            if (((String) CalComboHora.getSelectedItem()).equals("Ahora")) {
+            if (((String) calComboHora.getSelectedItem()).equals("Ahora")) {
                 time = LocalTime.now();
             } else {
-                String hora = CalPanSpinHora.getValue() + "";
-                String min = CalPanSpinMinutos.getValue() + "";
+                String hora = calPanSpinHora.getValue() + "";
+                String min = calPanSpinMinutos.getValue() + "";
                 time = LocalTime.of(Integer.parseInt(hora), Integer.parseInt(min));
             }
-            if (CalBtnVeterinariaSi.isSelected()) {
-                Veterinaria vet = sistema.buscarVetPorNombre((String) CalComboVeterinaria.getSelectedItem());
-                String motivo = (String) CalComboMotivo.getSelectedItem();
+            if (calBtnVeterinariaSi.isSelected()) {
+                Veterinaria vet = sistema.buscarVetPorNombre((String) calComboVeterinaria.getSelectedItem());
+                String motivo = (String) calComboMotivo.getSelectedItem();
                 VisitaVeterinaria visita = new VisitaVeterinaria(nombreAct, time, 
                         usuario, mascota, fueRealizada, fechaSeleccionada, vet, motivo);
                 if (vet.agendarActividad(visita)) {
-                    sistema.AnadirActividad(visita);
+                    sistema.anadirActividad(visita);
                     sistema.getVisitas().add(visita);
-                    if (CalComboHora.getSelectedIndex() != 0) {
+                    if (calComboHora.getSelectedIndex() != 0) {
                         timerNuevo(visita);
                     }
-                    CalLblAdvertencia.setText("Se agrego la visita a la veterinaria con éxito");
-                    CalLstActividades.setEnabled(true);
-                    CalBtnEditar.setVisible(false);
-                    CalTxtNombreResp.setText("");
-                    CalPanVeterinaria.setVisible(false);
-                    CalLblHorarios.setVisible(false);
+                    calLblAdvertencia.setText("Se agrego la visita a la veterinaria con éxito");
+                    calLstActividades.setEnabled(true);
+                    calBtnEditar.setVisible(false);
+                    calTxtNombreResp.setText("");
+                    calPanVeterinaria.setVisible(false);
+                    calLblHorarios.setVisible(false);
                 } else {
-                    CalLblAdvertencia.setText("La veterinaria no tiene horarios disponibles en ese horario, por favor ingrse una "
+                    calLblAdvertencia.setText("La veterinaria no tiene horarios disponibles en ese horario, por favor ingrse una "
                             + "hora distinta entre las " + vet.getHoraInicial() + " y las " + vet.getHoraFinal());
                 }
             } else {
-                String tipoAct = (String) CalComboTipo.getSelectedItem();
+                String tipoAct = (String) calComboTipo.getSelectedItem();
                 if (tipoAct.equals("Paseo")) {
                     Paseo paseo = new Paseo(nombreAct, usuario, mascota, 0, fueRealizada, time, fechaSeleccionada);
-                    double distanciaPaseo = Double.parseDouble(CalSpinDistancia.getValue().toString());
+                    double distanciaPaseo = Double.parseDouble(calSpinDistancia.getValue().toString());
                     if (distanciaPaseo != 0.0) {
                         paseo.setDistancia(distanciaPaseo);
                     }
-                    sistema.AnadirActividad(paseo);
+                    sistema.anadirActividad(paseo);
                     sistema.getPaseos().add(paseo);
-                    if (CalComboHora.getSelectedIndex() != 0) {
+                    if (calComboHora.getSelectedIndex() != 0) {
                         timerNuevo(paseo);
                     }
                     if (!rutaImagenRuta.equals("")) {
@@ -1690,68 +1690,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         paseo.setRuta(crearIcono(imagen, 500));
                         rutaImagenRuta = "";
                     }
-                    CalLblAdvertencia.setText("Se añadió el paseo correctamente al calendario");
-                    CalLstActividades.setEnabled(true);
-                    CalTxtNombreResp.setText("");
-                    CalBtnEditar.setVisible(false);
-                    CalPanRuta.setVisible(false);
+                    calLblAdvertencia.setText("Se añadió el paseo correctamente al calendario");
+                    calLstActividades.setEnabled(true);
+                    calTxtNombreResp.setText("");
+                    calBtnEditar.setVisible(false);
+                    calPanRuta.setVisible(false);
                 } else {
                     if (tipoAct.equals("Alimentación")) {
-                        String tipoAlimento = CalTxtTipoAlimento.getText();
+                        String tipoAlimento = calTxtTipoAlimento.getText();
                         if (tipoAlimento.equals("")) {
-                            CalLblAdvertencia.setText("No se ingresó el tipo del alimento, ingrse el tipo del alimento");
+                            calLblAdvertencia.setText("No se ingresó el tipo del alimento, ingrse el tipo del alimento");
                         } else {
                             Alimentacion alim = new Alimentacion(nombreAct, usuario, mascota, tipoAlimento, fueRealizada, time, fechaSeleccionada);
-                            sistema.AnadirActividad(alim);
+                            sistema.anadirActividad(alim);
                             sistema.getAlimentaciones().add(alim);
-                            if (CalComboHora.getSelectedIndex() != 0) {
+                            if (calComboHora.getSelectedIndex() != 0) {
                                 timerNuevo(alim);
                             }
-                            CalLblAdvertencia.setText("Se añadió la alimentación correctamente al calendario");
-                            CalTxtNombreResp.setText("");
-                            CalTxtTipoAlimento.setText("");
-                            CalBtnEditar.setVisible(false);
-                            CalLstActividades.setEnabled(true);
+                            calLblAdvertencia.setText("Se añadió la alimentación correctamente al calendario");
+                            calTxtNombreResp.setText("");
+                            calTxtTipoAlimento.setText("");
+                            calBtnEditar.setVisible(false);
+                            calLstActividades.setEnabled(true);
                         }
                     } else {
                         ActividadCualquiera actividad = new ActividadCualquiera(nombreAct, usuario, mascota, fueRealizada, time, fechaSeleccionada);
-                        sistema.AnadirActividad(actividad);
+                        sistema.anadirActividad(actividad);
                         sistema.getActsCualquieras().add(actividad);
-                        if (CalComboHora.getSelectedIndex() != 0) {
+                        if (calComboHora.getSelectedIndex() != 0) {
                             timerNuevo(actividad);
                         }
-                        CalLblAdvertencia.setText("Se añadió la actividad correctamente al calendario");
-                        CalTxtNombreResp.setText("");
-                        CalBtnEditar.setVisible(false);
-                        CalLstActividades.setEnabled(true);
+                        calLblAdvertencia.setText("Se añadió la actividad correctamente al calendario");
+                        calTxtNombreResp.setText("");
+                        calBtnEditar.setVisible(false);
+                        calLstActividades.setEnabled(true);
                     }
                 }
             }
         }
-        CalPanRuta.setVisible(false);
-        int dia = CalDayChooser.getDay();
-        int mes = CalMonthChooser.getMonth() + 1;
-        int ano = CalYearChooser.getYear();
+        calPanRuta.setVisible(false);
+        int dia = calDayChooser.getDay();
+        int mes = calMonthChooser.getMonth() + 1;
+        int ano = calYearChooser.getYear();
         ArrayList<Actividad> listaActividades = sistema.listaActividadesPorFecha(dia, mes, ano);
         String[] arrActividades = new String[listaActividades.size()];
         for (int i = 0; i < listaActividades.size(); i++) {
             Actividad act = listaActividades.get(i);
             arrActividades[i] = act.getNombre();
         }
-        CalLstActividades.setListData(arrActividades);
+        calLstActividades.setListData(arrActividades);
 
-        CalLblFechaResp.setText(dia + "/" + mes + "/" + ano);
+        calLblFechaResp.setText(dia + "/" + mes + "/" + ano);
         fechaSeleccionada = new Fecha(dia, mes, ano);
     }//GEN-LAST:event_btnGuardarActividadActionPerformed
 
-    private void CalLstActividadesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CalLstActividadesValueChanged
-        String nombreAct = CalLstActividades.getSelectedValue();
+    private void calLstActividadesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_calLstActividadesValueChanged
+        String nombreAct = calLstActividades.getSelectedValue();
         String cero = "";
-        CalBtnVerRuta.setVisible(false);
+        calBtnVerRuta.setVisible(false);
         if (nombreAct != null) {
             Paseo paseo = sistema.buscarPaseoPorNombre(nombreAct);
             if (paseo != null) {
-                CalBtnVerRuta.setVisible(true);
+                calBtnVerRuta.setVisible(true);
                 if (paseo.getHora().getMinute() < 10) {
                     cero = "0";
                 }
@@ -1760,13 +1760,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     fueRealizada = "Si";
                 }
                 if (paseo.getDistancia() == 0.0) {
-                    CalTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
+                    calTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
                             + "Usuario responsable: " + paseo.getUsuario().getNombre() + "\n"
                             + "Mascota: " + paseo.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
                             + "Hora: " + paseo.getHora().getHour() + ":" + cero + paseo.getHora().getMinute());
                 } else {
-                    CalTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
+                    calTxtAreaInfoAct.setText("Nombre: " + paseo.getNombre() + "\n"
                             + "Usuario responsable: " + paseo.getUsuario().getNombre() + "\n"
                             + "Mascota: " + paseo.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
@@ -1787,7 +1787,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         fueRealizada = "Si";
                     }
 
-                    CalTxtAreaInfoAct.setText("Nombre: " + alim.getNombre() + "\n"
+                    calTxtAreaInfoAct.setText("Nombre: " + alim.getNombre() + "\n"
                             + "Usuario responsable: " + alim.getUsuario().getNombre() + "\n"
                             + "Mascota: " + alim.getMascota().getNombre() + "\n"
                             + "Realizada: " + fueRealizada + "\n"
@@ -1803,7 +1803,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         if (visita.getFueRealizado()) {
                             fueRealizada = "Si";
                         }
-                        CalTxtAreaInfoAct.setText("Nombre: " + visita.getNombre() + "\n"
+                        calTxtAreaInfoAct.setText("Nombre: " + visita.getNombre() + "\n"
                                 + "Usuario responsable: " + visita.getUsuario().getNombre() + "\n"
                                 + "Mascota: " + visita.getMascota().getNombre() + "\n"
                                 + "Realizada: " + fueRealizada + "\n"
@@ -1820,7 +1820,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             fueRealizada = "Si";
                         }
 
-                        CalTxtAreaInfoAct.setText("Nombre: " + act.getNombre() + "\n"
+                        calTxtAreaInfoAct.setText("Nombre: " + act.getNombre() + "\n"
                                 + "Usuario responsable: " + act.getUsuario().getNombre() + "\n"
                                 + "Mascota: " + act.getMascota().getNombre() + "\n"
                                 + "Realizada: " + fueRealizada + "\n"
@@ -1828,31 +1828,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     }
                 }
             }
-            CalBtnEditar.setVisible(true);
+            calBtnEditar.setVisible(true);
         } else {
-            CalTxtAreaInfoAct.setText("Seleccione un paseo para" + "\n"
+            calTxtAreaInfoAct.setText("Seleccione un paseo para" + "\n"
                     + "poder ver su información");
         }
-    }//GEN-LAST:event_CalLstActividadesValueChanged
+    }//GEN-LAST:event_calLstActividadesValueChanged
 
-    private void CalDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_CalDayChooserPropertyChange
-        int dia = CalDayChooser.getDay();
-        int mes = CalMonthChooser.getMonth() + 1;
-        int ano = CalYearChooser.getYear();
+    private void calDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calDayChooserPropertyChange
+        int dia = calDayChooser.getDay();
+        int mes = calMonthChooser.getMonth() + 1;
+        int ano = calYearChooser.getYear();
         ArrayList<Actividad> listaActividades = sistema.listaActividadesPorFecha(dia, mes, ano);
         String[] arrActividades = new String[listaActividades.size()];
         for (int i = 0; i < listaActividades.size(); i++) {
             Actividad act = listaActividades.get(i);
             arrActividades[i] = act.getNombre();
         }
-        CalLstActividades.setListData(arrActividades);
+        calLstActividades.setListData(arrActividades);
 
-        CalLblFechaResp.setText(dia + "/" + mes + "/" + ano);
+        calLblFechaResp.setText(dia + "/" + mes + "/" + ano);
         fechaSeleccionada = new Fecha(dia, mes, ano);
-    }//GEN-LAST:event_CalDayChooserPropertyChange
+    }//GEN-LAST:event_calDayChooserPropertyChange
 
-    private void CalBtnVerRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalBtnVerRutaActionPerformed
-        String nombreAct = CalLstActividades.getSelectedValue();
+    private void calBtnVerRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calBtnVerRutaActionPerformed
+        String nombreAct = calLstActividades.getSelectedValue();
         Paseo paseo = sistema.buscarPaseoPorNombre(nombreAct);
         if (paseo != null) {
             if (paseo.getRuta() != null) {
@@ -1862,24 +1862,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-                CalLblAdvertencia.setText("No hay ruta agregada a este paseo");
+                calLblAdvertencia.setText("No hay ruta agregada a este paseo");
             }
         }
-    }//GEN-LAST:event_CalBtnVerRutaActionPerformed
+    }//GEN-LAST:event_calBtnVerRutaActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        Object nombreMascota = PerroComboPerros.getSelectedItem();
+        Object nombreMascota = perroComboPerros.getSelectedItem();
         if(nombreMascota != null) {
             sistema.getMascotas().removeIf(perro -> perro.getNombre()
                     .equals(nombreMascota));
             resetearPestanaPerros();
             if(sistema.getMascotas().size() > 0) {
-                PerroComboPerros.setSelectedIndex(0);  
+                perroComboPerros.setSelectedIndex(0);  
             }
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
 
-    private void PerroBtnExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroBtnExaminarActionPerformed
+    private void perroBtnExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroBtnExaminarActionPerformed
         JFileChooser elegirImagen = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg", "gif", "png");
         elegirImagen.setFileFilter(filter);
@@ -1887,24 +1887,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (result == JFileChooser.APPROVE_OPTION) {
             File imgSeleccionada = elegirImagen.getSelectedFile();
             rutaImagenAgregar = imgSeleccionada.getAbsolutePath();
-            PerroLblFoto.setIcon(crearIcono(imgSeleccionada, 100));
+            perroLblFoto.setIcon(crearIcono(imgSeleccionada, 100));
         } else {
-            PerroLblAdvertencia.setText("No se ha podido ingresar la imágen de forma correcta");
+            perroLblAdvertencia.setText("No se ha podido ingresar la imágen de forma correcta");
         }
-    }//GEN-LAST:event_PerroBtnExaminarActionPerformed
+    }//GEN-LAST:event_perroBtnExaminarActionPerformed
 
-    private void PerroTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerroTxtNombreActionPerformed
+    private void perroTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perroTxtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PerroTxtNombreActionPerformed
+    }//GEN-LAST:event_perroTxtNombreActionPerformed
 
     private void cambiarVisibilidadVeterinaria(boolean opcionCombo, boolean usaVeterinaria) {
-        CalPanVeterinaria.setVisible(opcionCombo);
-        CalBtnVeterinariaSi.setSelected(usaVeterinaria);
-        CalBtnVeterinariaNo.setSelected(!usaVeterinaria);
-        CalComboVeterinaria.setVisible(usaVeterinaria);
-        CalComboMotivo.setVisible(usaVeterinaria);
-        CalLblMotivo.setVisible(usaVeterinaria);
-        CalLblHorarios.setVisible(opcionCombo);
+        calPanVeterinaria.setVisible(opcionCombo);
+        calBtnVeterinariaSi.setSelected(usaVeterinaria);
+        calBtnVeterinariaNo.setSelected(!usaVeterinaria);
+        calComboVeterinaria.setVisible(usaVeterinaria);
+        calComboMotivo.setVisible(usaVeterinaria);
+        calLblMotivo.setVisible(usaVeterinaria);
+        calLblHorarios.setVisible(opcionCombo);
     }
 
     private ImageIcon crearIcono(String ruta, int tamano) {
@@ -2095,104 +2095,104 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CalBtnAgregarDatos;
-    private javax.swing.JButton CalBtnEditar;
-    private javax.swing.ButtonGroup CalBtnGroupRealizada;
-    private javax.swing.ButtonGroup CalBtnGroupRepetir;
-    private javax.swing.ButtonGroup CalBtnGroupVeterinaria;
-    private javax.swing.JRadioButton CalBtnRealizadaNo;
-    private javax.swing.JRadioButton CalBtnRealizadaSi;
-    private javax.swing.JButton CalBtnRuta;
-    private javax.swing.JButton CalBtnVerRuta;
-    private javax.swing.JRadioButton CalBtnVeterinariaNo;
-    private javax.swing.JRadioButton CalBtnVeterinariaSi;
-    private javax.swing.JComboBox<String> CalComboHora;
-    private javax.swing.JComboBox<String> CalComboMotivo;
-    private javax.swing.JComboBox<String> CalComboPerro;
-    private javax.swing.JComboBox<String> CalComboTipo;
-    private javax.swing.JComboBox<String> CalComboUsuario;
-    private javax.swing.JComboBox<String> CalComboVeterinaria;
-    private com.toedter.calendar.JDayChooser CalDayChooser;
-    private javax.swing.JLabel CalLblActividadesDelDia;
-    private javax.swing.JLabel CalLblAdvertencia;
-    private javax.swing.JLabel CalLblCentimetros;
-    private javax.swing.JLabel CalLblDistancia;
-    private javax.swing.JLabel CalLblFecha;
-    private javax.swing.JLabel CalLblFechaResp;
-    private javax.swing.JLabel CalLblHora;
-    private javax.swing.JLabel CalLblHorarios;
-    private javax.swing.JLabel CalLblInfoActividad;
-    private javax.swing.JLabel CalLblKilogramos;
-    private javax.swing.JLabel CalLblKilometros;
-    private javax.swing.JLabel CalLblMotivo;
-    private javax.swing.JLabel CalLblNombre;
-    private javax.swing.JLabel CalLblPerro;
-    private javax.swing.JLabel CalLblRealizada;
-    private javax.swing.JLabel CalLblRuta;
-    private javax.swing.JLabel CalLblTipo;
-    private javax.swing.JLabel CalLblTipoAlimento;
-    private javax.swing.JLabel CalLblTituloActividad;
-    private javax.swing.JLabel CalLblTituloFecha;
-    private javax.swing.JLabel CalLblUsuario;
-    private javax.swing.JLabel CalLblVeterinaria;
-    private javax.swing.JList<String> CalLstActividades;
-    private com.toedter.calendar.JMonthChooser CalMonthChooser;
-    private javax.swing.JPanel CalPanHoraPersonalizada;
-    private javax.swing.JLabel CalPanLblHora;
-    private javax.swing.JLabel CalPanLblMinutos;
-    private javax.swing.JPanel CalPanRuta;
-    private javax.swing.JSpinner CalPanSpinHora;
-    private javax.swing.JSpinner CalPanSpinMinutos;
-    private javax.swing.JPanel CalPanVeterinaria;
-    private javax.swing.JScrollPane CalScrollActividades;
-    private javax.swing.JScrollPane CalScrollInfoAct;
-    private javax.swing.JSpinner CalSpinDistancia;
-    private javax.swing.JTextArea CalTxtAreaInfoAct;
-    private javax.swing.JTextField CalTxtNombreResp;
-    private javax.swing.JTextField CalTxtTipoAlimento;
-    private com.toedter.calendar.JYearChooser CalYearChooser;
-    private javax.swing.JTabbedPane Panel;
-    private javax.swing.JButton PerroBtnAgregar;
-    private javax.swing.JButton PerroBtnEditar;
-    private javax.swing.JButton PerroBtnExaminar;
-    private javax.swing.JButton PerroBtnGuardar;
-    private javax.swing.JComboBox<String> PerroComboPerros;
-    private javax.swing.JLabel PerroLblAdvertencia;
-    private javax.swing.JLabel PerroLblAltura;
-    private javax.swing.JLabel PerroLblComentarios;
-    private javax.swing.JLabel PerroLblFoto;
-    private javax.swing.JLabel PerroLblFotoBoton;
-    private javax.swing.JLabel PerroLblNombre;
-    private javax.swing.JLabel PerroLblPerros;
-    private javax.swing.JLabel PerroLblPeso;
-    private javax.swing.JPanel PerroPanFoto;
-    private javax.swing.JPanel PerroPanInformacion;
-    private javax.swing.JSpinner PerroSpinAltura;
-    private javax.swing.JSpinner PerroSpinPeso;
-    private javax.swing.JTextField PerroTxtComentarios;
-    private javax.swing.JTextField PerroTxtNombre;
-    private javax.swing.JButton UsuarioBtnAgregar;
-    private javax.swing.JComboBox<String> UsuarioComboUsuarios;
-    private javax.swing.JLabel UsuarioLblActividad;
-    private javax.swing.JLabel UsuarioLblActividades;
-    private javax.swing.JLabel UsuarioLblAdvertencia;
-    private javax.swing.JLabel UsuarioLblFecha;
-    private javax.swing.JLabel UsuarioLblMail;
-    private javax.swing.JLabel UsuarioLblNombre;
-    private javax.swing.JLabel UsuarioLblUsuarios;
-    private javax.swing.JList<String> UsuarioLstActividades;
-    private javax.swing.JList<String> UsuarioLstFechas;
-    private javax.swing.JScrollPane UsuarioScrollActividades;
-    private javax.swing.JScrollPane UsuarioScrollFechas;
-    private javax.swing.JTextField UsuarioTxtMail;
-    private javax.swing.JTextField UsuarioTxtNombre;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnGuardarActividad;
+    private javax.swing.JButton calBtnAgregarDatos;
+    private javax.swing.JButton calBtnEditar;
+    private javax.swing.ButtonGroup calBtnGroupRealizada;
+    private javax.swing.ButtonGroup calBtnGroupRepetir;
+    private javax.swing.ButtonGroup calBtnGroupVeterinaria;
+    private javax.swing.JRadioButton calBtnRealizadaNo;
+    private javax.swing.JRadioButton calBtnRealizadaSi;
+    private javax.swing.JButton calBtnRuta;
+    private javax.swing.JButton calBtnVerRuta;
+    private javax.swing.JRadioButton calBtnVeterinariaNo;
+    private javax.swing.JRadioButton calBtnVeterinariaSi;
+    private javax.swing.JComboBox<String> calComboHora;
+    private javax.swing.JComboBox<String> calComboMotivo;
+    private javax.swing.JComboBox<String> calComboPerro;
+    private javax.swing.JComboBox<String> calComboTipo;
+    private javax.swing.JComboBox<String> calComboUsuario;
+    private javax.swing.JComboBox<String> calComboVeterinaria;
+    private com.toedter.calendar.JDayChooser calDayChooser;
+    private javax.swing.JLabel calLblActividadesDelDia;
+    private javax.swing.JLabel calLblAdvertencia;
+    private javax.swing.JLabel calLblCentimetros;
+    private javax.swing.JLabel calLblDistancia;
+    private javax.swing.JLabel calLblFecha;
+    private javax.swing.JLabel calLblFechaResp;
+    private javax.swing.JLabel calLblHora;
+    private javax.swing.JLabel calLblHorarios;
+    private javax.swing.JLabel calLblInfoActividad;
+    private javax.swing.JLabel calLblKilogramos;
+    private javax.swing.JLabel calLblKilometros;
+    private javax.swing.JLabel calLblMotivo;
+    private javax.swing.JLabel calLblNombre;
+    private javax.swing.JLabel calLblPerro;
+    private javax.swing.JLabel calLblRealizada;
+    private javax.swing.JLabel calLblRuta;
+    private javax.swing.JLabel calLblTipo;
+    private javax.swing.JLabel calLblTipoAlimento;
+    private javax.swing.JLabel calLblTituloActividad;
+    private javax.swing.JLabel calLblTituloFecha;
+    private javax.swing.JLabel calLblUsuario;
+    private javax.swing.JLabel calLblVeterinaria;
+    private javax.swing.JList<String> calLstActividades;
+    private com.toedter.calendar.JMonthChooser calMonthChooser;
+    private javax.swing.JPanel calPanHoraPersonalizada;
+    private javax.swing.JLabel calPanLblHora;
+    private javax.swing.JLabel calPanLblMinutos;
+    private javax.swing.JPanel calPanRuta;
+    private javax.swing.JSpinner calPanSpinHora;
+    private javax.swing.JSpinner calPanSpinMinutos;
+    private javax.swing.JPanel calPanVeterinaria;
+    private javax.swing.JScrollPane calScrollActividades;
+    private javax.swing.JScrollPane calScrollInfoAct;
+    private javax.swing.JSpinner calSpinDistancia;
+    private javax.swing.JTextArea calTxtAreaInfoAct;
+    private javax.swing.JTextField calTxtNombreResp;
+    private javax.swing.JTextField calTxtTipoAlimento;
+    private com.toedter.calendar.JYearChooser calYearChooser;
     private javax.swing.JComboBox<String> comboTipoMascota;
     private javax.swing.JLabel labelTipo;
     private javax.swing.JPanel panCalendario;
     private javax.swing.JPanel panPerros;
     private javax.swing.JPanel panUsuarios;
+    private javax.swing.JTabbedPane panel;
+    private javax.swing.JButton perroBtnAgregar;
+    private javax.swing.JButton perroBtnEditar;
+    private javax.swing.JButton perroBtnExaminar;
+    private javax.swing.JButton perroBtnGuardar;
+    private javax.swing.JComboBox<String> perroComboPerros;
+    private javax.swing.JLabel perroLblAdvertencia;
+    private javax.swing.JLabel perroLblAltura;
+    private javax.swing.JLabel perroLblComentarios;
+    private javax.swing.JLabel perroLblFoto;
+    private javax.swing.JLabel perroLblFotoBoton;
+    private javax.swing.JLabel perroLblNombre;
+    private javax.swing.JLabel perroLblPerros;
+    private javax.swing.JLabel perroLblPeso;
+    private javax.swing.JPanel perroPanFoto;
+    private javax.swing.JPanel perroPanInformacion;
+    private javax.swing.JSpinner perroSpinAltura;
+    private javax.swing.JSpinner perroSpinPeso;
+    private javax.swing.JTextField perroTxtComentarios;
+    private javax.swing.JTextField perroTxtNombre;
+    private javax.swing.JButton usuarioBtnAgregar;
+    private javax.swing.JComboBox<String> usuarioComboUsuarios;
+    private javax.swing.JLabel usuarioLblActividad;
+    private javax.swing.JLabel usuarioLblActividades;
+    private javax.swing.JLabel usuarioLblAdvertencia;
+    private javax.swing.JLabel usuarioLblFecha;
+    private javax.swing.JLabel usuarioLblMail;
+    private javax.swing.JLabel usuarioLblNombre;
+    private javax.swing.JLabel usuarioLblUsuarios;
+    private javax.swing.JList<String> usuarioLstActividades;
+    private javax.swing.JList<String> usuarioLstFechas;
+    private javax.swing.JScrollPane usuarioScrollActividades;
+    private javax.swing.JScrollPane usuarioScrollFechas;
+    private javax.swing.JTextField usuarioTxtMail;
+    private javax.swing.JTextField usuarioTxtNombre;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

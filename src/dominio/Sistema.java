@@ -82,11 +82,11 @@ public class Sistema {
         }
     }
 
-    public void AnadirUsuario(Usuario personaAnadir) {
+    public void anadirUsuario(Usuario personaAnadir) {
         usuarios.add(personaAnadir);
     }
 
-    public void EliminarUsuario(Usuario persona) {
+    public void eliminarUsuario(Usuario persona) {
         if (usuarios.contains(persona)) {
             usuarios.remove(persona);
         } else {
@@ -94,12 +94,12 @@ public class Sistema {
         }
     }
 
-    public void AnadirActividad(Actividad act) {
+    public void anadirActividad(Actividad act) {
         listaActividades.add(act);
         act.getUsuario().agregarActividad(act);
     }
 
-    public void EliminarActividad(Actividad act) {
+    public void eliminarActividad(Actividad act) {
         if (listaActividades.contains(act)) {
             listaActividades.remove(act);
             Usuario sacarActividad = this.usuarios.stream()
@@ -114,11 +114,11 @@ public class Sistema {
         }
     }
 
-    public void AnadirFecha(Fecha fecha) {
+    public void anadirFecha(Fecha fecha) {
         listaFechas.add(fecha);
     }
 
-    public void EliminarFecha(Fecha fecha) {
+    public void eliminarFecha(Fecha fecha) {
         if (listaFechas.contains(fecha)) {
             listaFechas.remove(fecha);
         } else {
