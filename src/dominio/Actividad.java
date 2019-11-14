@@ -4,13 +4,6 @@ import java.time.LocalTime;
 
 public abstract class Actividad {
 
-    
-    private Mascota mascota;
-    private boolean fueRealizado;
-    private Fecha fecha;
-    private LocalTime hora;
-    private String nombre;
-
     public abstract String getNombre();
 
     public abstract LocalTime getHora();

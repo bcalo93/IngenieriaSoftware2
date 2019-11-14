@@ -1789,9 +1789,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             + "Hora: " + paseo.getHora().getHour() + ":" + cero + paseo.getHora().getMinute() + "\n"
                             + "Distancia: " + paseo.getDistancia() + "kilómetros");
                 }
-                if (paseo.getRuta() != null) {
-
-                }
             } else {
                 Alimentacion alim = sistema.buscarAlimentacionPorNombre(nombreAct);
                 if (alim != null) {
@@ -1941,99 +1938,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println(e);
         }
         return retorno;
-    }
-
-    private void enviarMail(Actividad actividad) {
-        String nombreAct = actividad.getNombre();
-        Paseo paseo = sistema.buscarPaseoPorNombre(nombreAct);
-        String tipoActividad;
-        String cuerpo;
-        String cero = "";
-        if (paseo != null) {
-            tipoActividad = "Paseo";
-            if (actividad.getHora().getMinute() < 10) {
-                cero = "0";
-            }
-            cuerpo = "Hola " + actividad.getUsuario().getNombre() + ",\n"
-                    + "Te recordamos que debes pasear a "
-                    + actividad.getMascota().getNombre() + " hoy a las "
-                    + actividad.getHora().getHour() + ":" + cero + actividad.getHora().getMinute() + ".\n"
-                    + "No lo olvides!";
-        } else {
-            Alimentacion alimentacion = sistema.buscarAlimentacionPorNombre(nombreAct);
-            if (alimentacion != null) {
-                tipoActividad = "Alimentacion";
-                if (actividad.getHora().getMinute() < 10) {
-                    cero = "0";
-                }
-                cuerpo = "Hola " + actividad.getUsuario().getNombre() + ",\n"
-                        + "Te recordamos que debes alimentar a "
-                        + actividad.getMascota().getNombre() + " con " + alimentacion.getTipoAlimento()
-                        + " hoy a las " + actividad.getHora().getHour() + ":" + cero + actividad.getHora().getMinute() + ".\n"
-                        + "No lo olvides!";
-            } else {
-                VisitaVeterinaria visita = sistema.buscarVisitaPorNombre(nombreAct);
-                if (visita != null) {
-                    tipoActividad = "Visita a Veterinaria";
-                    if (actividad.getHora().getMinute() < 10) {
-                        cero = "0";
-                    }
-                    cuerpo = "Hola " + actividad.getUsuario().getNombre() + ",\n"
-                            + "Te recordamos que debes llevar a "
-                            + visita.getMascota().getNombre() + "a la veterinaria " + visita.getVeterinaria().getNombre()
-                            + "para realizar un/una " + visita.getMotivo() + " hoy a las "
-                            + actividad.getHora().getHour() + ":" + cero + actividad.getHora().getMinute() + ".\n"
-                            + "No lo olvides!";
-                } else {
-                    ActividadCualquiera actividadCualquiera = sistema.buscarActCualquieraPorNombre(nombreAct);
-                    tipoActividad = "una Actividad";
-                    if (actividad.getHora().getMinute() < 10) {
-                        cero = "0";
-                    }
-                    cuerpo = "Hola " + actividadCualquiera.getUsuario().getNombre() + ",\n"
-                            + "Te recordamos que debes " + actividadCualquiera.getNombre() + " con "
-                            + actividadCualquiera.getMascota().getNombre() + " hoy a las "
-                            + actividadCualquiera.getHora().getHour() + ":" + cero + actividadCualquiera.getHora().getMinute() + ".\n"
-                            + "No lo olvides!";
-                }
-            }
-        }
-        String asunto = "Recordatorio de " + tipoActividad + " de My Pet";
-
-        final String username = "recordatoriosmypet@gmail.com";
-        final String password = "canucanualex";
-
-        Properties props = new Properties();
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
-        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-
-        Session session = Session.getInstance(props,
-                new javax.mail.Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-
-        try {
-
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("recordatoriosmismascotas@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(actividad.getUsuario().getMail()));
-            message.setSubject(asunto);
-            message.setText(cuerpo);
-
-            Transport.send(message);
-
-            System.out.println("Done");
-
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
-        }
     }
     
     public void timerNuevo(final Actividad act) {

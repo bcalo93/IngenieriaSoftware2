@@ -388,8 +388,8 @@ public class PanelEditarPadrino extends javax.swing.JPanel implements Observer {
         this.padrino.setCiudad(this.txCiudad.getText());
         this.padrino.setPais(this.txPais.getText());
         this.padrino.setTelefono(this.txTelefono.getText());
-        this.padrino.setDonacion(new Donacion(Integer.valueOf(
-                this.spMontoDonacion.getValue().toString()), 
+        this.padrino.setDonacion(new Donacion(Integer.parseInt
+                (this.spMontoDonacion.getValue().toString()), 
                 (String)this.comboMonedaDonacion.getSelectedItem(), 
                 this.getComoFrecuenciaDonacion(), this.getComoMedioDonacion()
         ));

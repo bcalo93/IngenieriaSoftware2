@@ -40,7 +40,7 @@ public class LogicaPadrino {
     public Padrino getPadrinoPorId(Integer id) {
         return this.sistema.getPadrinos()
                 .stream()
-                .filter(padrino -> padrino.getId() == id)
+                .filter(padrino -> padrino.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
