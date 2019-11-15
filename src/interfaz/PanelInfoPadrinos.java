@@ -33,6 +33,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         this.setListaPadrinos();
+        this.asignarCampos();
     }
     
     public void mostrar() {
@@ -115,6 +116,11 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
         });
 
         btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelListaPadrinosLayout = new javax.swing.GroupLayout(panelListaPadrinos);
         panelListaPadrinos.setLayout(panelListaPadrinosLayout);
@@ -413,6 +419,19 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
             this.lbValorMoneda.setText(donacion.getMoneda());
             this.lbValorFrecuencia.setText(donacion.getFrecuencia().toString());
             this.lbValorMedio.setText(donacion.getMedio().toString());
+        } else {
+            this.lbValorNombre.setText("");
+            this.lblValorApellido.setText("");
+            this.lbValorCorreo.setText("");
+            this.lbValorTelefono.setText("");
+            this.lbValorCiudad.setText("");
+            this.lbValorPais.setText("");
+            this.modeloMascota.removeAllElements();
+
+            this.lbValorMonto.setText("");
+            this.lbValorMoneda.setText("");
+            this.lbValorFrecuencia.setText("");
+            this.lbValorMedio.setText("");
         }
     }
     
@@ -422,6 +441,10 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
             this.contenedor.cambiarAEditarPadrino(seleccionado);
         }
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        this.logicaPadrino.borrarPadrino(this.listPadrinos.getSelectedValue());        
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void setListaMascotas(Padrino padrino) {
         this.modeloMascota.removeAllElements();
