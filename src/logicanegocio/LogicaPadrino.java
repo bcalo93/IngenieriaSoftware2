@@ -37,6 +37,12 @@ public class LogicaPadrino {
         return this.sistema.getPadrinos();
     }
     
+    public void borrarPadrino(Padrino padrino) {
+        if (padrino != null) {
+            this.sistema.eliminarPadrino(padrino);
+        }
+    }
+    
     public Padrino getPadrinoPorId(Integer id) {
         return this.sistema.getPadrinos()
                 .stream()

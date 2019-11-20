@@ -139,6 +139,7 @@ public class Sistema extends Observable {
     
     public void eliminarPadrino(Padrino padrino) {
         this.listaPadrinos.remove(padrino);
+        this.notificarCambios();
     }
 
     public Usuario buscarUsuarioPorNombre(String nombreBuscar) {
