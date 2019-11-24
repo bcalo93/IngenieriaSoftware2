@@ -29,7 +29,7 @@ public class MascotaTest {
     
      @Test
     public void testConstructorPorParametros() {
-        Mascota unaMascota = new Mascota("Rasta", 1.1, 2.3, "Es rubio", "Perro");
+        Mascota unaMascota = new Mascota("Rasta", 1.1, 2.3, "Es rubio", "Perro", true, "sin adoptar");
         assertEquals("Rasta", unaMascota.getNombre());
         assertEquals(1.1, unaMascota.getAltura(), 0);
         assertEquals(2.3, unaMascota.getPeso(), 0);
@@ -39,7 +39,7 @@ public class MascotaTest {
     }
      @Test
     public void testConstructorPorParametrosConPesoYAlturaMenoresQue0() {
-        Mascota unaMascota = new Mascota("Pedro", -1.1, -2.3, "Es rubio", "Gato");
+        Mascota unaMascota = new Mascota("Pedro", -1.1, -2.3, "Es rubio", "Gato", true, "sin adoptar");
         assertEquals("Pedro", unaMascota.getNombre());
         assertEquals(0.0, unaMascota.getAltura(), 0);
         assertEquals(0.0, unaMascota.getPeso(), 0);
@@ -50,7 +50,7 @@ public class MascotaTest {
     
      @Test
     public void testConstructorPorParametrosConNombreYComentariosVacios() {
-        Mascota unaMascota = new Mascota("", -1.1, -2.3, "", "");
+        Mascota unaMascota = new Mascota("", -1.1, -2.3, "", "", true, "sin adoptar");
         assertEquals("Sin-Nombre", unaMascota.getNombre());
         assertEquals(0.0, unaMascota.getAltura(), 0);
         assertEquals(0.0, unaMascota.getPeso(), 0);
@@ -186,7 +186,7 @@ public class MascotaTest {
     public void testActualizarMascota() {
         ImageIcon imagen = new ImageIcon("/interfaz.images/gato.png");
         Mascota nuevosValores = new Mascota("Misifu", 20.0, 10.0, "Es un gato mimoso", 
-                "Gato");
+                "Gato", true, "sin adoptar");
         nuevosValores.setFoto(imagen);
         mascota.actualizar(nuevosValores);
         assertEquals("Misifu", mascota.getNombre());
@@ -202,7 +202,7 @@ public class MascotaTest {
         ImageIcon imagen = new ImageIcon("/interfaz.images/gato.png");
         mascota.setFoto(imagen);
         Mascota nuevosValores = new Mascota("Misifu", 20.0, 10.0, "Es un gato mimoso", 
-                "Gato");
+                "Gato", true, "sin adoptar");
         mascota.actualizar(nuevosValores);
         assertEquals("Misifu", mascota.getNombre());
         assertEquals(20.0, mascota.getAltura(), 0);

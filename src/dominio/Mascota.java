@@ -13,15 +13,18 @@ public class Mascota {
     private  String tipo;
     private String comentarios;
     private ImageIcon foto;
-    private boolean fueAdoptado;
+    private boolean habilitadoAdopcion;
+    private String estado;
 
     public Mascota(String nombre, double altura, double peso, String comentarios, 
-            String tipo) { //Sin foto
+            String tipo, boolean habilitadoAdopcion, String estado) { //Sin foto
         setNombre(nombre);
         setAltura(altura);
         setPeso(peso);
         setComentarios(comentarios);
         setTipo(tipo);
+        setHabilitadoAdopcion(habilitadoAdopcion);
+        setEstado(estado);
         this.foto = null;
     }
 
@@ -31,6 +34,8 @@ public class Mascota {
         this.peso = 0;
         this.comentarios = "Sin-Comentarios";
         this.tipo = TIPO_POR_DEFECTO;
+        this.estado = "";
+        this.habilitadoAdopcion = true;
         this.foto = null;
     }
 
@@ -93,12 +98,20 @@ public class Mascota {
         this.foto = imagen;
     }
 
-    public boolean fueAdoptado() {
-        return fueAdoptado;
+    public boolean isHabilitadoAdopcion() {
+        return habilitadoAdopcion;
     }
 
-    public void setFueAdoptado(boolean fueAdoptado) {
-        this.fueAdoptado = fueAdoptado;
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setHabilitadoAdopcion(boolean habilitadoAdopcion) {
+        this.habilitadoAdopcion = habilitadoAdopcion;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getTipo() {
@@ -130,7 +143,8 @@ public class Mascota {
         this.peso = mascota.getPeso();
         this.altura = mascota.getAltura();
         this.comentarios = mascota.getComentarios();
-        this.fueAdoptado = mascota.fueAdoptado();
+        this.estado = mascota.getEstado();
+        this.habilitadoAdopcion = mascota.isHabilitadoAdopcion();
         this.tipo = mascota.getTipo();
         if(mascota.getFoto() != null) {
             this.foto = mascota.getFoto();    

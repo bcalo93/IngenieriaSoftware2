@@ -77,7 +77,7 @@ public class LogicaMascotaTest {
         ArrayList<Mascota> resultado = new ArrayList<>();
         for(int i = 0; i < cantidad; i++) {
             resultado.add(new Mascota("Mascota" + i, i + 2.0, i + 20.0, 
-                    "Comentario" + i, "Gato"));
+                    "Comentario" + i, "Gato", true, "sin adoptar"));
         }
         return resultado;
     }
