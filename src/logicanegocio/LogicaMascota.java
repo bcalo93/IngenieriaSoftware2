@@ -20,6 +20,15 @@ public class LogicaMascota {
                 .collect(Collectors.toList());
     }
     
+     public List<Mascota> getMascotasParaAdoptar() {
+        return this.sistema
+                .getMascotas()
+                .stream()
+                .filter(mascota -> mascota.isHabilitadoAdopcion() == true && 
+                        mascota.getEstado().equals("sin adoptar"))
+                .collect(Collectors.toList());
+    }
+    
     public Mascota getMascotaPorNombre(String nombre) {
         return this.sistema
                 .getMascotas()
@@ -28,5 +37,7 @@ public class LogicaMascota {
                 .findFirst()
                 .orElse(null);
     }
+    
+    
     
 }

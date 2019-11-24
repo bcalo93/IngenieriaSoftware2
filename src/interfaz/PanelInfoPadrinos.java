@@ -449,8 +449,7 @@ public class PanelInfoPadrinos extends javax.swing.JPanel implements Observer {
     private void setListaMascotas(Padrino padrino) {
         this.modeloMascota.removeAllElements();
         padrino.getQuiereApadrinar().forEach(
-                mascota -> this.modeloMascota.addElement(mascota)
-        );   
+                mascota -> this.modeloMascota.addElement(mascota));   
     }
 
     private Sistema sistema;
