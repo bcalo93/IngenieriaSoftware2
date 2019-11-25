@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfaz;
 
 import dominio.Adoptante;
 import dominio.Mascota;
 import dominio.Sistema;
-import java.util.Observable;
-import java.util.Observer;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
 import logicanegocio.LogicaMascota;
 
 class PanelAdopcion extends javax.swing.JPanel {
@@ -24,8 +15,7 @@ class PanelAdopcion extends javax.swing.JPanel {
     }
 
     PanelAdopcion(Sistema sistema, int width, int height) {
-        this();        
-        this.sistema = sistema;
+        this();
         this.logicaMascota = new LogicaMascota(sistema); 
         this.setSize(width, height-100); 
         this.setListaMascotas();
@@ -230,7 +220,6 @@ class PanelAdopcion extends javax.swing.JPanel {
         setListaMascotas();
     }
     
-    private Sistema sistema;
     private LogicaMascota logicaMascota;
     private DefaultComboBoxModel<String> modeloComboMascotasParaAdoptar;
     private Adoptante adoptante;

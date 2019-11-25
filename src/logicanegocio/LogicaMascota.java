@@ -24,7 +24,7 @@ public class LogicaMascota {
         return this.sistema
                 .getMascotas()
                 .stream()
-                .filter(mascota -> mascota.isHabilitadoAdopcion() == true && 
+                .filter(mascota -> mascota.isHabilitadoAdopcion() && 
                         mascota.getEstado().equals("sin adoptar"))
                 .collect(Collectors.toList());
     }
