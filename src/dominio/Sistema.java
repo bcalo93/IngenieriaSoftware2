@@ -1,14 +1,13 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
 
-
-
-
-public class Sistema {
+public class Sistema extends Observable {
 
     private ArrayList<Usuario> usuarios;
-    private ArrayList<Perro> perros;
+    private ArrayList<Mascota> mascotas;
     private final ArrayList<Actividad> listaActividades;
     private ArrayList<Fecha> listaFechas;
     private ArrayList<Veterinaria> listaVeterinarias;
@@ -16,10 +15,11 @@ public class Sistema {
     private ArrayList<Paseo> listaPaseos;
     private ArrayList<Alimentacion> listaAlimentaciones;
     private ArrayList<VisitaVeterinaria> listaVisitas;
+    private ArrayList<Padrino> listaPadrinos;
 
     public Sistema() {
         this.usuarios = new ArrayList<>();
-        this.perros = new ArrayList<>();
+        this.mascotas = new ArrayList<>();
         this.listaActividades = new ArrayList<>();
         this.listaFechas = new ArrayList<>();
         this.listaVeterinarias = new ArrayList<>();
@@ -27,6 +27,7 @@ public class Sistema {
         this.listaAlimentaciones = new ArrayList<>();
         this.listaVisitas = new ArrayList<>();
         this.listaActividadesCualquiera = new ArrayList<>();
+        this.listaPadrinos = new ArrayList<>();
     }
 
     public ArrayList<Actividad> listaActividadesPorFecha(int dia, int mes, int ano) {
@@ -58,35 +59,36 @@ public class Sistema {
         return usuarios;
     }
 
-    public void setPerros(ArrayList<Perro> perros) {
-        this.perros = perros;
+    public void setMascotas(ArrayList<Mascota> mascotas) {
+        this.mascotas = mascotas;
     }
 
-    public ArrayList<Perro> getPerros() {
-        return perros;
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
     }
 
     public ArrayList<Actividad> getActividades() {
         return listaActividades;
     }
 
-    public void AnadirPerro(Perro perroAnadir) {
-        perros.add(perroAnadir);
+    public void anadirMascota(Mascota mascotaAnadir) {
+        mascotas.add(mascotaAnadir);
+        this.notificarCambios();
     }
 
-    public void EliminarPerro(Perro perro) {
-        if (perros.contains(perro)) {
-            perros.remove(perro);
+    public void eliminarMascota(Mascota mascota) {
+        if (mascotas.contains(mascota)) {
+            mascotas.remove(mascota);
         } else {
-            System.out.println("No existe tal perro");
+            System.out.println("No existe tal mascota");
         }
     }
 
-    public void AnadirUsuario(Usuario personaAnadir) {
+    public void anadirUsuario(Usuario personaAnadir) {
         usuarios.add(personaAnadir);
     }
 
-    public void EliminarUsuario(Usuario persona) {
+    public void eliminarUsuario(Usuario persona) {
         if (usuarios.contains(persona)) {
             usuarios.remove(persona);
         } else {
@@ -94,29 +96,54 @@ public class Sistema {
         }
     }
 
-    public void AnadirActividad(Actividad act) {
+    public void anadirActividad(Actividad act) {
         listaActividades.add(act);
         act.getUsuario().agregarActividad(act);
     }
 
-    public void EliminarActividad(Actividad act) {
+    public void eliminarActividad(Actividad act) {
         if (listaActividades.contains(act)) {
             listaActividades.remove(act);
+            Usuario sacarActividad = this.usuarios.stream()
+                    .filter(usuario -> usuario.getActividades().contains(act))
+                    .findFirst()
+                    .orElse(null);
+            if(sacarActividad != null) {
+                sacarActividad.getActividades().remove(act);
+            }
         } else {
             System.out.println("No existe tal actividad");
         }
     }
 
-    public void AnadirFecha(Fecha fecha) {
+    public void anadirFecha(Fecha fecha) {
         listaFechas.add(fecha);
     }
 
-    public void EliminarFecha(Fecha fecha) {
+    public void eliminarFecha(Fecha fecha) {
         if (listaFechas.contains(fecha)) {
             listaFechas.remove(fecha);
         } else {
             System.out.println("No existe tal fecha");
         }
+    }
+    
+    public List<Padrino> getPadrinos() {
+        return this.listaPadrinos;
+    }
+    
+    public void setPadrinos(ArrayList<Padrino> padrinos) {
+        this.listaPadrinos = padrinos;
+    }
+    
+    public void agregarPadrino(Padrino padrino) {
+        this.listaPadrinos.add(padrino);
+        this.notificarCambios();
+    }
+    
+    public void eliminarPadrino(Padrino padrino) {
+        this.listaPadrinos.remove(padrino);
+        this.notificarCambios();
     }
 
     public Usuario buscarUsuarioPorNombre(String nombreBuscar) {
@@ -128,10 +155,10 @@ public class Sistema {
         return null;
     }
 
-    public Perro buscarPerroPorNombre(String nombreBuscar) {
-        for (int i = 0; i < perros.size(); i++) {
-            if (nombreBuscar.equals(perros.get(i).getNombre())) {
-                return perros.get(i);
+    public Mascota buscarMascotaPorNombre(String nombreBuscar) {
+        for (int i = 0; i < mascotas.size(); i++) {
+            if (nombreBuscar.equals(mascotas.get(i).getNombre())) {
+                return mascotas.get(i);
             }
         }
         return null;
@@ -221,5 +248,9 @@ public class Sistema {
     public void setFechas(ArrayList<Fecha> fechas) {
         this.listaFechas = fechas;
     }
-
+    
+    private void notificarCambios() {
+        this.setChanged();
+        this.notifyObservers();
+    }
 }

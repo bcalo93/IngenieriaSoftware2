@@ -2,11 +2,11 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="CalBtnGroupRepetir">
+    <Component class="javax.swing.ButtonGroup" name="calBtnGroupRepetir">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="CalBtnGroupVeterinaria">
+    <Component class="javax.swing.ButtonGroup" name="calBtnGroupVeterinaria">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="CalBtnGroupRealizada">
+    <Component class="javax.swing.ButtonGroup" name="calBtnGroupRealizada">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -36,25 +36,22 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="Panel" min="-2" pref="901" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              <Component id="panel" min="-2" pref="901" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="Panel" min="-2" pref="586" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+              <Component id="panel" min="-2" pref="586" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="Panel">
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelMouseClicked"/>
-      </Events>
+    <Container class="javax.swing.JTabbedPane" name="panel">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -75,33 +72,33 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CalDayChooser" alignment="0" min="-2" pref="409" max="-2" attributes="0"/>
+                                  <Component id="calDayChooser" alignment="0" min="-2" pref="409" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="CalLblActividadesDelDia" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="calLblActividadesDelDia" min="-2" pref="114" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="CalScrollActividades" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <Component id="calScrollActividades" min="-2" pref="172" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="CalLblInfoActividad" min="-2" pref="225" max="-2" attributes="0"/>
-                                          <Component id="CalScrollInfoAct" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblInfoActividad" min="-2" pref="225" max="-2" attributes="0"/>
+                                          <Component id="calScrollInfoAct" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="CalMonthChooser" min="-2" max="-2" attributes="0"/>
+                                      <Component id="calMonthChooser" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CalYearChooser" min="-2" max="-2" attributes="0"/>
+                                      <Component id="calYearChooser" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
-                              <Component id="CalLblTituloFecha" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblTituloFecha" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -112,81 +109,82 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                              <Component id="CalBtnEditar" min="-2" pref="77" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                              <Component id="CalBtnAgregar" min="-2" pref="210" max="-2" attributes="0"/>
+                                              <Component id="calBtnEditar" min="-2" pref="77" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="CalBtnAgregarDatos" min="-2" pref="279" max="-2" attributes="0"/>
+                                              <Component id="calBtnAgregarDatos" min="-2" pref="279" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="CalLblAdvertencia" alignment="0" min="-2" pref="349" max="-2" attributes="0"/>
+                                          <Component id="calLblAdvertencia" alignment="0" min="-2" pref="349" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="CalPanRuta" min="-2" max="-2" attributes="0"/>
+                                              <Component id="calPanRuta" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="CalBtnVerRuta" min="-2" max="-2" attributes="0"/>
+                                              <Component id="calBtnVerRuta" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                      <Component id="CalTxtTipoAlimento" alignment="1" min="-2" pref="134" max="-2" attributes="0"/>
+                                                      <Component id="calTxtTipoAlimento" alignment="1" min="-2" pref="134" max="-2" attributes="0"/>
                                                       <Group type="102" alignment="0" attributes="0">
                                                           <Group type="103" groupAlignment="0" attributes="0">
                                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                                  <Component id="CalLblTipo" max="32767" attributes="0"/>
-                                                                  <Component id="CalLblUsuario" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="CalLblPerro" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="CalLblFecha" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="CalLblHora" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="calLblTipo" max="32767" attributes="0"/>
+                                                                  <Component id="calLblUsuario" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="calLblPerro" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="calLblFecha" alignment="0" max="32767" attributes="0"/>
+                                                                  <Component id="calLblHora" min="-2" max="-2" attributes="0"/>
                                                               </Group>
-                                                              <Component id="CalLblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="calLblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                              <Component id="CalComboTipo" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="CalComboUsuario" alignment="0" pref="134" max="32767" attributes="0"/>
-                                                              <Component id="CalComboPerro" alignment="0" pref="134" max="32767" attributes="0"/>
-                                                              <Component id="CalLblFechaResp" max="32767" attributes="0"/>
-                                                              <Component id="CalTxtNombreResp" max="32767" attributes="0"/>
-                                                              <Component id="CalComboHora" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="calComboTipo" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="calComboUsuario" alignment="0" pref="134" max="32767" attributes="0"/>
+                                                              <Component id="calComboPerro" alignment="0" pref="134" max="32767" attributes="0"/>
+                                                              <Component id="calLblFechaResp" max="32767" attributes="0"/>
+                                                              <Component id="calTxtNombreResp" max="32767" attributes="0"/>
+                                                              <Component id="calComboHora" alignment="0" max="32767" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="CalLblRealizada" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="CalLblTipoAlimento" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                                          <Component id="calLblRealizada" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="calLblTipoAlimento" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                                      <Component id="CalBtnRealizadaSi" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="calBtnRealizadaSi" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="CalBtnRealizadaNo" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="calBtnRealizadaNo" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CalPanVeterinaria" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="calPanVeterinaria" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="CalPanHoraPersonalizada" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="calPanHoraPersonalizada" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="CalLblTituloActividad" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblTituloActividad" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Component id="btnGuardarActividad" min="-2" pref="210" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -201,94 +199,94 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalComboTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calComboTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalTxtNombreResp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calTxtNombreResp" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalComboUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calComboUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="CalPanVeterinaria" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="calPanVeterinaria" min="-2" pref="112" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CalLblPerro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CalComboPerro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblPerro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calComboPerro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="CalLblFecha" max="32767" attributes="0"/>
-                                          <Component id="CalLblFechaResp" max="32767" attributes="0"/>
+                                          <Component id="calLblFecha" max="32767" attributes="0"/>
+                                          <Component id="calLblFechaResp" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblHora" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalComboHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calComboHora" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblRealizada" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalBtnRealizadaSi" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalBtnRealizadaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblRealizada" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calBtnRealizadaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calBtnRealizadaNo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CalLblTipoAlimento" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Component id="CalTxtTipoAlimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calLblTipoAlimento" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Component id="calTxtTipoAlimento" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="CalPanHoraPersonalizada" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calPanHoraPersonalizada" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CalPanRuta" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="CalBtnVerRuta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calPanRuta" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="calBtnVerRuta" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="CalBtnEditar" min="-2" max="-2" attributes="0"/>
+                              <Component id="calBtnEditar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="CalLblAdvertencia" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="calLblAdvertencia" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CalBtnAgregar" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnGuardarActividad" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="CalBtnAgregarDatos" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="calBtnAgregarDatos" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CalLblTituloFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CalLblTituloActividad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblTituloFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblTituloActividad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CalMonthChooser" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="CalYearChooser" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="calMonthChooser" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="calYearChooser" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CalDayChooser" min="-2" pref="268" max="-2" attributes="0"/>
+                              <Component id="calDayChooser" min="-2" pref="268" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CalLblActividadesDelDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CalLblInfoActividad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblActividadesDelDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblInfoActividad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="CalScrollActividades" min="-2" pref="174" max="-2" attributes="0"/>
+                                      <Component id="calScrollActividades" min="-2" pref="174" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="CalScrollInfoAct" max="32767" attributes="0"/>
+                                  <Component id="calScrollInfoAct" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -298,7 +296,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="com.toedter.calendar.JDayChooser" name="CalDayChooser">
+            <Component class="com.toedter.calendar.JDayChooser" name="calDayChooser">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -307,14 +305,14 @@
                 </Property>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="month" source="CalMonthChooser" sourcePath="${month}" target="CalDayChooser" targetPath="month" updateStrategy="0" immediately="false"/>
-                <BindingProperty name="year" source="CalYearChooser" sourcePath="${year}" target="CalDayChooser" targetPath="year" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="month" source="calMonthChooser" sourcePath="${month}" target="calDayChooser" targetPath="month" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="year" source="calYearChooser" sourcePath="${year}" target="calDayChooser" targetPath="year" updateStrategy="0" immediately="false"/>
               </BindingProperties>
               <Events>
-                <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="CalDayChooserPropertyChange"/>
+                <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="calDayChooserPropertyChange"/>
               </Events>
             </Component>
-            <Component class="com.toedter.calendar.JMonthChooser" name="CalMonthChooser">
+            <Component class="com.toedter.calendar.JMonthChooser" name="calMonthChooser">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -324,7 +322,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JYearChooser" name="CalYearChooser">
+            <Component class="com.toedter.calendar.JYearChooser" name="calYearChooser">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -333,18 +331,18 @@
                 </Property>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="CalScrollActividades">
+            <Container class="javax.swing.JScrollPane" name="calScrollActividades">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="CalLstActividades">
+                <Component class="javax.swing.JList" name="calLstActividades">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="CalLstActividadesValueChanged"/>
+                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="calLstActividadesValueChanged"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -352,32 +350,35 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="CalBtnAgregar">
+            <Component class="javax.swing.JButton" name="btnGuardarActividad">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar Actividad"/>
+              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnAgregarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActividadActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblTipo">
+            <Component class="javax.swing.JLabel" name="calLblTipo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo de actividad:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblUsuario">
+            <Component class="javax.swing.JLabel" name="calLblUsuario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Usuario:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblPerro">
+            <Component class="javax.swing.JLabel" name="calLblPerro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Perro:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblFecha">
+            <Component class="javax.swing.JLabel" name="calLblFecha">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fecha:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CalComboTipo">
+            <Component class="javax.swing.JComboBox" name="calComboTipo">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -388,13 +389,13 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalComboTipoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calComboTipoActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CalComboUsuario">
+            <Component class="javax.swing.JComboBox" name="calComboUsuario">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
@@ -404,7 +405,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CalComboPerro">
+            <Component class="javax.swing.JComboBox" name="calComboPerro">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
@@ -414,7 +415,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CalComboHora">
+            <Component class="javax.swing.JComboBox" name="calComboHora">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -424,18 +425,18 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalComboHoraActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calComboHoraActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblHora">
+            <Component class="javax.swing.JLabel" name="calLblHora">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hora"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="CalPanHoraPersonalizada">
+            <Container class="javax.swing.JPanel" name="calPanHoraPersonalizada">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -443,13 +444,13 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CalPanLblHora" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalPanLblMinutos" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanLblHora" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanLblMinutos" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="CalPanSpinMinutos" alignment="1" max="32767" attributes="0"/>
-                              <Component id="CalPanSpinHora" alignment="1" max="32767" attributes="0"/>
+                              <Component id="calPanSpinMinutos" alignment="1" max="32767" attributes="0"/>
+                              <Component id="calPanSpinHora" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -460,13 +461,13 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CalPanLblHora" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalPanSpinHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanLblHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanSpinHora" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CalPanLblMinutos" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalPanSpinMinutos" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanLblMinutos" min="-2" max="-2" attributes="0"/>
+                              <Component id="calPanSpinMinutos" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -474,19 +475,19 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="CalPanLblMinutos">
+                <Component class="javax.swing.JLabel" name="calPanLblMinutos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Minutos"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="CalPanSpinMinutos">
+                <Component class="javax.swing.JSpinner" name="calPanSpinMinutos">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="0" maximum="55" minimum="0" numberType="java.lang.Integer" stepSize="5" type="number"/>
+                      <SpinnerModel initial="0" maximum="59" minimum="0" numberType="java.lang.Integer" stepSize="5" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="CalPanSpinHora">
+                <Component class="javax.swing.JSpinner" name="calPanSpinHora">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel type="list">
@@ -518,36 +519,36 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalPanLblHora">
+                <Component class="javax.swing.JLabel" name="calPanLblHora">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hora"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="CalLblFechaResp">
+            <Component class="javax.swing.JLabel" name="calLblFechaResp">
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblTituloFecha">
+            <Component class="javax.swing.JLabel" name="calLblTituloFecha">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fecha"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblTituloActividad">
+            <Component class="javax.swing.JLabel" name="calLblTituloActividad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actividad"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblNombre">
+            <Component class="javax.swing.JLabel" name="calLblNombre">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="CalTxtNombreResp">
+            <Component class="javax.swing.JTextField" name="calTxtNombreResp">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalTxtNombreRespActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calTxtNombreRespActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="CalPanVeterinaria">
+            <Container class="javax.swing.JPanel" name="calPanVeterinaria">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -555,20 +556,20 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="CalLblHorarios" max="32767" attributes="0"/>
+                              <Component id="calLblHorarios" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="CalLblVeterinaria" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="CalLblMotivo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="calLblVeterinaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="calLblMotivo" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="CalComboVeterinaria" max="32767" attributes="0"/>
-                                      <Component id="CalComboMotivo" max="32767" attributes="0"/>
+                                      <Component id="calComboVeterinaria" max="32767" attributes="0"/>
+                                      <Component id="calComboMotivo" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="CalBtnVeterinariaSi" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calBtnVeterinariaSi" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="CalBtnVeterinariaNo" min="-2" max="-2" attributes="0"/>
+                                          <Component id="calBtnVeterinariaNo" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -582,71 +583,71 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CalLblVeterinaria" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalBtnVeterinariaSi" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalBtnVeterinariaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblVeterinaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calBtnVeterinariaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calBtnVeterinariaNo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CalComboVeterinaria" min="-2" max="-2" attributes="0"/>
+                          <Component id="calComboVeterinaria" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CalComboMotivo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalLblMotivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calComboMotivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblMotivo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CalLblHorarios" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="calLblHorarios" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="CalLblVeterinaria">
+                <Component class="javax.swing.JLabel" name="calLblVeterinaria">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Veterinaria:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="CalBtnVeterinariaSi">
+                <Component class="javax.swing.JRadioButton" name="calBtnVeterinariaSi">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="CalBtnGroupVeterinaria"/>
+                      <ComponentRef name="calBtnGroupVeterinaria"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Si"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnVeterinariaSiActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnVeterinariaSiActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="CalBtnVeterinariaNo">
+                <Component class="javax.swing.JRadioButton" name="calBtnVeterinariaNo">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="CalBtnGroupVeterinaria"/>
+                      <ComponentRef name="calBtnGroupVeterinaria"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="No"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnVeterinariaNoActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnVeterinariaNoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="CalComboVeterinaria">
+                <Component class="javax.swing.JComboBox" name="calComboVeterinaria">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalComboVeterinariaActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calComboVeterinariaActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblMotivo">
+                <Component class="javax.swing.JLabel" name="calLblMotivo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Motivo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="CalComboMotivo">
+                <Component class="javax.swing.JComboBox" name="calComboMotivo">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -661,33 +662,33 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblHorarios">
+                <Component class="javax.swing.JLabel" name="calLblHorarios">
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="CalTxtTipoAlimento">
+            <Component class="javax.swing.JTextField" name="calTxtTipoAlimento">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalTxtTipoAlimentoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calTxtTipoAlimentoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblTipoAlimento">
+            <Component class="javax.swing.JLabel" name="calLblTipoAlimento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tipo Alimento:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblActividadesDelDia">
+            <Component class="javax.swing.JLabel" name="calLblActividadesDelDia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actividades del D&#xed;a:"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="CalScrollInfoAct">
+            <Container class="javax.swing.JScrollPane" name="calScrollInfoAct">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="CalTxtAreaInfoAct">
+                <Component class="javax.swing.JTextArea" name="calTxtAreaInfoAct">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -695,66 +696,66 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="CalLblInfoActividad">
+            <Component class="javax.swing.JLabel" name="calLblInfoActividad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Informaci&#xf3;n de la Actividad: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="CalBtnEditar">
+            <Component class="javax.swing.JButton" name="calBtnEditar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnEditarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnEditarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblRealizada">
+            <Component class="javax.swing.JLabel" name="calLblRealizada">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fue realizada:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="CalBtnRealizadaSi">
+            <Component class="javax.swing.JRadioButton" name="calBtnRealizadaSi">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="CalBtnGroupRealizada"/>
+                  <ComponentRef name="calBtnGroupRealizada"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Si"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnRealizadaSiActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnRealizadaSiActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="CalBtnRealizadaNo">
+            <Component class="javax.swing.JRadioButton" name="calBtnRealizadaNo">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="CalBtnGroupRealizada"/>
+                  <ComponentRef name="calBtnGroupRealizada"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="No"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnRealizadaNoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnRealizadaNoActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="CalPanRuta">
+            <Container class="javax.swing.JPanel" name="calPanRuta">
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CalLblRuta" max="32767" attributes="0"/>
-                              <Component id="CalLblDistancia" alignment="1" pref="100" max="32767" attributes="0"/>
+                              <Component id="calLblRuta" max="32767" attributes="0"/>
+                              <Component id="calLblDistancia" alignment="1" pref="100" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="CalSpinDistancia" min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Component id="calSpinDistancia" min="-2" pref="56" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CalLblKilometros" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calLblKilometros" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  <Component id="CalBtnRuta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calBtnRuta" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -765,14 +766,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CalBtnRuta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalLblRuta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calBtnRuta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblRuta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CalSpinDistancia" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalLblKilometros" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CalLblDistancia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calSpinDistancia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblKilometros" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblDistancia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
@@ -780,54 +781,54 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JSpinner" name="CalSpinDistancia">
+                <Component class="javax.swing.JSpinner" name="calSpinDistancia">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.5" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblKilometros">
+                <Component class="javax.swing.JLabel" name="calLblKilometros">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Kil&#xf3;metros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="CalBtnRuta">
+                <Component class="javax.swing.JButton" name="calBtnRuta">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar Ruta"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnRutaActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnRutaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblRuta">
+                <Component class="javax.swing.JLabel" name="calLblRuta">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ruta:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblDistancia">
+                <Component class="javax.swing.JLabel" name="calLblDistancia">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Distancia:"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="CalBtnAgregarDatos">
+            <Component class="javax.swing.JButton" name="calBtnAgregarDatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar Datos Precargados"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnAgregarDatosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnAgregarDatosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="CalLblAdvertencia">
+            <Component class="javax.swing.JLabel" name="calLblAdvertencia">
             </Component>
-            <Component class="javax.swing.JButton" name="CalBtnVerRuta">
+            <Component class="javax.swing.JButton" name="calBtnVerRuta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Ruta"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalBtnVerRutaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calBtnVerRutaActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -849,23 +850,23 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="UsuarioLblUsuarios" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioLblUsuarios" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="UsuarioComboUsuarios" min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Component id="usuarioComboUsuarios" min="-2" pref="124" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="UsuarioLblNombre" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="UsuarioLblMail" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="usuarioLblNombre" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="usuarioLblMail" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="UsuarioTxtMail" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
-                                                  <Component id="UsuarioTxtNombre" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
+                                                  <Component id="usuarioTxtMail" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
+                                                  <Component id="usuarioTxtNombre" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="UsuarioLblAdvertencia" max="32767" attributes="0"/>
+                                          <Component id="usuarioLblAdvertencia" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -873,21 +874,21 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="UsuarioBtnAgregar" min="-2" max="-2" attributes="0"/>
+                              <Component id="usuarioBtnAgregar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="UsuarioLblActividades" alignment="0" min="-2" pref="259" max="-2" attributes="0"/>
+                          <Component id="usuarioLblActividades" alignment="0" min="-2" pref="259" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="UsuarioLblActividad" min="-2" max="-2" attributes="0"/>
-                                  <Component id="UsuarioScrollActividades" min="-2" pref="156" max="-2" attributes="0"/>
+                                  <Component id="usuarioLblActividad" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioScrollActividades" min="-2" pref="156" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="UsuarioLblFecha" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="UsuarioScrollFechas" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="usuarioLblFecha" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioScrollFechas" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -902,102 +903,102 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="UsuarioLblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="UsuarioTxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioLblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioTxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="UsuarioTxtMail" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="UsuarioLblMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioTxtMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usuarioLblMail" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="UsuarioLblAdvertencia" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="usuarioLblAdvertencia" min="-2" pref="22" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="UsuarioBtnAgregar" min="-2" max="-2" attributes="0"/>
+                              <Component id="usuarioBtnAgregar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="UsuarioLblActividades" min="-2" max="-2" attributes="0"/>
+                                      <Component id="usuarioLblActividades" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="UsuarioLblActividad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="UsuarioLblFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="usuarioLblActividad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="usuarioLblFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="UsuarioScrollFechas" max="32767" attributes="0"/>
-                                          <Component id="UsuarioScrollActividades" min="-2" pref="244" max="-2" attributes="0"/>
+                                          <Component id="usuarioScrollFechas" max="32767" attributes="0"/>
+                                          <Component id="usuarioScrollActividades" min="-2" pref="244" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="UsuarioLblUsuarios" min="-2" max="-2" attributes="0"/>
+                                      <Component id="usuarioLblUsuarios" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="UsuarioComboUsuarios" min="-2" max="-2" attributes="0"/>
+                                      <Component id="usuarioComboUsuarios" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="255" max="32767" attributes="0"/>
+                      <EmptySpace pref="561" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="UsuarioLblUsuarios">
+            <Component class="javax.swing.JLabel" name="usuarioLblUsuarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="UsuarioComboUsuarios">
+            <Component class="javax.swing.JComboBox" name="usuarioComboUsuarios">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioComboUsuariosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usuarioComboUsuariosActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="UsuarioLblNombre">
+            <Component class="javax.swing.JLabel" name="usuarioLblNombre">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="UsuarioLblMail">
+            <Component class="javax.swing.JLabel" name="usuarioLblMail">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mail:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="UsuarioTxtNombre">
+            <Component class="javax.swing.JTextField" name="usuarioTxtNombre">
             </Component>
-            <Component class="javax.swing.JTextField" name="UsuarioTxtMail">
+            <Component class="javax.swing.JTextField" name="usuarioTxtMail">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioTxtMailActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usuarioTxtMailActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="UsuarioBtnAgregar">
+            <Component class="javax.swing.JButton" name="usuarioBtnAgregar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar Usuario"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioBtnAgregarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usuarioBtnAgregarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="UsuarioLblActividades">
+            <Component class="javax.swing.JLabel" name="usuarioLblActividades">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pr&#xf3;ximas Actividades"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="UsuarioScrollActividades">
+            <Container class="javax.swing.JScrollPane" name="usuarioScrollActividades">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="UsuarioLstActividades">
+                <Component class="javax.swing.JList" name="usuarioLstActividades">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="0"/>
@@ -1009,21 +1010,21 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="UsuarioLblActividad">
+            <Component class="javax.swing.JLabel" name="usuarioLblActividad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Activiad:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="UsuarioLblFecha">
+            <Component class="javax.swing.JLabel" name="usuarioLblFecha">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fecha"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="UsuarioScrollFechas">
+            <Container class="javax.swing.JScrollPane" name="usuarioScrollFechas">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="UsuarioLstFechas">
+                <Component class="javax.swing.JList" name="usuarioLstFechas">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="0"/>
@@ -1035,15 +1036,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="UsuarioLblAdvertencia">
+            <Component class="javax.swing.JLabel" name="usuarioLblAdvertencia">
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="panPerros">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Perros">
-                <Property name="tabTitle" type="java.lang.String" value="Perros"/>
+              <JTabbedPaneConstraints tabName="Mascotas">
+                <Property name="tabTitle" type="java.lang.String" value="Mascotas"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -1056,312 +1057,433 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="PerroLblPerros" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PerroComboPerros" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <Component id="perroLblPerros" min="-2" max="-2" attributes="0"/>
+                                  <Component id="perroComboPerros" min="-2" pref="112" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PerroBtnEditar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="perroBtnEditar" max="32767" attributes="0"/>
+                                  <Component id="btnBorrar" pref="72" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="PerroBtnGuardar" min="-2" pref="113" max="-2" attributes="0"/>
-                                  <Component id="PerroBtnAgregar" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="595" max="-2" attributes="0"/>
+                              <Component id="perroLblAdvertencia" pref="13" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="PerroLblAdvertencia" min="-2" pref="375" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="perroBtnAgregar" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="perroBtnGuardar" min="-2" pref="113" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <Component id="PerroPanInformacion" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="perroLblComentarios" pref="446" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="perroTxtComentarios" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
+                                          <Component id="perroPanInformacion" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="251" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="PerroLblPerros" min="-2" max="-2" attributes="0"/>
+                              <Component id="perroLblPerros" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="PerroComboPerros" min="-2" max="-2" attributes="0"/>
+                              <Component id="perroComboPerros" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="PerroBtnEditar" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="perroBtnEditar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PerroPanInformacion" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBorrar" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="perroPanInformacion" min="-2" pref="295" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="PerroLblAdvertencia" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <Component id="perroLblComentarios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PerroBtnGuardar" min="-2" max="-2" attributes="0"/>
+                      <Component id="perroTxtComentarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="perroBtnGuardar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PerroBtnAgregar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="241" max="32767" attributes="0"/>
+                      <Component id="perroBtnAgregar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Component id="perroLblAdvertencia" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="PerroBtnAgregar">
+            <Component class="javax.swing.JButton" name="perroBtnAgregar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ingresar Perro"/>
+                <Property name="text" type="java.lang.String" value="Ingresar Mascota"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroBtnAgregarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroBtnAgregarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="PerroLblPerros">
+            <Component class="javax.swing.JLabel" name="perroLblPerros">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Perros"/>
+                <Property name="text" type="java.lang.String" value="Mascotas"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="PerroPanInformacion">
+            <Container class="javax.swing.JPanel" name="perroPanInformacion">
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="PerroTxtComentarios" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="PerroPanFoto" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="PerroLblComentarios" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="perroPanFoto" min="-2" max="-2" attributes="0"/>
+                              <Component id="perroLblFoto" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="PerroLblNombre" min="-2" max="-2" attributes="0"/>
-                                              <Component id="PerroLblAltura" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="PerroTxtNombre" max="32767" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="PerroSpinPeso" min="-2" pref="113" max="-2" attributes="0"/>
-                                                      <Component id="PerroSpinAltura" min="-2" pref="113" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="CalLblCentimetros" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="CalLblKilogramos" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="PerroLblPeso" min="-2" max="-2" attributes="0"/>
-                                              <Component id="PerroLblFotoBoton" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                          <Component id="PerroBtnExaminar" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="perroLblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelTipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                      <Component id="perroLblAltura1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Component id="perroLblAltura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perroLblPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perroLblFotoBoton" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="perroTxtNombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="comboTipoMascota" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="checkAdoptado" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="perroSpinAltura" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                              <Component id="perroSpinPeso" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="calLblKilogramos" min="-2" max="-2" attributes="0"/>
+                                              <Component id="calLblCentimetros" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="estadoTxt" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="perroBtnExaminar" min="-2" pref="126" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="perroTxtNombre" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perroLblNombre" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="PerroLblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="PerroTxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="comboTipoMascota" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="PerroLblAltura" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="PerroSpinAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalLblCentimetros" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="PerroLblPeso" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="PerroSpinPeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="CalLblKilogramos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="PerroBtnExaminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="PerroLblFotoBoton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="checkAdoptado" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="PerroPanFoto" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="PerroLblComentarios" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="perroLblFoto" min="-2" pref="112" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="PerroTxtComentarios" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="perroLblAltura1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="estadoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="perroLblAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="perroSpinAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="calLblCentimetros" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="perroLblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="calLblKilogramos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perroSpinPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="perroLblFotoBoton" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perroBtnExaminar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="perroPanFoto" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="PerroPanFoto">
+                <Container class="javax.swing.JPanel" name="perroPanFoto">
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PerroLblFoto" min="-2" pref="112" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PerroLblFoto" min="-2" pref="112" max="-2" attributes="0"/>
-                              <EmptySpace pref="12" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="138" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="PerroLblFoto">
-                    </Component>
-                  </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="PerroLblAltura">
+                <Component class="javax.swing.JLabel" name="perroLblAltura">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Altura"/>
+                    <Property name="text" type="java.lang.String" value="Altura:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="PerroLblComentarios">
+                <Component class="javax.swing.JLabel" name="perroLblNombre">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Comentarios"/>
+                    <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="PerroLblNombre">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Nombre"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="PerroLblPeso">
+                <Component class="javax.swing.JLabel" name="perroLblPeso">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Peso"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="PerroTxtNombre">
+                <Component class="javax.swing.JTextField" name="perroTxtNombre">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroTxtNombreActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroTxtNombreActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="PerroTxtComentarios">
-                </Component>
-                <Component class="javax.swing.JButton" name="PerroBtnExaminar">
+                <Component class="javax.swing.JButton" name="perroBtnExaminar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Examinar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroBtnExaminarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroBtnExaminarActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="PerroLblFotoBoton">
+                <Component class="javax.swing.JLabel" name="perroLblFotoBoton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Foto:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="PerroSpinAltura">
+                <Component class="javax.swing.JSpinner" name="perroSpinAltura">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="PerroSpinPeso">
+                <Component class="javax.swing.JSpinner" name="perroSpinPeso">
                   <Properties>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.1" type="number"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblCentimetros">
+                <Component class="javax.swing.JLabel" name="calLblCentimetros">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cent&#xed;metros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="CalLblKilogramos">
+                <Component class="javax.swing.JLabel" name="calLblKilogramos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Kilogramos"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JComboBox" name="comboTipoMascota">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Perro"/>
+                        <StringItem index="1" value="Gato"/>
+                        <StringItem index="2" value="Caballo"/>
+                        <StringItem index="3" value="Vaca"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labelTipo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tipo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Puede ser adoptado?"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="perroLblAltura1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Estado"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="checkAdoptado">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkAdoptadoActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="estadoTxt">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="sin adoptar"/>
+                        <StringItem index="1" value="adoptado"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="estadoTxtActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="perroLblFoto">
+                </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JComboBox" name="PerroComboPerros">
+            <Component class="javax.swing.JComboBox" name="perroComboPerros">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PerroComboPerrosMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroComboPerrosActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="perroComboPerrosMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroComboPerrosActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="PerroBtnEditar">
+            <Component class="javax.swing.JButton" name="perroBtnEditar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroBtnEditarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroBtnEditarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="PerroBtnGuardar">
+            <Component class="javax.swing.JButton" name="perroBtnGuardar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PerroBtnGuardarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perroBtnGuardarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="PerroLblAdvertencia">
+            <Component class="javax.swing.JLabel" name="perroLblAdvertencia">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnBorrar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="perroTxtComentarios">
+            </Component>
+            <Component class="javax.swing.JLabel" name="perroLblComentarios">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Comentarios"/>
+              </Properties>
             </Component>
           </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelPadrinos">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Padrinos">
+                <Property name="tabTitle" type="java.lang.String" value="Padrinos"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="908" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="868" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelAdopciones">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Adopci&#xf3;n">
+                <Property name="tabTitle" type="java.lang.String" value="Adopci&#xf3;n"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="908" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="868" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
         </Container>
       </SubComponents>
     </Container>

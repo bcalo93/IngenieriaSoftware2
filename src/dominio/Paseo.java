@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 public class Paseo extends Actividad {
 
     private Usuario usuario;
-    private Perro perro;
+    private Mascota mascota;
     private double distancia;
     private ImageIcon ruta;
     private boolean fueRealizado;
@@ -14,9 +14,9 @@ public class Paseo extends Actividad {
     private Fecha fecha;
     private String nombre;
 
-    public Paseo(String nombre, Usuario usuario, Perro perro, double distancia, boolean fueRealizado, LocalTime hora, Fecha fecha) {
+    public Paseo(String nombre, Usuario usuario, Mascota mascota, double distancia, boolean fueRealizado, LocalTime hora, Fecha fecha) {
         this.usuario = usuario;
-        this.perro = perro;
+        this.mascota = mascota;
         setDistancia(distancia);
         this.fueRealizado = fueRealizado;
         this.hora = hora;
@@ -27,7 +27,7 @@ public class Paseo extends Actividad {
     
     public Paseo(){
         this.usuario = new Usuario();
-        this.perro = new Perro();
+        this.mascota = new Mascota();
         this.distancia = 0;
         this.fueRealizado = false;
         this.hora = LocalTime.now();
@@ -77,13 +77,13 @@ public class Paseo extends Actividad {
     }
 
     @Override
-    public Perro getMascota() {
-        return perro;
+    public Mascota getMascota() {
+        return mascota;
     }
 
     @Override
-    public void setMascota(Perro perros) {
-        this.perro = perros;
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class Paseo extends Actividad {
 
     @Override
     public String toString() {
-        return "Paseo{" + "responsable=" + usuario + ", perro=" + perro + ", distancia=" + distancia + ", fueRealizado=" + fueRealizado + ", hora=" + hora + ", fecha=" + fecha + ", nombre=" + nombre + '}';
+        return "Paseo{" + "responsable=" + usuario + ", mascota=" + mascota + ", distancia=" + distancia + ", fueRealizado=" + fueRealizado + ", hora=" + hora + ", fecha=" + fecha + ", nombre=" + nombre + '}';
     }
 
     @Override

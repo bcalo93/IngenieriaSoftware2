@@ -7,12 +7,11 @@ package dominio;
 
 import java.time.LocalTime;
 import javax.swing.ImageIcon;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -22,31 +21,11 @@ public class PaseoTest {
 
     private Paseo paseo;
 
-    public PaseoTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         paseo = new Paseo();
     }
-
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
     @Test
     public void testConstructorSinParametros() {
         Paseo unPaseo = new Paseo();
@@ -59,15 +38,15 @@ public class PaseoTest {
     @Test
     public void testConstructorPorParametros() {
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         LocalTime time = LocalTime.now();
         Fecha fecha = new Fecha();
-        Paseo unPaseo = new Paseo("Nombre", usuario, perro, 0, true, time, fecha);
+        Paseo unPaseo = new Paseo("Nombre", usuario, mascota, 0, true, time, fecha);
         assertEquals(fecha, unPaseo.getFecha());
         assertEquals(time, unPaseo.getHora());
         assertEquals("Nombre", unPaseo.getNombre());
         assertEquals(usuario, unPaseo.getUsuario());
-        assertEquals(perro, unPaseo.getMascota());
+        assertEquals(mascota, unPaseo.getMascota());
         assertEquals(true, unPaseo.getFueRealizado());
         assertEquals(0, unPaseo.getDistancia(), 0.0);
     }
@@ -75,15 +54,15 @@ public class PaseoTest {
     @Test
     public void testConstructorPorParametrosVacio() {
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         LocalTime time = LocalTime.now();
         Fecha fecha = new Fecha();
-        Paseo unPaseo = new Paseo("", usuario, perro, 0, true, time, fecha);
+        Paseo unPaseo = new Paseo("", usuario, mascota, 0, true, time, fecha);
         assertEquals(fecha, unPaseo.getFecha());
         assertEquals(time, unPaseo.getHora());
         assertEquals("Sin-Nombre", unPaseo.getNombre());
         assertEquals(usuario, unPaseo.getUsuario());
-        assertEquals(perro, unPaseo.getMascota());
+        assertEquals(mascota, unPaseo.getMascota());
         assertEquals(true, unPaseo.getFueRealizado());
         assertEquals(0, unPaseo.getDistancia(), 0.0);
     }
@@ -129,9 +108,9 @@ public class PaseoTest {
 
     @Test
     public void testSetMascota() {
-        Perro perro = new Perro();
-        paseo.setMascota(perro);
-        assertEquals(perro, paseo.getMascota());
+        Mascota mascota = new Mascota();
+        paseo.setMascota(mascota);
+        assertEquals(mascota, paseo.getMascota());
     }
 
     @Test
@@ -168,13 +147,13 @@ public class PaseoTest {
     @Test
     public void testToString() {
         Usuario responsable = paseo.getUsuario();
-        Perro perro = paseo.getMascota();
+        Mascota mascota = paseo.getMascota();
         double distancia = paseo.getDistancia();
         boolean fueRealizado = paseo.getFueRealizado();
         LocalTime hora = paseo.getHora();
         Fecha fecha = paseo.getFecha();
         String nombre = paseo.getNombre();
         String resString = paseo.toString();
-        assertEquals("Paseo{" + "responsable=" + responsable + ", perro=" + perro + ", distancia=" + distancia + ", fueRealizado=" + fueRealizado + ", hora=" + hora + ", fecha=" + fecha + ", nombre=" + nombre + '}', resString);
+        assertEquals("Paseo{" + "responsable=" + responsable + ", mascota=" + mascota + ", distancia=" + distancia + ", fueRealizado=" + fueRealizado + ", hora=" + hora + ", fecha=" + fecha + ", nombre=" + nombre + '}', resString);
     }
 }

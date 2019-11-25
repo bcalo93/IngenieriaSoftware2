@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
 import java.util.ArrayList;
@@ -13,40 +8,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author marce
- */
 public class FechaTest {
 
     private Fecha fecha;
-
-    public FechaTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Before
     public void setUp() {
         fecha = new Fecha();
     }
-
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-     @Test
+    
+    @Test
     public void testConstructorSinParametros() {
         Fecha unaFecha = new Fecha();
         assertEquals(1, unaFecha.getDia());
@@ -256,6 +227,63 @@ public class FechaTest {
         assertEquals(25, resDia);
     }
     
+    @Test
+    public void testEqualsMismaInstancia() {
+        Fecha fecha = new Fecha();
+        assertTrue(fecha.equals(fecha));
+    }
     
+    @Test
+    public void testEqualsNullInstancia() {
+        Fecha fecha = new Fecha();
+        assertFalse(fecha.equals(null));
+    }
     
+    @Test
+    public void testEqualsTipoDiferente() {
+        Fecha fecha = new Fecha();
+        assertFalse(fecha.equals("Texto"));
+    }
+    
+    @Test
+    public void testEqualsMismaFecha() {
+        Fecha fecha1 = new Fecha(20, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 10, 2019);
+        assertTrue(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testEqualsDiaDiferente() {
+        Fecha fecha1 = new Fecha(21, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 10, 2019);
+        assertFalse(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testEqualsMesDiferente() {
+        Fecha fecha1 = new Fecha(20, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 9, 2019);
+        assertFalse(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testEqualsAnioDiferente() {
+        Fecha fecha1 = new Fecha(20, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 10, 2018);
+        assertFalse(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testHashCode() {
+        int testDia = 20;
+        int testMes = 5;
+        int testAnio = 2019;
+        Fecha testFecha = new Fecha(testDia, testMes, testAnio);
+        int valorEsperado = 7;
+        valorEsperado = 97 * valorEsperado + testDia;
+        valorEsperado = 97 * valorEsperado + testMes;
+        valorEsperado = 97 * valorEsperado + testAnio;
+        
+        assertEquals(valorEsperado, testFecha.hashCode());
+    }
 }

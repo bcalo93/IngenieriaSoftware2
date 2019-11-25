@@ -58,15 +58,15 @@ public class AlimentacionTest {
     @Test
     public void testConstructorPorParametros() {
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         LocalTime time = LocalTime.now();
         Fecha fecha = new Fecha();
-        Alimentacion unaAlim = new Alimentacion("Nombre", usuario, perro, "Comida", true, time, fecha);
+        Alimentacion unaAlim = new Alimentacion("Nombre", usuario, mascota, "Comida", true, time, fecha);
         assertEquals(fecha, unaAlim.getFecha());
         assertEquals(time, unaAlim.getHora());
         assertEquals("Nombre", unaAlim.getNombre());
         assertEquals(usuario, unaAlim.getUsuario());
-        assertEquals(perro, unaAlim.getMascota());
+        assertEquals(mascota, unaAlim.getMascota());
         assertEquals("Comida", unaAlim.getTipoAlimento());
         assertEquals(true, unaAlim.getFueRealizado());
     }
@@ -74,15 +74,15 @@ public class AlimentacionTest {
     @Test
     public void testConstructorPorParametrosVacios() {
         Usuario usuario = new Usuario();
-        Perro perro = new Perro();
+        Mascota mascota = new Mascota();
         LocalTime time = LocalTime.now();
         Fecha fecha = new Fecha();
-        Alimentacion unaAlim = new Alimentacion("", usuario, perro, "", true, time, fecha);
+        Alimentacion unaAlim = new Alimentacion("", usuario, mascota, "", true, time, fecha);
         assertEquals(fecha, unaAlim.getFecha());
         assertEquals(time, unaAlim.getHora());
         assertEquals("Sin-Nombre", unaAlim.getNombre());
         assertEquals(usuario, unaAlim.getUsuario());
-        assertEquals(perro, unaAlim.getMascota());
+        assertEquals(mascota, unaAlim.getMascota());
         assertEquals("Sin-Tipo", unaAlim.getTipoAlimento());
         assertEquals(true, unaAlim.getFueRealizado());
     }
@@ -115,9 +115,9 @@ public class AlimentacionTest {
 
     @Test
     public void testSetMascota() {
-        Perro perro = new Perro();
-        alimentacion.setMascota(perro);
-        assertEquals(perro, alimentacion.getMascota());
+        Mascota mascota = new Mascota();
+        alimentacion.setMascota(mascota);
+        assertEquals(mascota, alimentacion.getMascota());
     }
 
     @Test
@@ -142,7 +142,7 @@ public class AlimentacionTest {
     @Test
     public void testToString() {
         Usuario responsable = alimentacion.getUsuario();
-        Perro mascota = alimentacion.getMascota();
+        Mascota mascota = alimentacion.getMascota();
         String tipoAlimento = alimentacion.getTipoAlimento();
         boolean fueRealizado = alimentacion.getFueRealizado();
         LocalTime hora = alimentacion.getHora();

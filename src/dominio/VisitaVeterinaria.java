@@ -16,7 +16,7 @@ public class VisitaVeterinaria extends Actividad {
     private String nombre;
     private LocalTime hora;
     private Usuario responsable;
-    private Perro perro;
+    private Mascota mascota;
     private boolean fueRealizado;
     private Fecha fecha;
     private Veterinaria veterinaria;
@@ -26,18 +26,18 @@ public class VisitaVeterinaria extends Actividad {
         this.nombre = "Sin-Nombre";
         this.hora = LocalTime.now();
         this.responsable = new Usuario();
-        this.perro = new Perro();
+        this.mascota = new Mascota();
         this.fueRealizado = false;
         this.fecha = new Fecha();
         this.veterinaria = new Veterinaria();
         this.motivo = "Sin-Motivo";
     }
 
-    public VisitaVeterinaria(String nombre, LocalTime hora, Usuario responsable, Perro perro, boolean fueRealizado, Fecha fecha, Veterinaria veterinaria, String motivo) {
+    public VisitaVeterinaria(String nombre, LocalTime hora, Usuario responsable, Mascota mascota, boolean fueRealizado, Fecha fecha, Veterinaria veterinaria, String motivo) {
         setNombre(nombre);
         this.hora = hora;
         this.responsable = responsable;
-        this.perro = perro;
+        this.mascota = mascota;
         this.fueRealizado = fueRealizado;
         this.fecha = fecha;
         this.veterinaria = veterinaria;
@@ -98,13 +98,13 @@ public class VisitaVeterinaria extends Actividad {
     }
 
     @Override
-    public Perro getMascota() {
-        return this.perro;
+    public Mascota getMascota() {
+        return this.mascota;
     }
 
     @Override
-    public void setMascota(Perro mascota) {
-        this.perro = mascota;
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
     }
 
     @Override
@@ -116,7 +116,7 @@ public class VisitaVeterinaria extends Actividad {
     public void setFueRealizado(boolean seCompleto) {
         this.fueRealizado = seCompleto;
         if(fueRealizado)
-            veterinaria.EliminarActividadAgendada(this);
+            veterinaria.eliminarActividadAgendada(this);
     }
 
     @Override
@@ -131,7 +131,7 @@ public class VisitaVeterinaria extends Actividad {
 
     @Override
     public String toString() {
-        return "VisitaVeterinaria{" + "nombre=" + nombre + ", hora=" + hora + ", responsable=" + responsable + ", perro=" + perro + ", fueRealizado=" + fueRealizado + ", fecha=" + fecha + ", veterinaria=" + veterinaria + '}';
+        return "VisitaVeterinaria{" + "nombre=" + nombre + ", hora=" + hora + ", responsable=" + responsable + ", mascota=" + mascota + ", fueRealizado=" + fueRealizado + ", fecha=" + fecha + ", veterinaria=" + veterinaria + '}';
     }
 
   
