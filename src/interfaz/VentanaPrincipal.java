@@ -1442,7 +1442,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             sistema.anadirUsuario(persona);
             Mascota rasta = new Mascota("Rasta", 50, 23, 
                     "Es un buen perro, le gusta comer", "Perro",
-                    true, "adoptado");
+                    true, "sin adoptar");
             rasta.setFoto(new ImageIcon(ImageIO.read(this.getClass()
                     .getResource(PERRO_POR_DEFECTO))
                     .getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
