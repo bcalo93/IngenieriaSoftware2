@@ -2045,7 +2045,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             timer.setRepeats(false);
             timer.start();
         } catch (ArithmeticException e) {
-
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
