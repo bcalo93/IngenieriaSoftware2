@@ -339,7 +339,7 @@ public class LogicaPadrinoTest {
         logica.borrarPadrino(paraBorrar);
         assertEquals(19, padrinos.size());
         assertFalse(padrinos.stream().anyMatch(padrino -> 
-                padrino.getId() == idBorrado));
+                padrino.getId().equals(idBorrado)));
     }
     
     @Test
