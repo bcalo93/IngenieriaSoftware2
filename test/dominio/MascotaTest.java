@@ -1,5 +1,6 @@
 package dominio;
 
+import java.util.Objects;
 import javax.swing.ImageIcon;
 import org.junit.Before;
 import org.junit.Test;
@@ -141,7 +142,7 @@ public class MascotaTest {
         assertTrue(resultado);
         assertEquals("Nombre valido", mascota.getNombre());
     }
-    
+
     @Test
     public void testNombreValidoEspacioBlanco() {
         mascota.setNombre(" ");
@@ -177,7 +178,7 @@ public class MascotaTest {
     @Test
     public void testPesoValidaCero() {
         mascota.setAltura(0.0);
-        boolean resultado = mascota.alturaValida();
+        boolean resultado = mascota.pesoValido();
         assertFalse(resultado);
         assertEquals(0.0, mascota.getAltura(), 0);
     }
@@ -210,5 +211,58 @@ public class MascotaTest {
         assertEquals("Es un gato mimoso", mascota.getComentarios());
         assertEquals("Gato", mascota.getTipo());
         assertEquals(imagen, mascota.getFoto());
+    }
+    
+    @Test
+    public void testEqualsMismaInstancia() {
+        assertTrue(mascota.equals(mascota));
+    }
+    
+    @Test
+    public void testEqualsNullInstancia() {
+        assertFalse(mascota.equals(null));
+    }
+    
+    @Test
+    public void testEqualsTipoDiferente() {
+        assertFalse(mascota.equals("Texto"));
+    }
+    
+    @Test
+    public void testEqualsMismoNombre() {
+        String nombre = "Test Nombre";
+        mascota.setNombre(nombre);
+        Mascota testEquals = new Mascota();
+        testEquals.setNombre(nombre);
+        assertTrue(mascota.equals(testEquals));
+    }
+    
+    @Test
+    public void testEqualsNombreDiferente() {
+        Mascota testEquals = new Mascota();
+        testEquals.setNombre("Nombre diferente");
+        assertFalse(mascota.equals(testEquals));
+    }
+    
+    @Test
+    public void testEqualsMesDiferente() {
+        Fecha fecha1 = new Fecha(20, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 9, 2019);
+        assertFalse(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testEqualsAnioDiferente() {
+        Fecha fecha1 = new Fecha(20, 10, 2019);
+        Fecha fecha2 = new Fecha(20, 10, 2018);
+        assertFalse(fecha1.equals(fecha2));
+    }
+    
+    @Test
+    public void testHashCode() {
+        String nombreMascota = "Test Mascota";
+        mascota.setNombre(nombreMascota);
+        
+        assertEquals(67 * 7 + Objects.hashCode(nombreMascota), mascota.hashCode());
     }
 }

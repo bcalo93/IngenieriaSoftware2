@@ -132,6 +132,10 @@ public class Sistema extends Observable {
         return this.listaPadrinos;
     }
     
+    public void setPadrinos(ArrayList<Padrino> padrinos) {
+        this.listaPadrinos = padrinos;
+    }
+    
     public void agregarPadrino(Padrino padrino) {
         this.listaPadrinos.add(padrino);
         this.notificarCambios();

@@ -73,10 +73,25 @@ public class LogicaMascotaTest {
         assertNull(resultado);
     }
     
+    @Test
+    public void getMascotasParaAdoptarTest() {
+        ArrayList<Mascota> testMascotas = crearMascotas(20);
+        testMascotas.get(10).setHabilitadoAdopcion(false);
+        testMascotas.get(9).setEstado("adoptado");
+        sistema.setMascotas(testMascotas);
+        
+        List<Mascota> resultado = logica.getMascotasParaAdoptar();
+        assertEquals(18, resultado.size());
+        assertFalse(resultado.stream().anyMatch(mascota -> mascota.getNombre()
+                .equals("Mascota10")));
+        assertFalse(resultado.stream().anyMatch(mascota -> mascota.getNombre()
+                .equals("Mascota9")));
+    }
+    
     private ArrayList<Mascota> crearMascotas(int cantidad) {
         ArrayList<Mascota> resultado = new ArrayList<>();
         for(int i = 0; i < cantidad; i++) {
-            resultado.add(new Mascota("Mascota" + i, i + 2.0, i + 20.0, 
+            resultado.add(new Mascota("Mascota" + i, i + 2.0, i + 20.0,
                     "Comentario" + i, "Gato", true, "sin adoptar"));
         }
         return resultado;
